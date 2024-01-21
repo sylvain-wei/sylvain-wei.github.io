@@ -9,4 +9,6 @@ date: 2023-12-11
 
 What a wonderful day!
 
+你好！
+
 ![](https://sylvain-wei.github.io\weishatweiming.jpg)
