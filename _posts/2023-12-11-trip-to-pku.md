@@ -9,4 +9,4 @@ date: 2023-12-11
 
 What a wonderful day!
 
-![Me](D:\GitHub\sylvain-wei.github.io\weishatweiming.jpg)
+![](https://sylvain-wei.github.io\weishatweiming.jpg)
