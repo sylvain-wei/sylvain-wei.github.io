@@ -11,7 +11,7 @@ I will continue to update my blogs on the web with my technical insights and per
 
 ## Research Interests
 
-<font color='blue'>[Highlight]</font> I am actively looking for a **research internship** opportunity in the field of **NLP/LLM** from March to August 2024. Please contact me if you have any leads!
+<font color='blue'>[Highlight]</font> I am actively looking for a **research internship** opportunity in **NLP/LLM** from Mar to Aug 2024. Please contact me if you have any leads!
 
 - Interpretability and Mechanisms of Large Language Models
 - Natural Language Understanding
@@ -37,7 +37,7 @@ My research interests are interdisciplinary, with a primary focus on (1) the eva
 - **Jun 2023：**Participated in research program on evaluation of text-to-image models, collaborated with [FlagEval](https://github.com/FlagOpen/FlagEval) Group at [北京智源人工智能研究院 (BAAI)](https://www.baai.ac.cn/).
 
 
-- **April 2023：**Participated in research program on graph contrastive learning, at Graph Learning Group, ACT Lab at Beihang University.
+- **Apr 2023：**Participated in research program on graph contrastive learning, at Graph Learning Group, ACT Lab at Beihang University.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hello! This is my firtst post on Twitter!😃</p>&mdash; veison (@veison02) <a href="https://twitter.com/veison02/status/1748184433642164650?ref_src=twsrc%5Etfw">January 19, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
