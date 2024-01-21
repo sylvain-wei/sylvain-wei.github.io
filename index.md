@@ -11,7 +11,7 @@ I will continue to update my blogs on the web with my technical insights and per
 
 ## Research Interests
 
-<font color='blue'>[Highlight]</font> I am actively looking for a research internship opportunity in NLP/LLM from Mar to Aug 2024. Please contact me if you have any leads!
+*<font color='blue'>[Highlight]</font> I am actively looking for a research internship opportunity in NLP/LLM from Mar to Aug 2024. Please contact me if you have any leads!*
 
 - Interpretability and Mechanisms of Large Language Models
 - Natural Language Understanding
