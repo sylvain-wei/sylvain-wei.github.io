@@ -12,6 +12,10 @@ Since dependency structure is not constrained by word order, it is considered to
 # Tools
 There have been several tools that convert constituent structures to dependency structures. Let's assume that the constituency tree in the Penn Treebank style has the form:
 
+
+
+
+
 <p align="center">
 <img src="../images/constituent.png" alt="drawing" width="600px"/>
 </p>
