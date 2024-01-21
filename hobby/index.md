@@ -30,13 +30,9 @@ I have a great passion for music, especially experimental rock tracks and emotio
     <img src="/images/hobbysong3.png">
     <img src="/images/hobbysong4.png">
 </div>
-<br>
-
 I adore the music composed by Tayu Lo, as his songs express sincere emotions towards our nation and possess a keen awareness of the times. They also encapsulate the wondrous experiences of childhood and love. Additionally, I have been gradually exploring Western music lately. The unparalleled talent and genuine human compassion showcased in the works of artists like Lady Gaga, Elton John, and The Beatles have truly captivated me and allowed me to experience the enchantment of music. I also appreciate piano compositions, such as the works of Ryuichi Sakamoto. 
-
 Despite my mediocre singing abilities, I enjoy singing, and I plan to embark on learning instruments like the guitar in the near future.
 
-<br>
 
 # Running
 
@@ -46,21 +42,16 @@ I enjoy running, although I'm not skilled in sprinting or long-distance running.
   <img src="/images/running-1.jpg" style="width: 100%; height: auto;">
 </div>
 
-<br>
 
 # Past Hobbies
 
 In the past, I enjoyed painting, calligraphy, and other artistic pursuits, but I was not proficient in any of them. I hope to pick up these hobbies again in the future and become more skilled at them.
 
-<br>
 
 # Chat with me
 
 **Jan 2024:** I have set up the [online-coffee-time](https://calendly.com/weish) . Welcome to chat with me!
-
 <!-- Calendly inline widget begin -->
-
 <div class="calendly-inline-widget" data-url="https://calendly.com/weish/30min" style="min-width:320px;height:700px;"></div>
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <!-- Calendly inline widget end -->
-
