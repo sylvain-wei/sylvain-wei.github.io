@@ -11,7 +11,7 @@ I will continue to update my blogs on the web with my technical insights and per
 
 ## Research Interests
 
-<font color='red'>[Highlight]</font> <u>I am actively looking for a research internship opportunity in the field of NLP/LLM from March to August 2024.</u> Please contact me if you have any leads!
+<font color='blue'>[Highlight]</font> I am actively looking for a **research internship** opportunity in the field of **NLP/LLM** from March to August 2024. Please contact me if you have any leads!
 
 - Interpretability and Mechanisms of Large Language Models
 - Natural Language Understanding
@@ -22,11 +22,11 @@ My research interests are interdisciplinary, with a primary focus on (1) the eva
 
 ## Education
 
-- Beihang University (BUAA)   
+- Beihang University  
   *Sept. 2021 - Present*  
   B.Eng. in **Artificial Intelligence**
 
-- Beihang University (BUAA)  
+- Beihang University  
   *Sept. 2020 - Aug. 2021*  
   B.Eng. in **Information Science**
 
@@ -43,5 +43,5 @@ My research interests are interdisciplinary, with a primary focus on (1) the eva
 
 ------
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_pv"> Total number of views:<font color='red'> <span id="busuanzi_value_site_pv"></span> </font>  on this site.</span>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_pv"> Total number of views:<font color='orange'> <span id="busuanzi_value_site_pv"></span> </font>  on this site.</span>
 
