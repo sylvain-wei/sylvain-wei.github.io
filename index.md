@@ -39,9 +39,15 @@ My research interests are interdisciplinary, with a primary focus on (1) the eva
 
 - **Apr 2023：**Participated in research program on Graph Contrastive Learning, at MAGIC Group, ACT Lab at Beihang University.
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hello! This is my firtst post on Twitter!😃</p>&mdash; veison (@veison02) <a href="https://twitter.com/veison02/status/1748184433642164650?ref_src=twsrc%5Etfw">January 19, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div style="text-align: center;">
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hello! This is my first post on Twitter!😃</p>&mdash; veison (@veison02) <a href="https://twitter.com/veison02/status/1748184433642164650?ref_src=twsrc%5Etfw">January 19, 2024</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 
 ------
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_pv"> Total number of views:<font color='blue'> <span id="busuanzi_value_site_pv"></span> </font>  on this site.</span>
+<div style="text-align: center;">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <span id="busuanzi_container_site_pv">Total number of views:<font color='blue'> <span id="busuanzi_value_site_pv"></span> </font> on this site.</span>
+</div>
 
