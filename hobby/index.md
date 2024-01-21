@@ -2,7 +2,7 @@
 layout: page
 title: My Hobbies
 excerpt: "Hobby"
-search_omit: false
+search_omit: true
 ---
 # Reading
 
