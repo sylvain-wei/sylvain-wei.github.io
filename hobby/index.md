@@ -42,9 +42,10 @@ Despite my mediocre singing abilities, I enjoy singing, and I plan to embark on 
 
 I enjoy running, although I'm not skilled in sprinting or long-distance running. I consider running as a source of pleasure because it allows me to release stress and feel the power of life. (The following image is a group photo of me taken at the Winter Marathon Festival on November 25, 2023.)
 
-<div>
-<img src="/images/running-1.jpg">
+<div style="width: 50%; margin: 0 auto;">
+  <img src="/images/running-1.jpg" style="width: 100%; height: auto;">
 </div>
+
 <br>
 
 # Past Hobbies
