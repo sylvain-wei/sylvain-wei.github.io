@@ -16,14 +16,14 @@
 # theme: jekyll-theme-so-simple
 remote_theme: mmistakes/so-simple-theme
 locale: en-US
-title: Shaohang Wei
-my_site_title: Shaohang Wei
+title: Zi Lin
+my_site_title: Zi Lin
 #name: Zi Lin
-description: "weish[at]buaa.edu"
+description: "lzi[at]ucsd.edu"
 baseurl: #/blog # the subpath of your site, e.g. "/blog"
 #url: http://127.0.0.1:4000
-url: https://sylvain-wei.github.io/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-logo: /images/shaohangwei2.jpg # path of site logo, e.g. "/images/logo.png"
+url: https://zi-lin.github.io/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+logo: /images/zilin.jpg # path of site logo, e.g. "/images/logo.png"
 date_format: "%B %-d, %Y"
 read_time: # reading time estimates, e.g. true
 words_per_minute: # 200
@@ -90,12 +90,12 @@ defaults:
 
 # Site Author
 author:
-  name: Shaohang Wei
+  name: Zi Lin
   picture:
-  email: weish@buaa.edu.cn
-  twitter: veison02
-  # facebook: zi.lin.12935
-  github: sylvain-wei
+  email: linzi.pku@gmail.com
+  twitter: suzzzylin
+  facebook: zi.lin.12935
+  github: zi-lin
   links:
     - title:
       url:
@@ -104,17 +104,17 @@ author:
 # Footer Links
 footer_links:
   - title: GitHub
-    url: https://github.com/sylvain-wei
+    url: https://github.com/zi-lin
     icon: fab fa-github-square
-  # - title: Facebook
-  #   url: https://www.facebook.com/suzzzylin
-  #   icon: fab fa-facebook-square
+  - title: Facebook
+    url: https://www.facebook.com/suzzzylin
+    icon: fab fa-facebook-square
   - title: Twitter
-    url: https://twitter.com/veison02
+    url: https://twitter.com/suzzzylin
     icon: fab fa-twitter-square
   - title: Instagram
-    url: https://www.instagram.com/sylvain_1006
+    url: https://instagram.com/suzzzylin
     icon: fab fa-instagram
-  # - title: Linkedin
-  #   url: https://www.linkedin.com/in/zi-lin/
-  #   icon: fab fa-linkedin
+  - title: Linkedin
+    url: https://www.linkedin.com/in/zi-lin/
+    icon: fab fa-linkedin
