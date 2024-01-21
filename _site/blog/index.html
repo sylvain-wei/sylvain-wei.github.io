@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.1
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <title>Zi Lin</title>
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/academicons.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Zi Lin" href="/atom.xml"><!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+</head>
+
+  <body class="layout--posts  ">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/tag/tag/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Zi Lin">
+        <img src="/images/zilin.jpg" class="site-logo-img animated fadeInDown" alt="Zi Lin">
+      </a>
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Zi Lin</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">lzi[at]ucsd.edu</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article>
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title"></h1>
+        
+      </header>
+      <div class="page-content">
+        
+
+
+<ul class="taxonomy-index">
+  
+  
+    <li>
+      <a href="#2019">
+        <strong>2019</strong> <span class="taxonomy-count">2</span>
+      </a>
+    </li>
+  
+    <li>
+      <a href="#2018">
+        <strong>2018</strong> <span class="taxonomy-count">3</span>
+      </a>
+    </li>
+  
+    <li>
+      <a href="#2017">
+        <strong>2017</strong> <span class="taxonomy-count">3</span>
+      </a>
+    </li>
+  
+</ul>
+
+
+
+  <section id="2019" class="taxonomy-section">
+    <h2 class="taxonomy-title">2019</h2>
+    <div class="entries-list">
+      
+        
+
+<article class="entry h-entry">
+  <header class="entry-header">
+    <h3 class="entry-title p-name">
+      
+        <a href="/domain-adaptation/" rel="bookmark">Domain Adaptation for Syntactic Analysis
+</a>
+      
+    </h3>
+    
+  </header>
+  
+    <div class="entry-excerpt p-summary">
+      
+        <h1 id="introduction">Introduction</h1>
+<p>Current NLP systems tend to perform well only on their training domain and nearby genres, while the performances often degrade on the data drawn from different domains. For instance, the performance of a statistical parser trained on the Penn Treebank Wall Street Journal (WSJ; newspaper text) significantly drops when evaluated on text from other domains, as shown in the following table (results are from McClosky, 2010; for the details of those domains, cf. the next section):</p>
+
+        <div class="more-link">
+          <a href="/domain-adaptation/">Read more&hellip;</a>
+        </div>
+      
+    </div>
+  
+  
+    <footer class="entry-meta">
+      
+      <time class="entry-date dt-published" datetime="2019-05-01T00:00:00-07:00">May 1, 2019
+  </time>
+    </footer>
+  
+</article>
+
+      
+        
+
+<article class="entry h-entry">
+  <header class="entry-header">
+    <h3 class="entry-title p-name">
+      
+        <a href="/constituent-to-dependency/" rel="bookmark">Constituent-to-dependency Conversion
+</a>
+      
+    </h3>
+    
+  </header>
+  
+    <div class="entry-excerpt p-summary">
+      
+        <h1 id="introduction">Introduction</h1>
+<p>Since dependency structure is not constrained by word order, it is considered to be more domain or language independent than phrase structure. Most current state-of-the-art dependency parsers use supervised learning approaches, which usually requires a large amount of annotated data. For English, there are some manually annotated dependency Treebanks available <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. Nonetheless, constituent-based Treebanks such as Penn Treebank are more dominant. Therefore, it is quite natural to built the tools that convert phrase structures to dependency structures.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Owen Rambow, Cassandre Creswell, Rachel Szekely, Harriet Taber, and Marilyn Walker. A dependency treebank for english. In Proceedings of LREC’02, 2002. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>M. Cmejrek, J. Curín, and J. Havelka. Prague czech-english dependency treebank: Any hopes for a common annotation scheme? In HLT-NAACL’04 workshop on Frontiers in Corpus Annotation, pages 47–54, 2004. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        <div class="more-link">
+          <a href="/constituent-to-dependency/">Read more&hellip;</a>
+        </div>
+      
+    </div>
+  
+  
+    <footer class="entry-meta">
+      
+      <time class="entry-date dt-published" datetime="2019-04-29T00:00:00-07:00">April 29, 2019
+  </time>
+    </footer>
+  
+</article>
+
+      
+    </div>
+    <a href="#page-title" class="back-to-top">Back to Top &uarr;</a>
+  </section>
+
+  <section id="2018" class="taxonomy-section">
+    <h2 class="taxonomy-title">2018</h2>
+    <div class="entries-list">
+      
+        
+
+<article class="entry h-entry">
+  <header class="entry-header">
+    <h3 class="entry-title p-name">
+      
+        <a href="/SP/" rel="bookmark">Semantic Parsing
+</a>
+      
+    </h3>
+    
+  </header>
+  
+    <div class="entry-excerpt p-summary">
+      
+        <h1 id="introduction">Introduction</h1>
+<p>In fact, “semantic parsing” is, ironically, a semantically ambiguous term, which could refer to:</p>
+
+        <div class="more-link">
+          <a href="/SP/">Read more&hellip;</a>
+        </div>
+      
+    </div>
+  
+  
+    <footer class="entry-meta">
+      
+      <time class="entry-date dt-published" datetime="2018-11-11T00:00:00-08:00">November 11, 2018
+  </time>
+    </footer>
+  
+</article>
+
+      
+        
+
+<article class="entry h-entry">
+  <header class="entry-header">
+    <h3 class="entry-title p-name">
+      
+        <a href="/SRL/" rel="bookmark">Semantic Role Labeling
+</a>
+      
+    </h3>
+    
+  </header>
+  
+    <div class="entry-excerpt p-summary">
+      
+        <h1 id="introduction">Introduction</h1>
+<p><strong>Semantic Role Labeling (SRL)</strong>, sometimes called <em>shallow semantic parsing</em>, is a process in natural language processing that assigns semantic roles to constituents or their head words in a sentence according to their relationship to the predicates expressed in the sentence. Typical semantic roles can be divided into core <strong>arguments</strong> and <strong>adjuncts</strong>. The core arguments include <em>Agent, Patient, Source, Goal</em>, etc, While the adjuncts include <em>Location, Time, Manner, Cause</em>, etc.</p>
+
+        <div class="more-link">
+          <a href="/SRL/">Read more&hellip;</a>
+        </div>
+      
+    </div>
+  
+  
+    <footer class="entry-meta">
+      
+      <time class="entry-date dt-published" datetime="2018-11-10T00:00:00-08:00">November 10, 2018
+  </time>
+    </footer>
+  
+</article>
+
+      
+        
+
+<article class="entry h-entry">
+  <header class="entry-header">
+    <h3 class="entry-title p-name">
+      
+        <a href="/intro-amr/" rel="bookmark">Brief Introduction to Abstract Meaning Representation
+</a>
+      
+    </h3>
+    
+  </header>
+  
+    <div class="entry-excerpt p-summary">
+      
+        <p><strong>AMR (Abstract Meaning Representation)</strong>, is a set of sentences paired with simple, readable semantic representations. Remember that we have talked about FrameNet, a well-known ontology for frame semantic representations. If you want to know more about AMR, click <a href="http://zi-lin.com/pdf/intro-AMR_zilin.pdf">here</a>.</p>
+
+        <div class="more-link">
+          <a href="/intro-amr/">Read more&hellip;</a>
+        </div>
+      
+    </div>
+  
+  
+    <footer class="entry-meta">
+      
+      <time class="entry-date dt-published" datetime="2018-04-13T00:00:00-07:00">April 13, 2018
+  </time>
+    </footer>
+  
+</article>
+
+      
+    </div>
+    <a href="#page-title" class="back-to-top">Back to Top &uarr;</a>
+  </section>
+
+  <section id="2017" class="taxonomy-section">
+    <h2 class="taxonomy-title">2017</h2>
+    <div class="entries-list">
+      
+        
+
+<article class="entry h-entry">
+  <header class="entry-header">
+    <h3 class="entry-title p-name">
+      
+        <a href="/intro-ontology/" rel="bookmark">Brief Introduction to Ontologies
+</a>
+      
+    </h3>
+    
+  </header>
+  
+    <div class="entry-excerpt p-summary">
+      
+        <p>Have you ever heard of WordNet, HowNet, FrameNet and ConceptNet? There are different kinds of ontologies towards lexicon, syntax and commonsense knowledge.</p>
+
+        <div class="more-link">
+          <a href="/intro-ontology/">Read more&hellip;</a>
+        </div>
+      
+    </div>
+  
+  
+    <footer class="entry-meta">
+      
+      <time class="entry-date dt-published" datetime="2017-09-21T00:00:00-07:00">September 21, 2017
+  </time>
+    </footer>
+  
+</article>
+
+      
+        
+
+<article class="entry h-entry">
+  <header class="entry-header">
+    <h3 class="entry-title p-name">
+      
+        <a href="/build-c-compiler/" rel="bookmark">Build a Simple C Compiler with a Parse Tree!
+</a>
+      
+    </h3>
+    
+  </header>
+  
+    <div class="entry-excerpt p-summary">
+      
+        <p>Hi, there! I has completed my assignment for the course called Principles of Compilers eventually - building a simple C compiler. Additionally, I also wrote a Python draft to visualize the parse tree :) For more information about the process, please click <a href="http://zi-lin.com/pdf/assignment_report.pdf">here</a>.</p>
+
+        <div class="more-link">
+          <a href="/build-c-compiler/">Read more&hellip;</a>
+        </div>
+      
+    </div>
+  
+  
+    <footer class="entry-meta">
+      
+      <time class="entry-date dt-published" datetime="2017-06-01T00:00:00-07:00">June 1, 2017
+  </time>
+    </footer>
+  
+</article>
+
+      
+        
+
+<article class="entry h-entry">
+  <header class="entry-header">
+    <h3 class="entry-title p-name">
+      
+        <a href="/chinese-morphology/" rel="bookmark">Brief Introduction to Chinese Morphology
+</a>
+      
+    </h3>
+    
+  </header>
+  
+    <div class="entry-excerpt p-summary">
+      
+        <p>This is the draft I wrote for my presentation for the course called <strong>English Lexicoiogy</strong>, where I was asked to introduce something about Chinese morphology to student from College of Foreign Languages.</p>
+
+        <div class="more-link">
+          <a href="/chinese-morphology/">Read more&hellip;</a>
+        </div>
+      
+    </div>
+  
+  
+    <footer class="entry-meta">
+      
+      <time class="entry-date dt-published" datetime="2017-03-06T00:00:00-08:00">March 6, 2017
+  </time>
+    </footer>
+  
+</article>
+
+      
+    </div>
+    <a href="#page-title" class="back-to-top">Back to Top &uarr;</a>
+  </section>
+
+
+
+        
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://github.com/zi-lin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.facebook.com/suzzzylin"><i class="fab fa-facebook-square fa-2x" title="Facebook"></i></a><a class="social-icon" href="https://twitter.com/suzzzylin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://instagram.com/suzzzylin"><i class="fab fa-instagram fa-2x" title="Instagram"></i></a><a class="social-icon" href="https://www.linkedin.com/in/zi-lin/"><i class="fab fa-linkedin fa-2x" title="Linkedin"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2023 Zi Lin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129673678-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129673678-1');
+</script>
+  </body>
+
+</html>

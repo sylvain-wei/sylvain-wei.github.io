@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.1
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <title>Zi Lin</title>
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/academicons.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Zi Lin" href="/atom.xml"><!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+</head>
+
+  <body class="layout--post  semantic-parsing">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/tag/tag/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Zi Lin">
+        <img src="/images/zilin.jpg" class="site-logo-img animated fadeInDown" alt="Zi Lin">
+      </a>
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Zi Lin</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">lzi[at]ucsd.edu</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Semantic Parsing
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><img src="/images/zilin.jpg" class="author-avatar u-photo" alt="Zi Lin"><div class="author-info"><div class="author-name">
+        <em>by</em> <span class="p-name">Zi Lin</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href="https://twitter.com/zilin97"><i class="fab fa-twitter-square fa-lg" title="Twitter"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://github.com/zi-lin"><i class="fab fa-github-square fa-lg" title="Github"></i></a>
+          </li></ul>
+    <time class="page-date dt-published" datetime="2018-11-11T00:00:00-08:00"><a class="u-url" href="">November 11, 2018</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">NLP Tasks</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <h1 id="introduction">Introduction</h1>
+<p>In fact, “semantic parsing” is, ironically, a semantically ambiguous term, which could refer to:</p>
+
+<ul>
+  <li>Semantic role labeling (also known as shallow semantic parsing, see previous post for more information).</li>
+  <li>Finding generic relations in text.</li>
+  <li>Transforming a natural language sentence into its meaning representation.</li>
+</ul>
+
+<p>In this post, semantic parsing is the task of mapping natural language sentences (NL) into complete <strong>formal meaning representation</strong> (MRs) which a computer can execute for some domain -specific application <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. Representing the meaning of natural language is ultimately a difficult philosophical question and many attempts have been made to define generic formal semantics of natural language, including:</p>
+
+<ul>
+  <li>
+    <p><strong>Abstract Meaning Representation (AMR)</strong></p>
+  </li>
+  <li>
+    <p><strong>Semantic Dependency Parsing (SDP)</strong></p>
+  </li>
+  <li>
+    <p><strong>Meaning Representation Language (MRL)</strong></p>
+  </li>
+  <li>
+    <p><strong>SQL Query</strong></p>
+  </li>
+</ul>
+
+<h1 id="abstract-meaning-representation">Abstract Meaning Representation</h1>
+
+<p>Abstract Meaning Representation (AMR) <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> is a semantic formalism in which the meaning of a sentence is encoded as a rooted, directed, acyclic graph. Nodes represent concepts, and labeled directed graph edges represent the relationships between them. For example, for the sentence “the boy wants to believe the girl” we can have the corresponding AMR graph (in penman format) as:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(w / want-01
+	:ARG0 (b / boy)
+	:ARG1 (b2 / believe-01
+		:ARG0 (g / girl)
+		:ARG1 b))
+</code></pre></div></div>
+
+<p>AMR parsing, the task of transforming a sentence into its AMR graph, is a challenging task as it requires the parser to learn to predict not only concepts, which consist of <strong>predicates</strong>, <strong>lemmas</strong>, <strong>named entities</strong>, <strong>wiki-links</strong> and <strong>co-references</strong>, but also a large number of <strong>relation types</strong> based on the semantic role in PropBank (see the previous blog <a href="../SRL/">Semantic Role Labeling</a> if you are interested).</p>
+
+<h2 id="data">Data</h2>
+<p>There are multiple version of AMR data, including:</p>
+<ul>
+  <li>
+    <p><strong>LDC2013E117:</strong> 10,853 sentences with 13,050 AMRs (corpus includes multiple annotations for some sentences)</p>
+  </li>
+  <li>
+    <p><strong><a href="https://catalog.ldc.upenn.edu/LDC2014T12">LDC2014T12</a> (AMR 1.0):</strong> 13,051 sentences.</p>
+  </li>
+  <li>
+    <p><strong>LDC2015E86:</strong> 19,572 sentences. This version includes more AMRs, wikification, AMR adoption of new unified PropBank frames, AMR deepening, automatic AMR-English alignments, and correction of AMR annotation errors.</p>
+  </li>
+  <li>
+    <p><strong>LDC2016E25:</strong> 39,260 sentences.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://catalog.ldc.upenn.edu/LDC2017T10">LDC2017T10</a> (AMR 2.0):</strong> 39,260 sentences.</p>
+  </li>
+</ul>
+
+<h2 id="experiment--results">Experiment &amp; Results</h2>
+
+<p>These are the AMR parsing results on LDC2014T12, LDC2015E86 and LDC2017T10 test sets, where 2014N refers to the newswire section of LDC2014T12. You should look the original paper if you are interested in the model. <strong>Please contact me (through email) if the statistics is incorrect.</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Paper</th>
+      <th style="text-align: center">Model</th>
+      <th style="text-align: center">LDC2014N</th>
+      <th style="text-align: center">LDC2014</th>
+      <th style="text-align: center">LDC2015</th>
+      <th style="text-align: center">LDC2017</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/P18-1037">ACL-18</a></td>
+      <td style="text-align: center">Lyu &amp; Titov<br /><em>University of Edinburgh &amp; University of Amsterdam</em></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center"><strong>73.7</strong></td>
+      <td style="text-align: center"><strong>74.4</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/P18-1170">ACL-18</a></td>
+      <td style="text-align: center">Groschwitz et al.<br /><em>Saarland University &amp; Macquerie University</em></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">70.2</td>
+      <td style="text-align: center">71.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/P17-1112.pdf">ACL-17</a></td>
+      <td style="text-align: center">Buys &amp; Blunsom<br /><em>University of Oxford &amp; Deepmind</em></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">61.9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/P17-1043">ACL-17</a></td>
+      <td style="text-align: center">Foland &amp; Martin<br /><em>University of Colorado</em></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">70.7</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/D18-1198">EMNLP-18</a></td>
+      <td style="text-align: center">Guo &amp; Lu<br /><em>Singapore University of Technology &amp; Design</em></td>
+      <td style="text-align: center"><strong>74.0</strong></td>
+      <td style="text-align: center"><strong>68.3</strong></td>
+      <td style="text-align: center">68.7</td>
+      <td style="text-align: center">69.8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="https://arxiv.org/abs/1705.09980">Arxiv-17</a></td>
+      <td style="text-align: center">van Noord &amp; Bos<br /><em>University of Groningen</em></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">68.5</td>
+      <td style="text-align: center">71.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/D17-1129">EMNLP-17</a></td>
+      <td style="text-align: center">Wang &amp; Xue<br /><em>Brandeis University</em></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">68.1</td>
+      <td style="text-align: center">68.1</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/S16-1181">Semeval-16</a></td>
+      <td style="text-align: center">Wang et al. (CAMR)<br /><em>Brandeis University &amp; Boulder Language Technologies</em></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">66.5</td>
+      <td style="text-align: center">67.3</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/S16-1176">Semeval-16</a></td>
+      <td style="text-align: center">Barzdins &amp; Gosko<br /><em>University of Latvia</em></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">67.2</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/S16-1186">Semeval-16</a></td>
+      <td style="text-align: center">Flanigan et al. (JAMR)<br /><em>Carnegie Mellon University &amp; University of Washington</em></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">66</td>
+      <td style="text-align: center">67</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/E17-1051">EACL-17</a></td>
+      <td style="text-align: center">Damonte et al.<br /><em>University of Edinburgh &amp; University of Padua</em></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">64</td>
+      <td style="text-align: center">64</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/N18-2023">NAACL-18</a></td>
+      <td style="text-align: center">Vilares &amp; Gómez-Rodríguez<br /><em>Universidade da Coruña</em></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">64</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="https://aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16563/16021">AAAI-18</a></td>
+      <td style="text-align: center">Peng et al.<br /><em>University of Rochester &amp; University of Padua</em></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">64</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/P17-1014">ACL-17</a></td>
+      <td style="text-align: center">Konstas et al.<br /><em>University of Washington &amp; Allen Institute for Artificial Intelligence</em></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">62.1</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/E17-1035">EACL-17</a></td>
+      <td style="text-align: center">Peng et al.<br /><em>University of Rochester &amp; Brandeis University</em></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">52</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/D15-1136">EMNLP-15</a></td>
+      <td style="text-align: center">Pust et al.<br /><em>Univerisity of Southern California</em></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">67.1</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/D16-1065">EMNLP-16</a></td>
+      <td style="text-align: center">Zhou et al.<br /><em>Nianjin Normal University &amp; DFKI, Germany</em></td>
+      <td style="text-align: center">71</td>
+      <td style="text-align: center">66</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/S16-1180">Semeval-16</a></td>
+      <td style="text-align: center">Goodman et al.<br /><em>University College London &amp; University of Sheffeld</em></td>
+      <td style="text-align: center">70</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">64</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/P15-2141.pdf">ACL-IJCNLP-15</a></td>
+      <td style="text-align: center">Wang et al. (CAMR)<br /><em>Brandeis University &amp; Boulder Language Technologies</em></td>
+      <td style="text-align: center">70</td>
+      <td style="text-align: center">66</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/D17-1130">EMNLP-17</a></td>
+      <td style="text-align: center">Ballesteros &amp; AI-Onaizan<br /><em>IBM T.J Waston Research Center</em></td>
+      <td style="text-align: center">69</td>
+      <td style="text-align: center">64</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/D15-1198">EMNLP-15</a></td>
+      <td style="text-align: center">Artzi et al.<br /><em>Cornell University &amp; University of Washington</em></td>
+      <td style="text-align: center">67</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/P15-1095">ACL-IJCNLP-15</a></td>
+      <td style="text-align: center">Werling et al.<br /><em>Stanford University</em></td>
+      <td style="text-align: center">62</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/N15-1040">NAACL-15</a></td>
+      <td style="text-align: center">Wang et al. (CAMR)<br /><em>Brandeis University &amp; Harvard Medical School</em></td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">59</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/P14-1134">ACL-14</a></td>
+      <td style="text-align: center">Flanigan et al. (JAMR)<br /><em>Carnegie Mellon University</em></td>
+      <td style="text-align: center">59</td>
+      <td style="text-align: center">58</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="https://www.aclweb.org/anthology/K15-1004">CoNLL-15</a></td>
+      <td style="text-align: center">Peng et al.<br /><em>University of Rochester</em></td>
+      <td style="text-align: center">58</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="semantic-dependency-parsing">Semantic Dependency Parsing</h1>
+
+<p>Task 8 at SemEval 2014 defines <em>Broad-Coverage Semantic Dependency Parsing</em> (SDP) as the problem of recovering sentence-internal predicate-argument relationships for <em>all content words</em>, i.e., the semantic structure constituting the relational core of sentence meaning <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>.</p>
+
+<p>SDP seeks to stimulate the dependency parsing community to move towards more general graph processing, to thus enable a more direct analysis of <em>Who did What to Whom?</em> In addition to its relation to syntactic dependency parsing, the task also has some overlap with Semantic Role Labeling (SRL) <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>.</p>
+
+<p>The SDP parsers are required to identify all semantic dependencies, i.e., compute a representation that integrates all content words in one structure. Different from SRL, SDP task does not encompass predicate disambiguation, a design decision in part owed to SDP’s goal to focus on parsing-oriented, i.e., structural, analysis, and in part to lacking consensus on sense inventories for all content words.</p>
+
+<p>SDP uses three distinct target representations for semantic dependencies. Including:</p>
+
+<h2 id="dm-delph-in-mrs-derived-bi-lexical-dependencies">DM: DELPH-IN MRS-Derived Bi-Lexical Dependencies</h2>
+
+<p>These semantic dependency graphs originate in a manual re-annotation of Sections 00–21 of the WSJ Corpus with syntactico-semantic analyses derived from the LinGO English Resource Grammar (ERG) <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>. The DM target representations are derived through a two-step ‘lossy’ conversion of MRSs, first to variable-free Elementary Dependency Structures (EDS) <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>, then to ‘pure’ bi-lexical form - projecting some construction semantics onto word-to-word dependencies <sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>. For example, for the sentence “Ms. Haag plays Elianti.”, we have the DM representation as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">id</th>
+      <th style="text-align: center">form</th>
+      <th style="text-align: center">lemma</th>
+      <th style="text-align: center">pos</th>
+      <th style="text-align: center">top</th>
+      <th style="text-align: center">pred</th>
+      <th style="text-align: center">arg1</th>
+      <th style="text-align: center">arg2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">Ms.</td>
+      <td style="text-align: center">Ms.</td>
+      <td style="text-align: center">NNP</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">+</td>
+      <td style="text-align: center">_</td>
+      <td style="text-align: center">_</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">Haag</td>
+      <td style="text-align: center">Haag</td>
+      <td style="text-align: center">NNP</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">compound</td>
+      <td style="text-align: center">ARG1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">plays</td>
+      <td style="text-align: center">play</td>
+      <td style="text-align: center">VBZ</td>
+      <td style="text-align: center">+</td>
+      <td style="text-align: center">+</td>
+      <td style="text-align: center">_</td>
+      <td style="text-align: center">_</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">Elianti</td>
+      <td style="text-align: center">Elianti</td>
+      <td style="text-align: center">NNP</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">_</td>
+      <td style="text-align: center">ARG2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">.</td>
+      <td style="text-align: center">.</td>
+      <td style="text-align: center">.</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">_</td>
+      <td style="text-align: center">_</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="pas-enju-predicate-argument-structures">PAS: Enju Predicate-Argument Structures</h2>
+
+<p>The Enju parsing system is an HPSG-based parser for English. The grammar and the disambiguation model of this parser are derived from the Enju HPSG treebank, which is automatically converted from the phrase structure and predicate-argument structure annotation of the PTB. The PAS data set is extracted from the WSJ portion of the Enju HPSG treebank. While the Enju treebank is annotated with full HPSG-style structures, only its predicate-argument structures are convert into the SDP data format for use in the SDP task.</p>
+
+<h2 id="pcedt-prague-tectogrammatical-bi-lexical-dependencies">PCEDT: Prague Tectogrammatical Bi-Lexical Dependencies</h2>
+
+<p>The Prague Czech-English Dependency TreeBank (PCEDT) <sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup> is a set of parallel dependency trees over the WSJ texts from the PTB, and their Czech translations. The specifics of the PCEDT representations are best observed in the procedure that converts the original PCEDT data to the SDP data format; see Miyao et al. 2014 <sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>.</p>
+
+<h1 id="data-1">Data</h1>
+<ul>
+  <li>
+    <p><strong><a href="http://sdp.delph-in.net/2014/data.html">Semeval-2014 Task 8</a>:</strong> For this task, there will be three data sets: training, development, and test.  On November 4, 2013, a sample (of some 190 dependency graphs) from the training data was published as <a href="http://svn.delph-in.net/sdp/public/2014/trial/current.tgz">trial data</a>, demonstrating key characteristics of the task.  Since December 13, some 750,000 tokens of annotated text are available as training data; please subscribe to the task <a href="http://lists.emmtee.net/mailman/listinfo/sdp-participants">mailing list</a> for access information.</p>
+  </li>
+  <li>
+    <p><strong><a href="http://sdp.delph-in.net/2015/data.html">Semeval-2015 Task 8</a>:</strong> This Task is a re-run with some extensions of Task 8 at SemEval-2014.</p>
+  </li>
+</ul>
+
+<h1 id="experiment--results-1">Experiment &amp; Results</h1>
+
+<p>The results are the labeled parsing performance (F1 score) on both in-domain and out-of-domain test data and are based on the English dataset from SemEval 2015 Task 18 closed track. The data split is 33,964 training sentences from 00-19 of the WSJ corpus, 1,692 development sentences from 20, 1,410 sentences from 21 as in domain test data, and 1,849 sentences sampled from the Brown Corpus as out-of-domain test data.</p>
+
+<h2 id="in-domain">In-Domain</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">paper</th>
+      <th style="text-align: center">model</th>
+      <th style="text-align: center">DM</th>
+      <th style="text-align: center">PAS</th>
+      <th style="text-align: center">PSD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/P18-2077">ACL-2018</a></td>
+      <td style="text-align: center">Dozat &amp; Manning<br /><em>Stanford University</em></td>
+      <td style="text-align: center"><strong>93.7</strong></td>
+      <td style="text-align: center"><strong>93.9</strong></td>
+      <td style="text-align: center"><strong>81.0</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/P17-1186">ACL-2017</a></td>
+      <td style="text-align: center">Peng et al.<br /><em>University of Washington &amp; Carnegie Mellon University</em></td>
+      <td style="text-align: center">90.4</td>
+      <td style="text-align: center">92.7</td>
+      <td style="text-align: center">78.5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16549/16113">AAAI-2018</a></td>
+      <td style="text-align: center">Wang et al.<br /><em>Harbin Institute of Technology</em></td>
+      <td style="text-align: center">90.3</td>
+      <td style="text-align: center">91.7</td>
+      <td style="text-align: center">78.6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/S15-2154">Semeval-2015</a></td>
+      <td style="text-align: center">Du et al.<br /><em>Peking University</em></td>
+      <td style="text-align: center">89.1</td>
+      <td style="text-align: center">91.3</td>
+      <td style="text-align: center">75.7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/S15-2162">Semeval-2015</a></td>
+      <td style="text-align: center">Almeida &amp; Martins<br /><em>Priberam Labs &amp; Instituto de Telecomunicacoes</em></td>
+      <td style="text-align: center">88.2</td>
+      <td style="text-align: center">90.9</td>
+      <td style="text-align: center">76.4</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="out-of-domain">Out-Of-Domain</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">paper</th>
+      <th style="text-align: center">model</th>
+      <th style="text-align: center">DM</th>
+      <th style="text-align: center">PAS</th>
+      <th style="text-align: center">PSD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/P18-2077">ACL-2018</a></td>
+      <td style="text-align: center">Dozat &amp; Manning<br /><em>Stanford University</em></td>
+      <td style="text-align: center"><strong>88.9</strong></td>
+      <td style="text-align: center"><strong>90.6</strong></td>
+      <td style="text-align: center"><strong>79.4</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/P17-1186">ACL-2017</a></td>
+      <td style="text-align: center">Peng et al.<br /><em>University of Washington &amp; Carnegie Mellon University</em></td>
+      <td style="text-align: center">85.3</td>
+      <td style="text-align: center">89.0</td>
+      <td style="text-align: center">76.4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16549/16113">AAAI-2018</a></td>
+      <td style="text-align: center">Wang et al.<br /><em>Harbin Institute of Technology</em></td>
+      <td style="text-align: center">84.9</td>
+      <td style="text-align: center">87.6</td>
+      <td style="text-align: center">75.9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/S15-2154">Semeval-2015</a></td>
+      <td style="text-align: center">Du et al.<br /><em>Peking University</em></td>
+      <td style="text-align: center">81.8</td>
+      <td style="text-align: center">87.2</td>
+      <td style="text-align: center">73.3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/S15-2162">Semeval-2015</a></td>
+      <td style="text-align: center">Almeida &amp; Martins<br /><em>Priberam Labs &amp; Instituto de Telecomunicacoes</em></td>
+      <td style="text-align: center">81.8</td>
+      <td style="text-align: center">86.9</td>
+      <td style="text-align: center">74.8</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="logical-form-representation">Logical Form Representation</h1>
+<p>First-order logic is used as a semantic representation language (MRL), which is designed by the creator of the application to suit the application’s need independent of natural language. Some MRL data sets are based on Prolog database, where two well-known semantic parsing benchmark data sets are Jobs and Geo <sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">10</a></sup>.</p>
+
+<p>Here we explain the features of the Geoquery representation language through a sample query:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "What is the largest city in Texas?"
+Query: answer(C, largest(C, (city(C), loc(C, S), const(S, stateid(texas)))))
+</code></pre></div></div>
+
+<p>Objects are represented as logical terms and are typed with a semantic category using logical functions applied to possibly ambiguous English constants (e.g. <code class="language-plaintext highlighter-rouge">stateid(Mississippi), riverid(Mississippi)</code>). Relationships between objects are expressed using predicates; for instance, <code class="language-plaintext highlighter-rouge">loc(X, Y)</code> states that <code class="language-plaintext highlighter-rouge">X</code> is located in <code class="language-plaintext highlighter-rouge">Y</code>.</p>
+
+<p>We also need to handle quantifiers such as ‘largest’. We represent these using <em>meta-predicates</em> for which at least one argument is a conjunction of literals. For example, <code class="language-plaintext highlighter-rouge">largest(X, Goal)</code> states that the object <code class="language-plaintext highlighter-rouge">X</code> satisfies <code class="language-plaintext highlighter-rouge">Goal</code> and is the largest object that does so, using the appropriate measure of size for objects of its type (e.g. area for states, population for cities). Finally, an unspecified object required as an argument to a predicate can appear elsewhere in the sentence, requiring the use of the predicate <code class="language-plaintext highlighter-rouge">const(X, C)</code> to bind the variable <code class="language-plaintext highlighter-rouge">X</code> to the constant <code class="language-plaintext highlighter-rouge">C</code>.</p>
+
+<h2 id="data-2">Data</h2>
+<ul>
+  <li>
+    <p><strong><a href="https://github.com/zi-lin/zi-lin.github.io/tree/master/data/geo880">Geo 880</a>:</strong>  A set of 880 queries to a database of U.S. geography containing basic information about the U.S. states like population, area, capital city, neighboring states, and so on. It is originally annotated with Prolog style semantics. Geo has 880 instances split into a training set of 680 training examples and 200 test examples <sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote" rel="footnote">11</a></sup>.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://github.com/zi-lin/zi-lin.github.io/tree/master/data/jobs640">Jobs 640</a>:</strong> A set of 640 queries to a database of computer-related job postings, such as job announcements, from the USENET newsgroup <code class="language-plaintext highlighter-rouge">austin.jobs</code>. Information from these job postings are extracted to create a database which contains the following types of information: 1) the job title, 2) the company, 3) the recruiter, 4) the location, 5) the salary, 6) the languages and platforms used, and 7) required or desired years of experience and degrees. The training-test split contains 500 training and 140 test instances.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://www.kaggle.com/siddhadev/ms-cntk-atis">ATIS</a>:</strong>  A set of 5,410 queries to a flight booking system, and the representations are of lambda-calculus logical forms. The ATIS database consists of data obtained from the Official Airline Guide (OAG, 1990), organized under a relational schema. The database remained fixed throughout the pilot phase. It contains information about flights, fares, airlines, cities, airports, and ground services, and includes twenty-five supporting tables. The large majority of the questions posed by subjects can be answered from the database with a single relational query.</p>
+  </li>
+</ul>
+
+<h2 id="experiment--results-2">Experiment &amp; Results</h2>
+<p>The results are based on accuracies which are defined as the proportion of the input sentences that are correctly parsed to their gold standard logical forms.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">paper</th>
+      <th style="text-align: center">model</th>
+      <th style="text-align: center">Geo880</th>
+      <th style="text-align: center">Jobs640</th>
+      <th style="text-align: center">ATIS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/D18-1110">EMNLP-18</a></td>
+      <td style="text-align: center">Xu et al.<br /><em>Tencent AI Lab &amp; IBM Research &amp; Peking University</em></td>
+      <td style="text-align: center"><strong>88.1</strong></td>
+      <td style="text-align: center">91.2</td>
+      <td style="text-align: center"><strong>85.9</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/P17-1105">ACL-17</a></td>
+      <td style="text-align: center">Rabinovich et al.<br /><em>UC Berkeley</em></td>
+      <td style="text-align: center">85.7</td>
+      <td style="text-align: center"><strong>92.9</strong></td>
+      <td style="text-align: center">85.3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/P11-1060">ACL-11</a></td>
+      <td style="text-align: center">Liang et al.<br /><em>UC Berkeley</em></td>
+      <td style="text-align: center">87.9</td>
+      <td style="text-align: center">90.7</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/D14-1135">ACL-14</a></td>
+      <td style="text-align: center">Wang et al.<br /><em>University of Washington &amp; Allen Institute for AI</em></td>
+      <td style="text-align: center">90.4</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">91.3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/D13-1161">EMNLP-13</a></td>
+      <td style="text-align: center">Kwiatkowski et al.<br /><em>University of Washington</em></td>
+      <td style="text-align: center">89.0</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/N15-1162">NAACL-15</a></td>
+      <td style="text-align: center">Zhao and Huang<br /><em>City University of New York</em></td>
+      <td style="text-align: center">88.9</td>
+      <td style="text-align: center">85.0</td>
+      <td style="text-align: center">84.2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/P13-1092">ACL-13</a></td>
+      <td style="text-align: center">Poon<br />Microsoft Research</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">83.5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/D11-1140">EMNLP-11</a></td>
+      <td style="text-align: center">Kwiatkowski et al.<br /><em>University of Edinburgh &amp; University of Washington</em></td>
+      <td style="text-align: center">88.6</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">82.8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/D10-1119">EMNLP-10</a></td>
+      <td style="text-align: center">Kwiatkowski et al.<br /><em>University of Edinburgh &amp; University of Washington</em></td>
+      <td style="text-align: center">87.9</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">71.4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/P16-1004">ACL-16</a></td>
+      <td style="text-align: center">Dong &amp; Lapata -Seq2Tree<br /><em>University of Edinburgh</em></td>
+      <td style="text-align: center">87.1</td>
+      <td style="text-align: center">90.0</td>
+      <td style="text-align: center">85.3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/P07-1121">ACL-07</a></td>
+      <td style="text-align: center">Wong and Mooney<br /><em>University of Texas</em></td>
+      <td style="text-align: center">86.6</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/D07-1071">EMNLP-CoNLL-07</a></td>
+      <td style="text-align: center">Zettlemoyer and Collins<br /><em>MIT</em></td>
+      <td style="text-align: center">86.1</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">84.6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/P16-1004">ACL-16</a></td>
+      <td style="text-align: center">Dong &amp; Lapata -Seq2Seq<br /><em>University of Edinburgh</em></td>
+      <td style="text-align: center">85.0</td>
+      <td style="text-align: center">87.1</td>
+      <td style="text-align: center">84.2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/P16-1002">ACL-16</a></td>
+      <td style="text-align: center">Jia &amp; Liang<br /><em>Stanford University</em></td>
+      <td style="text-align: center">85.0</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">76.3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://www.aclweb.org/anthology/D08-1082">EMNLP-08</a></td>
+      <td style="text-align: center">Lu et al.<br /><em>Singapore-MIT alliance &amp; National University of Singapore &amp; MIT</em></td>
+      <td style="text-align: center">81.8</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="https://link.springer.com/content/pdf/10.1007%2F3-540-44795-4_40.pdf">ECML-01</a></td>
+      <td style="text-align: center">Tang &amp; Mooney<br /><em>University of Texas</em></td>
+      <td style="text-align: center">79.8</td>
+      <td style="text-align: center">79.4</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="https://arxiv.org/ftp/arxiv/papers/1207/1207.1420.pdf">UAI-05</a></td>
+      <td style="text-align: center">Zettlemoyer and Collins<br /><em>MIT</em></td>
+      <td style="text-align: center">79.3</td>
+      <td style="text-align: center">79.3</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://turing.cs.washington.edu/papers/nli-iui03.pdf">IUI-03</a></td>
+      <td style="text-align: center">Poposcu et al.<br /><em>University of Washington</em></td>
+      <td style="text-align: center">77.5</td>
+      <td style="text-align: center">88.0</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/N06-1056">NAACL-06</a></td>
+      <td style="text-align: center">Wong and Mooney<br /><em>University of Texas</em></td>
+      <td style="text-align: center">74.8</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="https://dl.acm.org/citation.cfm?id=1706546">CoNLL-05</a></td>
+      <td style="text-align: center">Ge and Mooney<br /><em>University of Texas</em></td>
+      <td style="text-align: center">72.3</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><a href="http://aclweb.org/anthology/P06-1115">COLING-ACL-06</a></td>
+      <td style="text-align: center">Kate and Mooney<br /><em>University of Texas</em></td>
+      <td style="text-align: center">71.7</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="sql-query">SQL Query</h1>
+<p>In recent years, there has been considerable interest in automated synthesis of programs from informal specifications. A particularly promising application domain for such computer-aided programming techniques is the automated synthesis of database queries. Although many end-users need to query data stored in some relational database, they typically lack the expertise to write complex queries in declarative query languages such as SQL. As a result, there has been a flurry of interest in automatically synthesizing SQL queries from informal specifications. Here we will talk about the techniques that can generate SQL queries from natural language (NL) descriptions.</p>
+
+<p>For example, for the sentence “how many CFL teams are from York College”, we will have the SRL query like:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT COUNT CFL Team FROM
+CFLDraft WHERE College = "York"
+</code></pre></div></div>
+
+<h2 id="data-3">Data</h2>
+<ul>
+  <li><strong><a href="https://github.com/salesforce/WikiSQL">WikiSQL</a>:</strong> WikiSQL is a collection of questions, corresponding SQL queries, and SQL tables. It is the largest hand-annotated semantic parsing dataset to data - it is an order of magnitude larger than other datasets that have logical forms, either in terms of the number of examples or the number of tables. The corpus consists of 80654 hand-annotated instances of natural language questions, SQL queries, and SQL tables extracted from 24241 HTML tables from Wikipedia <sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">12</a></sup>.</li>
+</ul>
+
+<h2 id="experiment-and-results">Experiment and Results</h2>
+<p>To learn more about the experiment and results on WikiSQL, see <a href="https://github.com/salesforce/WikiSQL">https://github.com/salesforce/WikiSQL</a> for more details.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Rohit J Kate and YukWahWong. 2010. Semantic parsing: The task, the state of the art and the future. Tutorial Abstracts of ACL 2010 page 6. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Laura Banarescu, Claire Bonial, Shu Cai, Madalina Georgescu, Kira Griffitt, Ulf Hermjakob, Kevin Knight, Philipp Koehn, Martha Palmer, and Nathan Schneider. 2013. Abstract meaning representation for SemBanking. In Proc. of the 7th Linguistic Annotation Workshop and Interoperability with Discourse. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>Oepen, S., Kuhlmann, M., Miyao, Y., Zeman, D., Flickinger, D., Hajic, J., Ivanova, Angelina, Zhang, Y. 2014. SemEval 2014 Task 8: Broad-coverage semantic dependency parsing. In Proceedings of the 8th International Workshop on Semantic Evaluation. Dublin, Ireland. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>Gildea, D., &amp; Jurafsky, D. 2002. Automatic labeling of semantic roles. Computational Linguistics, 28, 71:245–288. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>Flickinger, D., Zhang, Y., &amp; Kordoni, V. 2012. DeepBank. A dynamically annotated treebank of the Wall Street Journal. In Proceedings of the 11th International Workshop on Treebanks and Linguistic Theories (p. 85–96). Lisbon, Portugal: Edições Colibri. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6" role="doc-endnote">
+      <p>Oepen, S., &amp; Lønning, J. T. 2006. Discriminantbased MRS banking. In Proceedings of the 5th International Conference on Language Resources and Evaluation (p. 1250–1255). Genoa, Italy. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:7" role="doc-endnote">
+      <p>Ivanova, A., Oepen, S., Øvrelid, L., &amp; Flickinger, D. 2012. Who did what to whom? A contrastive study of syntacto-semantic dependencies. In Proceedings of the Sixth Linguistic Annotation Workshop (p. 2–11). Jeju, Republic of Korea. <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:8" role="doc-endnote">
+      <p>Hajic, J., Hajicová, E., Panevová, J., Sgall, P., Bojar, O., Cinková, S., … &amp; Semecký, J. 2012. Announcing Prague Czech-English Dependency Treebank 2.0. In LREC (pp. 3153-3160). <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:9" role="doc-endnote">
+      <p>Miyao, Y., Oepen, S., &amp; Zeman, D. 2014. In-house: An ensemble of pre-existing off-the-shelf parsers. In Proceedings of the 8th International Workshop on Semantic Evaluation. Dublin, Ireland. <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:10" role="doc-endnote">
+      <p>Lappoon R. Tang and Raymond J. Mooney. 2001. Using multiple clause constructors in inductive logic programming for semantic parsing. In Proceedings of the 12th ECML, pages 466–477, Freiburg, Germany. <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:11" role="doc-endnote">
+      <p>Luke S. Zettlemoyer and Michael Collins. 2005. Learning to map sentences to logical form: Structured classification with probabilistic categorial grammars. In Proceedings of the 21st UAI, pages 658–666, Toronto, ON. <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:12" role="doc-endnote">
+      <p>Zhong, V., Xiong, C. and Socher, R., 2017. Seq2SQL: Generating structured queries from natural language using reinforcement learning. arXiv preprint arXiv:1709.00103. <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        </div>
+
+        
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FSP%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Semantic+Parsing%20http%3A%2F%2Flocalhost%3A4000%2FSP%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FSP%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=Semantic+Parsing&url=http%3A%2F%2Flocalhost%3A4000%2FSP%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/SRL/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Semantic Role Labeling
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/constituent-to-dependency/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Constituent-to-dependency Conversion
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://github.com/zi-lin"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.facebook.com/suzzzylin"><i class="fab fa-facebook-square fa-2x" title="Facebook"></i></a><a class="social-icon" href="https://twitter.com/suzzzylin"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://instagram.com/suzzzylin"><i class="fab fa-instagram fa-2x" title="Instagram"></i></a><a class="social-icon" href="https://www.linkedin.com/in/zi-lin/"><i class="fab fa-linkedin fa-2x" title="Linkedin"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2023 Zi Lin. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129673678-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129673678-1');
+</script>
+  </body>
+
+</html>

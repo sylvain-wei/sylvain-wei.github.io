@@ -1,0 +1,535 @@
+I"��<h1 id="introduction">Introduction</h1>
+<p>Current NLP systems tend to perform well only on their training domain and nearby genres, while the performances often degrade on the data drawn from different domains. For instance, the performance of a statistical parser trained on the Penn Treebank Wall Street Journal (WSJ; newspaper text) significantly drops when evaluated on text from other domains, as shown in the following table (results are from McClosky, 2010; for the details of those domains, cf. the next section):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Train</th>
+      <th style="text-align: center">WSJ</th>
+      <th style="text-align: center">Brown</th>
+      <th style="text-align: center">GENIA</th>
+      <th style="text-align: center">SWBD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">WSJ</td>
+      <td style="text-align: center">89.7</td>
+      <td style="text-align: center">84.1</td>
+      <td style="text-align: center">76.2</td>
+      <td style="text-align: center">76.7</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Recently, many endeavors have been made to explore and solve the problems of domain adaptation, ranging from creating challenging datasets to building algorithm that can avoid overfitting on the training data or transfer to the new domains. Here we will discuss several datasets build for the out-of-domain NLP task of syntactic analysis as well as some ideas on how to address the problem of domain adaptation. Note that in the literature, many definitions of the source domain and the target domain are proposed, here domain adaptation refers to the domains within the same NLP task and language (mainly English), but for other genres and domains such as emails, web forums and biomedical papers in terms of the dominant source domain of the Penn Treebank of Wall Street Journal (WSJ, financial news).</p>
+
+<h1 id="datasets">Datasets</h1>
+
+<ul>
+  <li>
+    <p><strong><a href="https://catalog.ldc.upenn.edu/LDC2009T26">Brown, ATIS &amp; Switchboard (SWBD) of Treebank-3</a></strong>: The Treebank-3 released by LDC also contains different domains other than WSJ: (1) the Brown Corpus (domain of literature), which has been completely retagged using the Penn Treebank tag set; (2) ATIS, the data from Department of Energy abstracts; (3) Switchboard, a collection of spontaneous telephone conversations between previously unacquainted speakers of American English on a variety of topics chosen from a pre-determined list.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://www.computing.dcu.ie/~jfoster/resources/bnc1000.html">British National Corpus (BNC)</a></strong>: Gold Standard <strong>Parse Trees</strong> for 1,000 sentences from the British National Corpus – annotated according to Penn Treebank bracketing guidelines and checked using Markus Dickinson’s treebank annotation error detection software.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://catalog.ldc.upenn.edu/LDC2012T13">English Web Treebank (EWT)</a></strong>: English Web Treebank was developed by the Linguistic Data Consortium (LDC) with funding from Google Inc. It contains 254,830 word-level tokens and 16,624 sentence-level tokens of webtext in 1174 files annotated for sentence- and word-level <strong>tokenization,</strong> <strong>part-of-speech</strong>, and <strong>syntactic structure</strong>. The data is roughly evenly divided across five genres: weblogs, newsgroups, email, reviews, and question-answers. The files were manually annotated following the sentence-level tokenization guidelines for web text and the word-level tokenization guidelines developed for English treebanks.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://github.com/Oneplus/Tweebank">Tweebank</a></strong>: Tweebank v2 is a collection of English tweets annotated in <strong>Universal Dependencies</strong> that can be exploited for the training of NLP systems to enhance their performance on social media texts. It is built on the original data of Tweebank v1 (840 unique tweets, 639/201 for training/test set), along with an additional 210 tweets sampled from the <strong>POS-tagged</strong> dataset of Gimpel et al. (2011) <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> and 2,500 tweets sampled from the Twitter stream from Feb. 2016 to Jul. 2016. The latter data source consists of 147.4M English tweets. In the same way as Kong et al. (2011)<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, reference unit is always the tweet in its entirety – which may thus consist of multiple sentences – not the sentence alone.</p>
+  </li>
+  <li>
+    <p><strong><a href="http://nclt.computing.dcu.ie/mt/confidentmt.html">Foreebank</a></strong>: the Foreebank treebank contains 1,000 English sentences and 1,000 French sentences. The English sentences come from the Symantec Norton technical support user forum. Half of the French sentences come from the French Norton forum and the other half are human translations of sentences from the English forum. The English annotation are guided by <strong>the Penn Treebank bracketing</strong> guidelines and a Foreebank-adapted version of the English Web Treebank bracketing guidelines. The French annotators used the French treebank (FTB) guidelines, following the SPMRL strategy for multiword expressions. They also contains the annotation for <strong>grammatical errors</strong>.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://www.computing.dcu.ie/~jjudge/qtreebank/">QuestionBank(QB)</a></strong>: a corpus of 4000 <strong>parse-annotated</strong> questions for use in training parsers employed in QA and evaluation of question parsing. In 2011, Chris Manning spent some time improving the parses in QuestionBank, and the results of that work appear <a href="https://nlp.stanford.edu/data/QuestionBank-Stanford.shtml">here</a>. The corrected version was released as a script that maps the original to the corrected version.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://catalog.ldc.upenn.edu/LDC2012T02">English Translation Treebank (ETT)</a></strong>: English Translation Treebank consists of 599 distinct newswire stories from the Lebanese publication An Nahar translated from Arabic to English and annotated for <strong>part-of-speech</strong> and <strong>syntactic structure</strong>. This corpus is part of an effort at LDC to produce parallel Arabic and English treebanks.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://catalog.ldc.upenn.edu/LDC2008T21">PennBioIE Oncology</a></strong>: The PennBioIE Oncology Corpus consists of 1414 <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi">PubMed</a> abstracts on cancer, concentrating on molecular genetics, and comprising approximately 327,000 words of biomedical text, tokenized and annotated for paragraph, sentence, <strong>part of speech</strong>, and 24 types of <strong>biomedical named entities</strong> in five categories of interest. 318 of the abstracts have also been <strong>syntactically</strong> annotated. All of the annotation was based on <a href="http://www.cis.upenn.edu/~treebank/">Penn Treebank II</a> standards, with some modifications for special characteristics of the biomedical text.</p>
+  </li>
+  <li>
+    <p><strong><a href="http://www.geniaproject.org/genia-corpus">GENIA corpus</a></strong>: The corpus contains 1,999 Medline abstracts, selected using a <a href="http://pubmed.com/">PubMed</a> query for the three MeSH terms “human”, “blood cells”, and “transcription factors”. The corpus has been annotated with various levels of linguistic and semantic information, including: <strong>part-of-speech annotation</strong>, <strong>constituency syntactic annotation</strong>, term annotation, event annotation, relation annotation, and <strong>coreference annotation</strong>.</p>
+  </li>
+</ul>
+
+<p>Here are some statistics and examples of English data from various source:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dataset</th>
+      <th>Style</th>
+      <th style="text-align: center">POS</th>
+      <th style="text-align: center">NER</th>
+      <th style="text-align: center">Coref</th>
+      <th style="text-align: right">#Token</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Brown</td>
+      <td>PTB</td>
+      <td style="text-align: center">✔</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: right">130,417</td>
+    </tr>
+    <tr>
+      <td>ATIS</td>
+      <td>PTB</td>
+      <td style="text-align: center">✔</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: right">4,350</td>
+    </tr>
+    <tr>
+      <td>SWBD</td>
+      <td>PTB</td>
+      <td style="text-align: center">✔</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: right">1,095,089</td>
+    </tr>
+    <tr>
+      <td>BNC</td>
+      <td>PTB</td>
+      <td style="text-align: center">✔</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: right">28,311</td>
+    </tr>
+    <tr>
+      <td>EWT</td>
+      <td>PTB</td>
+      <td style="text-align: center">✔</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: right">272,779</td>
+    </tr>
+    <tr>
+      <td>EWT_UD</td>
+      <td>UD</td>
+      <td style="text-align: center">✔</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: right">254,830</td>
+    </tr>
+    <tr>
+      <td>Tweebank</td>
+      <td>UD</td>
+      <td style="text-align: center">✔</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: right">55,427</td>
+    </tr>
+    <tr>
+      <td>Foreebank</td>
+      <td>PTB*</td>
+      <td style="text-align: center">✔</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: right">15,613</td>
+    </tr>
+    <tr>
+      <td>QB</td>
+      <td>PTB</td>
+      <td style="text-align: center">✔</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: right">-</td>
+    </tr>
+    <tr>
+      <td>ETT</td>
+      <td>PTB</td>
+      <td style="text-align: center">✔</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: right">461,489</td>
+    </tr>
+    <tr>
+      <td>PennBio</td>
+      <td>PTB</td>
+      <td style="text-align: center">✔</td>
+      <td style="text-align: center">✔</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: right">327,000</td>
+    </tr>
+    <tr>
+      <td>GENIA</td>
+      <td>PTB</td>
+      <td style="text-align: center">✔</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">✔</td>
+      <td style="text-align: right">468,793</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Newspaper text (WSJ):
+- Rolls - Royce Motor Cars Inc. said it expects its U.S. sales to remain steady at
+about 1,200 cars in 1990 .
+- The luxury auto maker last year sold 1,214 cars in the U.S.
+- Bell , based in Los Angeles , makes and distributes electronic , computer and
+building products .
+- Investors are appealing to the Securities and Exchange Commission not to limit
+their access to information about stock purchases and sales by corporate
+insiders .
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Literature (Brown):
+- With the end of the trial Diane disappeared from New York .
+Several years ago she married a Houston business man , Robert Graham .
+- She later divorced Graham , who is believed to have moved to Bolivia .
+- The next time the police saw her she was dead .
+- It was September 20 , 1960 , in a lavishly decorated apartment littered with
+liquor bottles .
+- When the police arrived , they found McClellan and the two lawyers sitting and
+staring silently .
+- An autopsy disclosed a large amount of morphine in Diane ’s body .
+- ‘‘ I think that maybe she wanted it this way ’’ , a vice squad cop said .
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Social Media Data (Twitter):
+- new unique backpack ! combines vintage with modern ! URL1283 via @USER415
+- RT @USER767 : It 's been 3 years since the release of the music video of 
+Burning Desire . URL637
+- RT @USER526 : empathy 4 Kesha .... the worst . smh smh .. 💔
+- RT @USER1218 : @UER265 Blessed Sunday 😊
+- ; idk why ... but ifeel like talkin dirty O_o
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Questions (QuestionBank):
+- Who is the author of the book, `` The Iron Lady : A Biography of Margaret 
+Thatcher '' ?
+- What was the monetary value of the Nobel Prize in 1989 ?
+- How much did Mercury spend on advertising in 1993 ?
+- Why did David Koresh ask the FBI for a word processor ?
+- Name the designer of the shoe that spawned millions of plastic imitations , 
+known as `` jellies '' .
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Biomedical abstract (GENIA):
+- Glucocorticoid resistance in the squirrel monkey is associated with
+overexpression of the immunophilin FKBP51 .
+- The low binding affinity of squirrel monkey GR does not result from
+substitutions in the receptor , because squirrel monkey GR expressed in vitro
+exhibits high affinity .
+- Rather , squirrel monkeys express a soluble factor that , in mixing studies of
+cytosol from squirrel monkey lymphocytes ( SML ) and mouse L929 cells , reduced
+GR binding affinity by 11-fold .
+</code></pre></div></div>
+
+<h1 id="domain-adaptation-for-tagging--parsing">Domain Adaptation for Tagging &amp; Parsing</h1>
+
+<p>Domain adaptation has been recognized as a major NLP problem for over a decade. In particular, bridging the performance gap between in-domain and out-of-domain for tasks such as POS-tagging and parsing has received considerable attention.</p>
+
+<p>Similar to the general trichotomy of machine learning algorithms, according to the data available for the new target domain, there are three main approaches to domain adaptation that have been identified in the literature:</p>
+
+<ul>
+  <li>Supervised domain adaptation (e.g., Hera et al., 2005<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>; Daumé III, 2007<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>)</li>
+  <li>Unsupervised domain adaptation (e.g. Blitzer, McDonald &amp; Pereira, 2006<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>; McClosky et al, 2006<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>)</li>
+  <li>Semi-supervised domain adaptation (e.g. Daumé III, Kumar &amp; Saha, 2010<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>; Chang, Connor &amp; Roth, 2010<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>)</li>
+</ul>
+
+<p>Here we will investigate some techniques for out-of-domain parsing, mainly the semi-supervised approaches that do not require to manually annotate new data, as well as some other approaches. Note that what was previously called semi-supervised is nowadays often called unsupervised domain adaptation, although the new “convention” still needs to be established.</p>
+
+<h2 id="supervised-domain-adaptation">Supervised Domain Adaptation</h2>
+<ul>
+  <li>
+    <p><strong>Incorporate prior knowledge</strong>: the original, out-of-domain, source domain model is exploited as a prior when estimating a model on the target domain for which only limited resources are available. Roark and Bacchiani (2003)<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup> examined this idea to adapt a PCFG parser. Hara et al. (2005)<sup id="fnref:3:1" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> try to adapt the probabilistic disambiguation component of a grammar-driven parser (based on a HPSG) trained on newspaper text (WSJ) to the biomedical domain (GENIA corpus). The disambiguation component of their parser, Enju, is a maximum entropy model on a packed forest structure. Their approach consisted in integrating the original model estimated on the larger, out-of-domain data (newspaper text) as a reference distribution when learning a model on the target domain.</p>
+  </li>
+  <li>
+    <p><strong>Altering the feature space</strong>: A basic assumption is that there are three underlying distributions: an in-domain distribution, an out-of-domain distribution and a general distribution. Thus, it is assumed that the out-of-domain distribution is drawn from a mixture of the out-of-domain and the general distribution.</p>
+
+    <p>Daumé III (2007)<sup id="fnref:4:1" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup> introduces an algorithm called <em>easy 	adapt</em>, whose idea is to transform the domain adaptation learning problem into a standard supervised learning problem to which “any standard algorithm may be applied (e.g. SVM, MaxEnt)”. He proposes a simple pre-processing step in which the feature space is altered and the resulting data is used as input to a standard learning algorithm. In more detail, easy adapt basically triples the feature space: it takes each feature in the original feature space and makes three versions of it, a general version, a source-specific and a target-specific version. By transforming the feature space, the supervised learning algorithm is supposed to ‘learn’ which features transfer better to the new domain.</p>
+
+    <p>Finkel and Manning (2009)<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">10</a></sup> extend <em>easy adapt</em> by adding explicit hyperparameters to the model. That is, each domain has its own set of domain-specific parameters, but they are linked by introducing an additional layer that acts as general parameter set. This parametrization encourages the features to have similar weights across domains, unless there is evidence in the domains to the contrary.</p>
+  </li>
+  <li>
+    <p><strong>Changing the instance distribution</strong>: Jiang and Zhai (2007)<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote" rel="footnote">11</a></sup> propose to weigh source training instances by their similarity to the target distribution. They have shown the effectiveness of this approach on three NLP tasks (POS tagging, named entity classification and spam filtering).</p>
+  </li>
+</ul>
+
+<h2 id="unsupervised-domain-adaptation">Unsupervised Domain Adaptation</h2>
+
+<h3 id="self-training">Self-training</h3>
+
+<p>Because treebanks are expensive to create, while plain text in most domains is easily obtainable, semi-supervised approaches to parser domain adaptation are a particularly attractive solution to the domain portability problem. This usually involves a manually annotated training set (a treebank), and a larger set of unlabeled data (plain text).</p>
+
+<p>Many work in unsupervised domain adaptation for state-of-the-art parsers has achieved accuracy levels on out-of-domain text that is comparable to that achieved with domain-specific training data. This is done in a self-training setting, where a parser trained on a treebank (in a seed domain) is used to parse a large amount of unlabeled data in the target domain (assigning only one parse per sentence). The automatically parsed corpus is then used as additional training data for the parser. Specifically, their highlights are:</p>
+
+<ul>
+  <li>
+    <p><strong>Reranking</strong>: McClosky et al. (2006b)<sup id="fnref:6:1" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup> presented the most successful semi-supervised approach to date for adaptation of a WSJ-trained parser to Brown data containing several genres of text. Their approach involves the use of a first-stage n-best parser and a reranker, which together produce parses for the unlabeled dataset. The automatically parsed in-domain corpus is then used as additional training material. In their previous work<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">12</a></sup>, McClosky et al. (2006a) argue that the use of a reranker is an important factor in the success of their approach, which is a layered model: the baser layer is a generative statistical PCFG parser that creates a ranked list of k parses (say, 50), and the second layer is a reranker that reorders these parses using more detailed features.</p>
+  </li>
+  <li>
+    <p><strong>Small seed</strong>: Reichart and Rappoport (2007)<sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote" rel="footnote">13</a></sup> used self-training to enhance the performance of a generative statistical PCFG parser for both the in-domain and the parser adaptation scenarios. The difference between their parser and McClosky et al.’s: [1] the 1-best list of a base parser can be used as a self-training material for the base parser itself; [2] the self-training can be done when the seed is small. They achieved this by identifying the self-training protocols: the self-training set contains several thousand sentences. A parser trained with a small seed set parses the self-training set, and then the <em>whole</em> automatically annotated self-training set is combined with the manually annotated seed set to retrain the parser.</p>
+  </li>
+  <li>
+    <p><strong>Confidence-based</strong>: Yu et al. (2015)<sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote" rel="footnote">14</a></sup> used confidence-based methods to select additional training samples, where they compared two confidence-based methods: [1] using the parse score of the employed parser to measure the confidence into a parse tree; [2] calculating the score differences between the best tree and alternative trees.</p>
+  </li>
+  <li>
+    <p><strong>Simple:</strong> Sagae (2010)<sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote" rel="footnote">15</a></sup> proposed a simple self-training framework for domain adaptation to avoid the settings as in previous work (without reranking, other means of training instance selection, or estimation of parse quality). The work investigated the contribution of the reranker for a constituency parser, and suggested that constituency parsers without a reranker can achieve significant improvements on the target domain but the results are still higher when a reranker is used.</p>
+  </li>
+  <li>
+    <p><strong>Useful info from target domain</strong>: Chen et al. (2008)<sup id="fnref:16" role="doc-noteref"><a href="#fn:16" class="footnote" rel="footnote">16</a></sup> proposed a model that learns reliable information on shorter dependencies from unlabeled target domain data to help parse longer distance words. The rationale for this procedure is the observation that short dependency edges show a higher accuracy than longer edges. Kiperwasser and Goldberg (2015)<sup id="fnref:17" role="doc-noteref"><a href="#fn:17" class="footnote" rel="footnote">17</a></sup> presented a approach to improve dependency parsing accuracy by using bilexical statistics derived from auto-parsed data. The method is based on estimating the attachment potential of head-modifier words, by taking into account not only the head and modifier words themselves, but also the words surrounding the head and the modifier.</p>
+  </li>
+</ul>
+
+<h3 id="co-training">Co-training</h3>
+
+<p>Co-training is a technique that has been frequently used by domain adaptation for parsers, and it is very similar to self-training except that it involves more than one learner. The early version of co-training used two different ‘view’ of the classifier, each of which has a distinct feature set. They are used to annotate unlabeled set after trained on the same training set. Then both classifiers are retrained on the newly annotated data and the initial training set.<sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footnote" rel="footnote">18</a></sup></p>
+
+<p>Sagae and Tsujii (2007)<sup id="fnref:19" role="doc-noteref"><a href="#fn:19" class="footnote" rel="footnote">19</a></sup> improved the out-of-domain accuracy of a dependency parser trained on the entire WSJ training set (40k sentences) by using unlabeled data in the same domain as the out-of-domain test data (biomedical text). Specifically, they co-trained two dependency parsers by adding automatically parsed sentences for which the parsers agree to the training data. They use agreement between different parsers to estimate the quality of automatically generated training instances and selected only sentences with high estimated accuracy.</p>
+
+<p>Weiss et al. (2015)<sup id="fnref:20" role="doc-noteref"><a href="#fn:20" class="footnote" rel="footnote">20</a></sup> used normal agreement based co-training and tri-training in their evaluation of a state-of-the-art neural network parser. In their work, the annotations agreed by a conventional transition-based parser (zPar) and the Berkeley constituency parser have been used as additional training data. They retained their neural network parser and the zPar parser on the extended training data.</p>
+
+<h3 id="other-approaches">Other approaches</h3>
+
+<ul>
+  <li>
+    <p><strong>Up-training</strong>: Petrov et al. (2010) <sup id="fnref:21" role="doc-noteref"><a href="#fn:21" class="footnote" rel="footnote">21</a></sup> proposed an up-training procedure in which a deterministic parser is trained on the output of a more accurate, but slower, latent variable constituency parser (converted to dependencies). In practice, they parsed a large amount of unlabeled data from the target domain with the constituency parser of Petrov et al. (2006)<sup id="fnref:22" role="doc-noteref"><a href="#fn:22" class="footnote" rel="footnote">22</a></sup> and then trained a deterministic dependency parser on this noisy, automatically parsed data.</p>
+
+    <p>The goal of up-training is different from self-training or co-training, which are to further improve the performance of the very best model, instead, it aims to train a computationally cheaper model (a linear time dependency parser) to match the performance of the best model, resulting in a computationally efficient, yet highly accurate model.</p>
+  </li>
+  <li>
+    <p><strong>Using external lexicon</strong>:  Lack of the knowledge of the unknown words is one of the key problems of domain adaptation tasks. One way to address this problem is to use the external lexicon resources, which provide additional information for tokens, such as word lemma, part-of-speech tags, morphological information and so on. This information can be used by parsers directly to help making the decision. In previous work, lexicons have been used by Szolovits (2003)<sup id="fnref:23" role="doc-noteref"><a href="#fn:23" class="footnote" rel="footnote">23</a></sup> and Pyysalo et al. (2006)<sup id="fnref:24" role="doc-noteref"><a href="#fn:24" class="footnote" rel="footnote">24</a></sup> to improve the link grammar parser on the medical domain. Both approaches showed large improvements on parsing accuracy. Pekar et al. (2014)<sup id="fnref:25" role="doc-noteref"><a href="#fn:25" class="footnote" rel="footnote">25</a></sup> extracted a lexicon from a crowd-sourced online dictionary (Wikitionary) and applied it to a strong dependency parser. However, the dictionary achieved a moderate improvement only.</p>
+  </li>
+  <li>
+    <p><strong>Leveraging pre-trained embeddings</strong>: By using pre-trained word embeddings the neural network-based parsers can usually achieve a higher accuracy compared with those who used randomly initialized embeddings. <sup id="fnref:20:1" role="doc-noteref"><a href="#fn:20" class="footnote" rel="footnote">20</a></sup> <sup id="fnref:26" role="doc-noteref"><a href="#fn:26" class="footnote" rel="footnote">26</a></sup> <sup id="fnref:27" role="doc-noteref"><a href="#fn:27" class="footnote" rel="footnote">27</a></sup> Furthermore, Joshi et al. (2018) <sup id="fnref:28" role="doc-noteref"><a href="#fn:28" class="footnote" rel="footnote">28</a></sup> showed that recent advances in word representations greatly diminish the need for domain adaptation when the target domain is syntactically similar to the source domain.</p>
+  </li>
+  <li>
+    <p><strong>Word clustering</strong>: Word clustering is an unsupervised algorithm that is able to group the similar words into the same classes by analyzing the co-occurence of the words in a large unlabeled corpus. Koo et al. (2008)<sup id="fnref:29" role="doc-noteref"><a href="#fn:29" class="footnote" rel="footnote">29</a></sup> first employed a set of features based on brown clusters to a second-order graph-based dependency parser. The similar features have been adapted to a transition-based parser of Bohnet and Nivre (2012)<sup id="fnref:30" role="doc-noteref"><a href="#fn:30" class="footnote" rel="footnote">30</a></sup>.</p>
+  </li>
+  <li>
+    <p><strong>Learning from partial annotation</strong>: In Joshi et al. (2018)’s work<sup id="fnref:28:1" role="doc-noteref"><a href="#fn:28" class="footnote" rel="footnote">28</a></sup>, they revisited domain adaptation for parsers in the neural era and provided a simple way to adapt a parser using only dozens of partial annotations. Specifically, they create some partial annotations to teach the parser how to fix the errors, then retrains the parser, repeating the process until they are satisfied.</p>
+  </li>
+  <li>
+    <p><strong>Learning domain differences</strong>: Yu et al.<sup id="fnref:31" role="doc-noteref"><a href="#fn:31" class="footnote" rel="footnote">31</a></sup> addressed the relation between domain differences and domain adaptation for dependency parsing. They first showed that it is the inconsistent behavior of same features cross-domain, rather than word or feature coverage, that is the major cause of performances decrease of out-of-domain model, and the set of ambiguous features is small and has concentric distributions. Based on the analyses, they proposed a DA model that can automatically learn which features are ambiguous cross domain according to errors made by out-domain model on in-domain training data.</p>
+  </li>
+  <li>
+    <p><strong>Integrating with features learned from unlabeled data</strong>: Chen et al. (2012)<sup id="fnref:32" role="doc-noteref"><a href="#fn:32" class="footnote" rel="footnote">32</a></sup> applied high-order DLMs to a second-order graph-based parser. The DLMs allow the new parser to explore high-order features without increasing the time complexity. The DLMs are extracted from a 43 million words English corpus and a 311 million words corpus of Chinese parsed by the baseline parser. Features based on the DLMs are used in the parser.</p>
+  </li>
+  <li>
+    <p><strong>Normalization</strong>: A theoretical exploration of the effect of normalization on forum data is done by Kaljahi et al. (2015)<sup id="fnref:33" role="doc-noteref"><a href="#fn:33" class="footnote" rel="footnote">33</a></sup>, where they show that parsing manually normalize sentences results in a 2% increase of F1 score. Baldwin and Li (2015)<sup id="fnref:34" role="doc-noteref"><a href="#fn:34" class="footnote" rel="footnote">34</a></sup> evaluate the effects of different normalization actions on dependency parsing performance for the social media domain. They conclude that a variety of different normalization actions is useful for parsing. Zhang et al. (2013) <sup id="fnref:35" role="doc-noteref"><a href="#fn:35" class="footnote" rel="footnote">35</a></sup> test the effect of automatic normalization on dependency parsing by using automatically derived parse trees of the normalized sentences as reference. van der Goot and van Noord (2017) <sup id="fnref:36" role="doc-noteref"><a href="#fn:36" class="footnote" rel="footnote">36</a></sup> show that integrating the normalization model into the parsing algorithm is beneficial. This way multiple normalization candidates can be leveraged, improving parsing performance on social media.</p>
+  </li>
+</ul>
+
+<h1 id="constituency-parsing-performance-across-different-domains">Constituency parsing performance across different domains</h1>
+
+<p>There have been many constituency parsers developed based on different methodologies, and much progress has been made in recent years. A question is that whether those <em>so-called</em> state-of-the-art parsers could work robustly on other domains, here I list some of the constituency parsers as well as their performance on different domains.</p>
+
+<p>The performance of Stanford, Stanford-RNN, Berkeley, Charniak, BLLIP and BLLIP* are reported from Choe et al.<sup id="fnref:37" role="doc-noteref"><a href="#fn:37" class="footnote" rel="footnote">37</a></sup>, where all the parsers are trained on the WSJ training set (section 2-21) and the test data splits follow the standard as introduced in Foster and van Genabith (2008), Kim et al. (2003), Godfrey et al. (1992), Judge et al. (2006), Francis and Kučera (1989) and Marcus et al. (1993). BLLIP* (self-trained) BLLIP is self-trained using two million sentences from Gigaword and Stanford-RNN uses word embeddings trained from larger corpora. For more details, cf. Choe et al.<sup id="fnref:37:1" role="doc-noteref"><a href="#fn:37" class="footnote" rel="footnote">37</a></sup>. The results of Berkeley* (Berkeley self-attentive parser) are based on my own experiments.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Parser</th>
+      <th style="text-align: center">BNC</th>
+      <th style="text-align: center">GENIA</th>
+      <th style="text-align: center">SWBD</th>
+      <th style="text-align: center">QB*</th>
+      <th style="text-align: center">Brown</th>
+      <th style="text-align: center">WSJ</th>
+      <th style="text-align: center">Foreebank</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Berkeley*</td>
+      <td style="text-align: center">92.8</td>
+      <td style="text-align: center">84.2</td>
+      <td style="text-align: center">81.8</td>
+      <td style="text-align: center">91.5</td>
+      <td style="text-align: center">89.2</td>
+      <td style="text-align: center">95.1</td>
+      <td style="text-align: center">77.9</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">BLLIP*</td>
+      <td style="text-align: center">85.2</td>
+      <td style="text-align: center">77.8</td>
+      <td style="text-align: center">80.9</td>
+      <td style="text-align: center">89.5</td>
+      <td style="text-align: center">87.4</td>
+      <td style="text-align: center">92.2</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">BLLIP</td>
+      <td style="text-align: center">84.1</td>
+      <td style="text-align: center">76.7</td>
+      <td style="text-align: center">79.2</td>
+      <td style="text-align: center">88.1</td>
+      <td style="text-align: center">85.8</td>
+      <td style="text-align: center">91.5</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Charniak</td>
+      <td style="text-align: center">82.5</td>
+      <td style="text-align: center">74.8</td>
+      <td style="text-align: center">76.8</td>
+      <td style="text-align: center">85.6</td>
+      <td style="text-align: center">83.9</td>
+      <td style="text-align: center">89.7</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Berkeley</td>
+      <td style="text-align: center">82.3</td>
+      <td style="text-align: center">76.4</td>
+      <td style="text-align: center">74.5</td>
+      <td style="text-align: center">86.5</td>
+      <td style="text-align: center">84.6</td>
+      <td style="text-align: center">90.0</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Stanford-RNN</td>
+      <td style="text-align: center">82.0</td>
+      <td style="text-align: center">84.0</td>
+      <td style="text-align: center">70.7</td>
+      <td style="text-align: center">82.9</td>
+      <td style="text-align: center">84.0</td>
+      <td style="text-align: center">89.6</td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Stanford</td>
+      <td style="text-align: center">78.4</td>
+      <td style="text-align: center">73.1</td>
+      <td style="text-align: center">67.0</td>
+      <td style="text-align: center">78.6</td>
+      <td style="text-align: center">80.7</td>
+      <td style="text-align: center">85.4</td>
+      <td style="text-align: center">-</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="useful-resource">Useful resource</h1>
+<p>Apart from the reference, this post is also inspired a lot from:</p>
+<ul>
+  <li>Yu, Juntao, 2018. <a href="https://arxiv.org/pdf/1810.02100.pdf">Semi-supervised methods for out-of-domain dependency parsing</a>. arXiv preprint arXiv:1810.02100.</li>
+  <li>Barbara Plank, 2011. <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.721.5989&amp;rep=rep1&amp;type=pdf">Domain Adaptation for Parsing</a>. Ph.D. thesis, University of Groningen.</li>
+</ul>
+
+<p>Many thanks to their work, surveys on previous work and valuable thinkings to this direction. The literature review is necessarily incomplete as the literature on domain adaptation is huge (even though I only focus on parsing and tagging). I will appreciate it if you could give some feedbacks and suggestions after reading this post :)</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Kevin Gimpel, Nathan Schneider, Brendan O’Connor, Dipanjan Das, Daniel Mills, Jacob Eisenstein, Michael Heilman, Dani Yogatama, Jeffrey Flanigan, and Noah A. Smith. 2011. Part-of-speech tagging for twitter: Annotation, features, and experiments. In Proc. of ACL. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Lingpeng Kong, Nathan Schneider, Swabha Swayamdipta, Archna Bhatia, Chris Dyer, and Noah A. Smith. 2014. A Dependency Parser for Tweets. In Proc. of EMNLP. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>Hara, T., Miyao, Y. &amp; Tsujii, J. 2005. Adapting a Probabilistic Disambiguation Model of an HPSG Parser to a New Domain. In R. Dale, K.-F. Wong, J. Su &amp; O. Y. Kwong (Eds.), Natural Language Processing IJCNLP 2005 (Vol. 3651, p. 199-210). Springer Berlin / Heidelberg. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:3:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>Daume III, H. 2007. Frustratingly Easy Domain Adaptation. In ´ Proceedings of the 45th Meeting of the Association for Computational Linguistics. Prague, Czech Republic: Association for Computational Linguistics. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:4:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>Blitzer, J., McDonald, R. &amp; Pereira, F. 2006. Domain Adaptation with Structural Correspondence Learning. In Proceedings of the 2006 Conference on Empirical Methods in Natural Language Processing. Sydney, Australia. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6" role="doc-endnote">
+      <p>David McClosky, Eugene Charniak, and Mark Johnson. 2006b. Reranking and self-training for parser adaptation. In Proceedings of the 21st International Conference on Computational Linguistics and the 44th annual meeting of the Association for Computational Linguistics, pages 337–344. Association for Computational Linguistics. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:6:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:7" role="doc-endnote">
+      <p>Daume III, H., Kumar, A. &amp; Saha, A. 2010. Frustratingly Easy Semi- ´ Supervised Domain Adaptation. In Proceedings of the 2010 Workshop on Domain Adaptation for Natural Language Processing (pp. 53–59). Uppsala, Sweden: Association for Computational Linguistics. <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:8" role="doc-endnote">
+      <p>Chang, M.-W., Connor, M. &amp; Roth, D. 2010. The Necessity of Combining Adaptation Methods. In Proceedings of the 2010 Conference on Empirical Methods in Natural Language Processing (pp. 767–777). Cambridge, MA: Association for Computational Linguistics. <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:9" role="doc-endnote">
+      <p>Roark, B. &amp; Bacchiani, M. 2003. Supervised and unsupervised PCFG adaptation to novel domains. In Proceedings of the 4th Conference of the North American Chapter of the ACL (pp. 126–133). Edmonton, Canada: Association for Computational Linguistics. <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:10" role="doc-endnote">
+      <p>Finkel, J. R. &amp; Manning, C. D. 2009. Hierarchical Bayesian Domain Adaptation. In Proceedings of Human Language Technology Conference of the North American Chapter of the Association for Computational Linguistics (pp. 602–610). Boulder, Colorado: Association for Computational Linguistics. <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:11" role="doc-endnote">
+      <p>Jiang, J. &amp; Zhai, C. 2007. Instance Weighting for Domain Adaptation in NLP. In Proceedings of the 45th Meeting of the Association for Computational Linguistics (pp. 264–271). Prague, Czech Republic: Association for Computational Linguistics. <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:12" role="doc-endnote">
+      <p>David McClosky, Eugene Charniak, and Mark Johnson. 2006b. Reranking and self-training for parser adaptation. In Proceedings of the 21st International Conference on Computational Linguistics and the 44th annual meeting of the Association for Computational Linguistics, pages 337–344. Association for Computational Linguistics. <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:13" role="doc-endnote">
+      <p>Roi Reichart and Ari Rappoport. 2007. Self-training for enhancement and domain adaptation of statistical parsers trained on small datasets. In Proceedings of the 45th Annual Meeting of the Association for Computational Linguistics (ACL). Pages 616-623. Prague, Czech Republic. <a href="#fnref:13" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:14" role="doc-endnote">
+      <p>Juntao Yu, Mohab Elkaref, and Bernd Bohnet. 2015. Domain adaptation for dependency parsing via selftraining. In IWPT. <a href="#fnref:14" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:15" role="doc-endnote">
+      <p>Kenji Sagae. 2010. Self-training without reranking for parser domain adaptation and its impact on semantic role labeling. In Proceedings of the 2010 Workshop on Domain Adaptation for Natural Language Processing, pages 37–44. Association for Computational Linguistics. <a href="#fnref:15" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:16" role="doc-endnote">
+      <p>Wenliang Chen, Youzheng Wu, and Hitoshi Isahara. 2008. Learning reliable information for dependency parsing adaptation. In Proceedings of the 22nd International Conference on Computational Linguistics-Volume 1, pages 113–120. Association for Computational Linguistics. <a href="#fnref:16" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:17" role="doc-endnote">
+      <p>Eliyahu Kiperwasser and Yoav Goldberg. 2015. Semi-supervised dependency parsing using bilexical contextual features from auto-parsed data. In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics, Lisbon, Portugal, pages 1348–1353. <a href="http://aclweb.org/anthology/D15-1158">http://aclweb.org/anthology/D15-1158</a>. <a href="#fnref:17" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:18" role="doc-endnote">
+      <p>Avrim Blum and Tom Mitchell. 1998. Combining labeled and unlabeled data with co-training. In Proceedings of the Eleventh Annual Conference on Computational Learning Theory, pages 92–100, Madison, Wisconsin, USA. Association for Computing Machinery. <a href="#fnref:18" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:19" role="doc-endnote">
+      <p>Kenji Sagae and Jun’ichi Tsujii. 2007. Multilingual dependency parsing and domain adaptation with data-driven LR models and parser ensembles. In Proceedings of the CoNLL 2007 shared task. Prague, Czech Republic. <a href="#fnref:19" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:20" role="doc-endnote">
+      <p>David Weiss, Chris Alberti, Michael Collins, and Slav Petrov. 2015. Structured training for neural network transition-based parsing. In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing, pages 323–333, Beijing, China. Association for Computational Linguistics. <a href="#fnref:20" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:20:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:21" role="doc-endnote">
+      <p>Petrov, S., Chang, P. C., Ringgaard, M., &amp; Alshawi, H. 2010, October. Uptraining for accurate deterministic question parsing. In <em>Proceedings of the 2010 Conference on Empirical Methods in Natural Language Processing</em> (pp. 705-713). Association for Computational Linguistics. <a href="#fnref:21" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:22" role="doc-endnote">
+      <p>Petrov, S., Barrett, L., Thibaux, R., &amp; Klein, D. (2006, July). Learning accurate, compact, and interpretable tree annotation. In <em>Proceedings of the 21st International Conference on Computational Linguistics and the 44th annual meeting of the Association for Computational Linguistics</em> (pp. 433-440). Association for Computational Linguistics. <a href="#fnref:22" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:23" role="doc-endnote">
+      <p>Peter Szolovits. 2003. Adding a medical lexicon to an English parser. AMIA Annual Symposium Proceedings, pages 639–643. <a href="#fnref:23" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:24" role="doc-endnote">
+      <p>Sampo Pyysalo, Tapio Salakoski, Sophie Aubin, and Adeline Nazarenko. 2006. Lexical adaptation of link grammar to the biomedical sublanguage: A comparative evaluation of three approaches. BMC Bioinformatics, 7 (Suppl 3). <a href="#fnref:24" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:25" role="doc-endnote">
+      <p>Viktor Pekar, Juntao Yu, Mohab Elkaref, and Bernd Bohnet. 2014. Exploring options for fast domain adaptation of dependency parsers. In Proceedings of the First Joint Workshop on Statistical Parsing of Morphologically Rich Languages and Syntactic Analysis of Non-Canonical Languages, pages 54–65, Dublin, Ireland. Dublin City University. <a href="#fnref:25" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:26" role="doc-endnote">
+      <p>Danqi Chen and Christopher Manning. 2014. A fast and accurate dependency parser using neural networks. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing, pages 740–750, Doha, Qatar. Association for Computational Linguistics. <a href="#fnref:26" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:27" role="doc-endnote">
+      <p>Timothy Dozat and Christopher Manning. 2017. Deep biaffine attention for neural dependency parsing. In Proceedings of the 5th International Conference on Learning Representations, Toulon, France. <a href="#fnref:27" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:28" role="doc-endnote">
+      <p>Joshi, V., Peters, M., &amp; Hopkins, M. 2018, July. Extending a Parser to Distant Domains Using a Few Dozen Partially Annotated Examples. In <em>Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)</em> (pp. 1190-1199). <a href="#fnref:28" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:28:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:29" role="doc-endnote">
+      <p>Terry Koo, Xavier Carreras, and Michael Collins. 2008. Simple semisupervised dependency parsing. In Proceedings of the 46th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies, pages 595–603, Columbus, Ohio, USA. Association for Computational Linguistics. <a href="#fnref:29" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:30" role="doc-endnote">
+      <p>Bernd Bohnet and Joakim Nivre. 2012. A transition-based system for joint part-of-speech tagging and labeled non-projective dependency parsing. In Proceedings of the 2012 Joint Conference on Empirical Methods in Natural Language Processing and Computational Natural Language Learning, pages 1455–1465, Jeju Island, Korea. Association for Computational Linguistics. <a href="#fnref:30" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:31" role="doc-endnote">
+      <p>Yu, M., Zhao, T. and Bai, Y., 2013, June. Learning domain differences automatically for dependency parsing adaptation. In Twenty-Third International Joint Conference on Artificial Intelligence. <a href="#fnref:31" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:32" role="doc-endnote">
+      <p>Wenliang Chen, Min Zhang, and Haizhou Li. 2012. Utilizing dependency language models for graph-based dependency parsing models. In Proceedings of the 50th Annual Meeting of the Association for Computational Linguistics, pages 213–222, Jeju Island, Korea. Association for Computational Linguistics. <a href="#fnref:32" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:33" role="doc-endnote">
+      <p>Rasoul Kaljahi, Jennifer Foster, Johann Roturier, Corentin Ribeyre, Teresa Lynn, and Joseph Le Roux. 2015. Foreebank: Syntactic analysis of customer support forums. In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics, Lisbon, Portugal, pages 1341–1347. <a href="http://aclweb.org/anthology/D15-1157">http://aclweb.org/anthology/D15-1157</a>. <a href="#fnref:33" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:34" role="doc-endnote">
+      <p>Tyler Baldwin and Yunyao Li. 2015. An in-depth analysis of the effect of text normalization in social media. In Proceedings of the 2015 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. Association for Computational Linguistics, Denver, Colorado, pages 420–429. <a href="http://www.aclweb.org/anthology/N15-1045">http://www.aclweb.org/anthology/N15-1045</a>. <a href="#fnref:34" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:35" role="doc-endnote">
+      <p>Congle Zhang, Tyler Baldwin, Howard Ho, Benny Kimelfeld, and Yunyao Li. 2013. Adaptive parser-centric text normalization. In Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). Association for Computational Linguistics, Sofia, Bulgaria, pages 1159–1168. <a href="http://www.aclweb.org/anthology/P13-1114">http://www.aclweb.org/anthology/P13-1114</a>. <a href="#fnref:35" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:36" role="doc-endnote">
+      <p>Rob van der Goot and Gertjan van Noord. 2017. Parser adaptation for social media by integrating normalization. In Proceedings of ACL. <a href="#fnref:36" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:37" role="doc-endnote">
+      <p>Do Kook Choe, David McClosky, and Eugene Charniak. 2015. Syntactic parse fusion. In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing. <a href="#fnref:37" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:37:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+  </ol>
+</div>
+:ET

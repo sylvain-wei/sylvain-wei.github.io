@@ -15,21 +15,20 @@
 # in the templates via {{ site.myvariable }}.
 # theme: jekyll-theme-so-simple
 remote_theme: mmistakes/so-simple-theme
-skin: "/assets/css/skins/default.css"
 locale: en-US
-title: Shaohang Wei
-description: "It really is the best."
-baseurl: # the subpath of your site, e.g. "/blog"
-url: https://sylvain-wei.github.io
-# the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-logo: # path of site logo, e.g. "/images/logo.png"
+title: Zi Lin
+my_site_title: Zi Lin
+#name: Zi Lin
+description: "lzi[at]ucsd.edu"
+baseurl: #/blog # the subpath of your site, e.g. "/blog"
+#url: http://127.0.0.1:4000
+url: https://zi-lin.github.io/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+logo: /images/zilin.jpg # path of site logo, e.g. "/images/logo.png"
 date_format: "%B %-d, %Y"
 read_time: # reading time estimates, e.g. true
 words_per_minute: # 200
-mathjax:
-  enable: true # MathJax equations, e.g. true, false (default)
-  combo:  # "tex-svg" (default), "tex-mml-chtml", etc.: docs.mathjax.org/en/latest/web/components/combined.html
-  tags:  # "none", "ams" (default), "all"
+markdown: kramdown
+mathjax: true # MathJax equations, e.g. true
 google_fonts:
   - name: "Source Sans Pro"
     weights: "400,400i,700,700i"
@@ -37,7 +36,7 @@ google_fonts:
     weights: "400,400i,700,700i"
 google_analytics: # Google Analytics id, e.g. "UA-NNNNNNNN-N"
 disqus:
-  shortname: shaohangwei # Disqus shortname, e.g. "my_disqus_shortname"
+  shortname: # Disqus shortname, e.g. "my_disqus_shortname"
 twitter:
   username: # site's Twitter username, e.g. "mmistakes"
 
@@ -47,7 +46,6 @@ liquid:
 
 # Build settings
 permalink: /:categories/:title/
-markdown: kramdown
 feed:
   path: atom.xml
 
@@ -92,10 +90,12 @@ defaults:
 
 # Site Author
 author:
-  name: Shaohang Wei
-  picture:  
-  email:  weish@buaa.edu.cn
-  twitter:  veison02
+  name: Zi Lin
+  picture:
+  email: linzi.pku@gmail.com
+  twitter: suzzzylin
+  facebook: zi.lin.12935
+  github: zi-lin
   links:
     - title:
       url:
@@ -104,11 +104,17 @@ author:
 # Footer Links
 footer_links:
   - title: GitHub
-    url: https://github.com/sylvain-wei
+    url: https://github.com/zi-lin
     icon: fab fa-github-square
+  - title: Facebook
+    url: https://www.facebook.com/suzzzylin
+    icon: fab fa-facebook-square
   - title: Twitter
-    url: https://twitter.com/veison02
+    url: https://twitter.com/suzzzylin
     icon: fab fa-twitter-square
   - title: Instagram
-    url: https://www.instagram.com/sylvain_1006
+    url: https://instagram.com/suzzzylin
     icon: fab fa-instagram
+  - title: Linkedin
+    url: https://www.linkedin.com/in/zi-lin/
+    icon: fab fa-linkedin
