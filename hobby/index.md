@@ -10,7 +10,6 @@ search_omit: true
 
 Reading provides an opportunity for a dialogue with oneself. I am deeply interested in essays, novels, poetry, and biographies by both domestic and foreign authors. I have been extensively reading in the past, present, and will continue to do so in the future, exploring books on literature, history, art, management, philosophy, and other subjects. Currently, I am engrossed in "Zeng Guofan" by Senlin Hu, and "The Effective Manager." by Peter F. Drucker. This year, alongside my research studies, I plan to read 15 books of various genres. I hope to engage in fruitful exchanges and communication with fellow enthusiasts who share a passion for reading, just like me.
 
-<br>
 
 # Music
 
