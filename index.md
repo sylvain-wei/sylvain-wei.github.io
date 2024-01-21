@@ -2,7 +2,7 @@
 layout: home
 title: 
 excerpt: "Shaohang Wei's homepage"
-search_omit: true
+search_omit: false
 ---
 
 I am a senior student in Artificial Intelligence at **Beihang University**. Starting from the fall of 2024, I will officially enroll as a Ph.D. student in [Institute of Computational Linguistic (ICL)](https://icl.pku.edu.cn) at **Peking University**. 

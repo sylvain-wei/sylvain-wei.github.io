@@ -2,11 +2,9 @@
 layout: page
 title: My Hobbies
 excerpt: "Hobby"
-search_omit: true
+search_omit: false
 ---
-# Hobbies
-
-## Reading
+# Reading
 
 *"A reader lives a thousand lives before he dies. The man who never reads lives only one." - George R.R. Martin*
 
@@ -14,7 +12,7 @@ Reading provides an opportunity for a dialogue with oneself. I am deeply interes
 
 <br>
 
-## Music
+# Music
 
 I have a great passion for music, especially experimental rock tracks and emotionally stirring ballads. Through these genres, I can deeply sense the brilliance of human nature resonating within the rhythm and emotions. 
 
@@ -40,7 +38,7 @@ Despite my mediocre singing abilities, I enjoy singing, and I plan to embark on 
 
 <br>
 
-## Running
+# Running
 
 I enjoy running, although I'm not skilled in sprinting or long-distance running. I consider running as a source of pleasure because it allows me to release stress and feel the power of life. (The following image is a group photo of me taken at the Winter Marathon Festival on November 25, 2023.)
 
@@ -49,13 +47,13 @@ I enjoy running, although I'm not skilled in sprinting or long-distance running.
 </div>
 <br>
 
-## Past Hobbies
+# Past Hobbies
 
 In the past, I enjoyed painting, calligraphy, and other artistic pursuits, but I was not proficient in any of them. I hope to pick up these hobbies again in the future and become more skilled at them.
 
 <br>
 
-## Chat with me
+# Chat with me
 
 **Jan 2024:** I have set up the [online-coffee-time](https://calendly.com/weish) . Welcome to chat with me!
 
