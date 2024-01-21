@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Shaohang Wei
+title: 
 excerpt: "Shaohang Wei's homepage"
 search_omit: true
 ---
