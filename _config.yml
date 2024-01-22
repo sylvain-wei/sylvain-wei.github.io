@@ -32,7 +32,7 @@ markdown: kramdown
 mathjax: true # MathJax equations, e.g. true
 google_fonts:
   # - name: "Source Sans Pro" # TODO: 普通的无衬线英文
-  - name: "Arvo" # TODO: 普通的无衬线英文
+  - name: "Helvetica" # TODO: 普通的无衬线英文
     weights: "400,400i,700,700i"
   - name: "Lora"            # TODO: 衬线字体
     weights: "400,400i,700,700i"
