@@ -23,8 +23,11 @@
     }
   </script>
 
+  <!-- TODO: 下面三个link表示使用下面的样式表来组织整个页面 -->
+<!-- TODO: Here tells that should jiazai these css -->
   <link rel="stylesheet" href="/assets/css/academicons.css">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <!-- TODO: Here tells that 字体 should be Google字体 -->
   {% if site.google_fonts %}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={%- for font in site.google_fonts -%}{{ font.name | replace: ' ', '+' }}{% if font.weights %}:{% endif %}{{ font.weights | remove: ' ' }}{% if forloop.last != true %}|{% endif %}{%- endfor -%}">
   {% endif %}

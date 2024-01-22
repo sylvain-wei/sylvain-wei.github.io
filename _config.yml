@@ -30,9 +30,9 @@ words_per_minute: 200 # 200
 markdown: kramdown
 mathjax: true # MathJax equations, e.g. true
 google_fonts:
-  - name: "Source Sans Pro"
+  - name: "Source Sans Pro" # TODO: 普通的无衬线英文
     weights: "400,400i,700,700i"
-  - name: "Lora"
+  - name: "Lora"            # TODO: 衬线字体
     weights: "400,400i,700,700i"
 google_analytics: # Google Analytics id, e.g. "UA-NNNNNNNN-N"
 disqus:
@@ -54,7 +54,7 @@ feed:
 # paginate_path: /page:num/
 
 # Search TODO: if searching is too slow, then set it to 'false'
-search_full_content: true # can have performance implications for large sites
+search_full_content: false # can have performance implications for large sites
 
 # Taxonomy pages
 # category_archive_path: "/categories/#"
@@ -102,25 +102,29 @@ author:
       icon:
 
 # Footer Links
+# See https://fontawesome.com/v5/search?q=email&o=r
 footer_links:
   - title: GitHub
     url: https://github.com/sylvain-wei
-    icon: fab fa-github-square
+    icon: fab fa-github
   # - title: Facebook
   #   url: https://www.facebook.com/suzzzylin
   #   icon: fab fa-facebook-square
   - title: Twitter
     url: https://twitter.com/veison02
-    icon: fab fa-twitter-square
+    icon: fab fa-twitter  # fab fa-twitter-square
   - title: Instagram
     url: https://www.instagram.com/sylvain_1006
     icon: fab fa-instagram
-  - title: zhihu
+  - title: Zhihu
     url: https://www.zhihu.com/people/sylvain02
-    # incon: fab fa-zhihu
+    incon: fab fa-zhihu
   - title: email
     url: https://weish@buaa.edu.cn
-    # incon: fab fa-envelope
+    incon: fas fa-envelope
+  - title: Feed
+    url: atom.xml
+    icon: fas fa-rss-square
 
   # - title: Linkedin
   #   url: https://www.linkedin.com/in/zi-lin/
