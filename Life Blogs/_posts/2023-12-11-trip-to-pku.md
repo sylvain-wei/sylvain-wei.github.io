@@ -10,7 +10,7 @@ date: 2023-12-11
 2023年12月11日，北京下了今年的第一场雪。
 
 <div>
-	<img src="..\_assets\2023-12-11-trip-to-pku\weishatweiming.jpg" style="zoom:67%;" />
+	<img src="..\..\images\zilin.jpg" style="zoom:67%;" />
 </div>
 
 
