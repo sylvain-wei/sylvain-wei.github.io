@@ -51,4 +51,4 @@ search_omit: true
 - 2022-至今：中国图像图形学学会（CSIG）学生会员
 - 2023-至今：中国中文信息学会（CIPS）、中国计算机学会（CCF）学生会员
 
-更新时间：2024/1/19 &nbsp; [English Version (英文)](https://sylvain-wei.github.io/Awards/index.md)
+更新时间：2024/1/19 &nbsp; [English Version (英文)](https://sylvain-wei.github.io/Awards/)
