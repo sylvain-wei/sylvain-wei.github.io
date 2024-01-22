@@ -106,25 +106,28 @@ author:
 footer_links:
   - title: GitHub
     url: https://github.com/sylvain-wei
-    icon: fab fa-github
+    icon: fa-brands fa-github
+    # icon: fab fa-github
   # - title: Facebook
   #   url: https://www.facebook.com/suzzzylin
   #   icon: fab fa-facebook-square
   - title: Twitter
     url: https://twitter.com/veison02
-    icon: fab fa-twitter  # fab fa-twitter-square
+    icon: fa-brands fa-twitter
+    # icon: fab fa-twitter  # fab fa-twitter-square
   - title: Instagram
     url: https://www.instagram.com/sylvain_1006
-    icon: fab fa-instagram
+    icon: fa-brands fa-instagram
   - title: Zhihu
     url: https://www.zhihu.com/people/sylvain02
-    incon: fab fa-zhihu
-  - title: email
+    icon: fa-brands fa-zhihu
+    # icon: fab fa-zhihu
+  - title: Email
     url: https://weish@buaa.edu.cn
-    incon: fas fa-envelope
+    icon: fa-solid fa-envelope
   - title: Feed
     url: atom.xml
-    icon: fas fa-rss-square
+    icon: fa-solid fa-rss
 
   # - title: Linkedin
   #   url: https://www.linkedin.com/in/zi-lin/
