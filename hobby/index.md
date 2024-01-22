@@ -29,6 +29,7 @@ I have a great passion for music, especially experimental rock tracks and emotio
     <img src="/images/hobbysong3.png">
     <img src="/images/hobbysong4.png">
 </div>
+
 I adore the music composed by Tayu Lo, as his songs express sincere emotions towards our nation and possess a keen awareness of the times. They also encapsulate the wondrous experiences of childhood and love. Additionally, I have been gradually exploring Western music lately. The unparalleled talent and genuine human compassion showcased in the works of artists like Lady Gaga, Elton John, and The Beatles have truly captivated me and allowed me to experience the enchantment of music. I also appreciate piano compositions, such as the works of Ryuichi Sakamoto. 
 Despite my mediocre singing abilities, I enjoy singing, and I plan to embark on learning instruments like the guitar in the near future.
 
