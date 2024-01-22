@@ -14,7 +14,7 @@ date: 2023-12-11
 “红楼飞雪，一时英杰”，红楼虽在东城沙滩，但传说的魅力从不止于一隅。从西门进入到校友桥头，贝公楼外一片宁静祥和。
 
 <p align="center">
-    <img src="../2023-12-11-trip-to-pku/images/beigonglou.jpg" width="600px" alt="nothing"/>
+    <img src="../../images/2023-12-11-trip-to-pku/beigonglou.jpg" width="600px" alt="nothing"/>
 </p>
 
 
@@ -27,7 +27,7 @@ date: 2023-12-11
 慈济寺门前行人有十余，立于中央的是酷似微笑胖娃娃的雪人。
 
 <p align="center">
-    <img src="../2023-12-11-trip-to-pku/images/snowman.jpg" width="600px" alt="nothing"/></p>
+    <img src="../../images/2023-12-11-trip-to-pku/snowman.jpg" width="600px" alt="nothing"/></p>
 
 
 
@@ -36,11 +36,11 @@ date: 2023-12-11
 接着，我来到了湖心岛，在石舫前端，我留下了自己在燕园的印记——与博雅塔的冬日合影（非常感谢摄影的同学，整个构图算是非常合适了）。
 
 <p align="center">
-    <img src="../2023-12-11-trip-to-pku/images/weishatweiming.jpg" width="600px" alt="nothing"/>
+    <img src="../../images/2023-12-11-trip-to-pku/weishatweiming.jpg" width="600px" alt="nothing"/>
 </p>
 
 
 
 简记于此，以记录燕园初雪之行。期待与燕园的未来五年，能与时光雕刻我的学术理想。
 
-<p align="center"><img src="../2023-12-11-trip-to-pku/images/weiminghu.jpg" width="600px" alt="nothing"/></p>
+<p align="center"><img src="../../images/2023-12-11-trip-to-pku/weiminghu.jpg" width="600px" alt="nothing"/></p>
