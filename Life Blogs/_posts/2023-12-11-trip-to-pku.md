@@ -9,6 +9,8 @@ date: 2023-12-11
 
 2023年12月11日，北京下了今年的第一场雪。
 
+<img src="D:\GitHub\sylvain-wei.github.io\Life Blogs\_assets\2023-12-11-trip-to-pku\weishatweiming.jpg" style="zoom:67%;" />
+
 以后将成为长期流放昌平的苦命人，我必然得抓住难得的机会去燕园看一次雪。
 
 “红楼飞雪，一时英杰”，红楼虽在东城沙滩，但传说的魅力从不止于一隅。从西门进入到校友桥头，贝公楼外一片宁静祥和。
@@ -16,6 +18,7 @@ date: 2023-12-11
 <p align="center">
     <img src="https://sylvain-wei.github.io/Life Blogs/_assets/2023-12-11-trip-to-pku/beigonglou.jpg" width="600px" alt="nothing"/>
 </p>
+
 
 
 校友桥下湖光潋滟，今日之景格外清澈，无雪风吹皱一池冬水，只留人在水上映衬嬉游。
