@@ -9,7 +9,11 @@ date: 2023-12-11
 
 2023年12月11日，北京下了今年的第一场雪。
 
-<img src="D:\GitHub\sylvain-wei.github.io\Life Blogs\_assets\2023-12-11-trip-to-pku\weishatweiming.jpg" style="zoom:67%;" />
+<div>
+	<img src="D:\GitHub\sylvain-wei.github.io\Life Blogs\_assets\2023-12-11-trip-to-pku\weishatweiming.jpg" style="zoom:67%;" />
+</div>
+
+
 
 以后将成为长期流放昌平的苦命人，我必然得抓住难得的机会去燕园看一次雪。
 
