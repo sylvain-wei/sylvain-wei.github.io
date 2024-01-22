@@ -21,13 +21,13 @@ date: 2023-12-11
 
 慈济寺门前行人有十余，立于中央的是酷似微笑胖娃娃的雪人。
 
-<img src="..\_assets\2023-12-11-trip-to-pku\snowman.jpg" width=70%>
+<img src="../_assets/2023-12-11-trip-to-pku/snowman.jpg" width=70%>
 
 沿湖而行，走到观瞻博雅塔的最佳视角。不少同学和我一样在此处拍摄。希望留下燕园在此刻最优雅宁静的模样。
 
 接着，我来到了湖心岛，在石舫前端，我留下了自己在燕园的印记——与博雅塔的冬日合影（非常感谢摄影的同学，整个构图算是非常合适了）。
 
-<img src="../_assets/2023-12-11-trip-to-pku/weishatweiming.jpg" width=70% height=70%>
+<img src="../_assets/2023-12-11-trip-to-pku/weishatweiming.jpg" width=70%>
 
 简记于此，以记录燕园初雪之行。期待与燕园的未来五年，能与时光雕刻我的学术理想。
 
