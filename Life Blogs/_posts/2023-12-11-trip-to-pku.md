@@ -1,5 +1,5 @@
 ---
-title: "你好A Trip to Peking University in the First Snow of 2023"
+title: "A Trip to Peking University in the First Snow of 2023"
 hidden: true
 last_modified_at: 2024-01-21
 tag: Life
