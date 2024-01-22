@@ -115,6 +115,13 @@ footer_links:
   - title: Instagram
     url: https://www.instagram.com/sylvain_1006
     icon: fab fa-instagram
+  - title: Zhihu
+    url: https://www.zhihu.com/people/sylvain02
+    incon: fab fa-zhihu
+  - title: Email
+    url: https://weish@buaa.edu.cn
+    incon: fab fa-envelope
+
   # - title: Linkedin
   #   url: https://www.linkedin.com/in/zi-lin/
   #   icon: fab fa-linkedin
