@@ -14,7 +14,7 @@ date: 2023-12-11
 “红楼飞雪，一时英杰”，红楼虽在东城沙滩，但传说的魅力从不止于一隅。从西门进入到校友桥头，贝公楼外一片宁静祥和。
 
 <p align="center">
-    <img src="../_assets/2023-12-11-trip-to-pku/beigonglou.jpg" width="600px" alt="nothing"/>
+    <img src="https://sylvain-wei.github.io/Life Blogs/_assets/2023-12-11-trip-to-pku/beigonglou.jpg" width="600px" alt="nothing"/>
 </p>
 
 
