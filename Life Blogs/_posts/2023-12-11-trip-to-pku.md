@@ -14,7 +14,7 @@ date: 2023-12-11
 “红楼飞雪，一时英杰”，红楼虽在东城沙滩，但传说的魅力从不止步于一隅。从西门进入到校友桥头，贝公楼外一片宁静祥和。
 
 <p>
-    <img src="https://sylvain-wei.github.io/Life Blogs/_assets/2023-12-11-trip-to-pku/beigonglou.jpg" width=70% height=70%>
+    <img src="../_assets/2023-12-11-trip-to-pku/beigonglou.jpg" width=70% height=70% alt="nothing">
 </p>
 
 校友桥下湖光潋滟，今日之景格外清澈，无雪风吹皱一池冬水，只留人在水上映衬嬉游。
@@ -23,14 +23,14 @@ date: 2023-12-11
 
 慈济寺门前行人有十余，立于中央的是酷似微笑胖娃娃的雪人。
 
-<p><img src="https://sylvain-wei.github.io/Life Blogs/_assets/2023-12-11-trip-to-pku/snowman.jpg" width=70%></p>
+<p><img src="../_assets/2023-12-11-trip-to-pku/snowman.jpg" width=70% alt="nothing"></p>
 
 沿湖而行，走到观瞻博雅塔的最佳视角。不少同学和我一样在此处拍摄。希望留下燕园在此刻最优雅宁静的模样。
 
 接着，我来到了湖心岛，在石舫前端，我留下了自己在燕园的印记——与博雅塔的冬日合影（非常感谢摄影的同学，整个构图算是非常合适了）。
 
-<p><img src="https://sylvain-wei.github.io/Life Blogs/_assets/2023-12-11-trip-to-pku/weishatweiming.jpg" width=70%></p>
+<p><img src="../_assets/2023-12-11-trip-to-pku/weishatweiming.jpg" width=70% alt="nothing"></p>
 
 简记于此，以记录燕园初雪之行。期待与燕园的未来五年，能与时光雕刻我的学术理想。
 
-<p><img src="https://sylvain-wei.github.io/Life Blogs/_assets/2023-12-11-trip-to-pku/weiminghu.jpg"></p>
+<p><img src="../_assets/2023-12-11-trip-to-pku/weiminghu.jpg" alt="nothing"></p>
