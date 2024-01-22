@@ -9,19 +9,14 @@ date: 2023-12-11
 
 2023年12月11日，北京下了今年的第一场雪。
 
-<div>
-	<img src="..\..\images\zilin.jpg" style="zoom:67%;" />
-</div>
-
-
-
 以后将成为长期流放昌平的苦命人，我必然得抓住难得的机会去燕园看一次雪。
 
 “红楼飞雪，一时英杰”，红楼虽在东城沙滩，但传说的魅力从不止于一隅。从西门进入到校友桥头，贝公楼外一片宁静祥和。
 
 <p align="center">
-    <img src="https://sylvain-wei.github.io/Life Blogs/_assets/2023-12-11-trip-to-pku/beigonglou.jpg" width="600px" alt="nothing"/>
+    <img src="../images/2023-12-11-trip-to-pku/beigonglou.jpg" width="600px" alt="nothing"/>
 </p>
+
 
 
 
@@ -32,7 +27,8 @@ date: 2023-12-11
 慈济寺门前行人有十余，立于中央的是酷似微笑胖娃娃的雪人。
 
 <p align="center">
-    <img src="../_assets/2023-12-11-trip-to-pku/snowman.jpg" width="600px" alt="nothing"/></p>
+    <img src="../images/2023-12-11-trip-to-pku/snowman.jpg" width="600px" alt="nothing"/></p>
+
 
 
 沿湖而行，走到观瞻博雅塔的最佳视角。不少同学和我一样在此处拍摄。希望留下燕园在此刻最优雅宁静的模样。
@@ -40,10 +36,11 @@ date: 2023-12-11
 接着，我来到了湖心岛，在石舫前端，我留下了自己在燕园的印记——与博雅塔的冬日合影（非常感谢摄影的同学，整个构图算是非常合适了）。
 
 <p align="center">
-    <img src="../_assets/2023-12-11-trip-to-pku/weishatweiming.jpg" width="600px" alt="nothing"/>
+    <img src="../images/2023-12-11-trip-to-pku/weishatweiming.jpg" width="600px" alt="nothing"/>
 </p>
+
 
 
 简记于此，以记录燕园初雪之行。期待与燕园的未来五年，能与时光雕刻我的学术理想。
 
-<p align="center"><img src="../_assets/2023-12-11-trip-to-pku/weiminghu.jpg" width="600px" alt="nothing"/></p>
+<p align="center"><img src="../images/2023-12-11-trip-to-pku/weiminghu.jpg" width="600px" alt="nothing"/></p>

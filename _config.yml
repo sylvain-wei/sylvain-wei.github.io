@@ -38,7 +38,7 @@ google_analytics: # Google Analytics id, e.g. "UA-NNNNNNNN-N"
 disqus:
   shortname: weish # Disqus shortname, e.g. "my_disqus_shortname"
 twitter:
-  username: # site's Twitter username, e.g. "mmistakes"
+  username: veison02 # site's Twitter username, e.g. "mmistakes"
 
 # Liquid
 liquid:
@@ -53,8 +53,8 @@ feed:
 # paginate: 10
 # paginate_path: /page:num/
 
-# Search
-search_full_content: false # can have performance implications for large sites
+# Search TODO: if searching is too slow, then set it to 'false'
+search_full_content: true # can have performance implications for large sites
 
 # Taxonomy pages
 # category_archive_path: "/categories/#"
