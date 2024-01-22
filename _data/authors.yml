@@ -7,12 +7,21 @@ Shaohang Wei:
   twitter: "@veison02"
   github: "sylvain-wei"
   links:
+    - title: GitHub
+      url: https://github.com/sylvain-wei
+      icon: fa-brands fa-github
     - title: Twitter
       url: https://twitter.com/veison02
-      icon: fab fa-twitter-square
-    - title: Github
-      url: https://github.com/sylvain-wei
-      icon: fab fa-github-square
+      icon: fa-brands fa-twitter
+    - title: Instagram
+      url: https://www.instagram.com/sylvain_1006
+      icon: fa-brands fa-instagram
+    - title: Zhihu
+      url: https://www.zhihu.com/people/sylvain02
+      icon: fa-brands fa-zhihu
+    - title: Email
+      url: https://weish@buaa.edu.cn
+      icon: fa-solid fa-at
 
 
 # Zi Lin:
