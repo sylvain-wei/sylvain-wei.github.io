@@ -97,37 +97,43 @@ author:
   # facebook: zi.lin.12935
   github: sylvain-wei
   links:
-    - title:
-      url:
-      icon:
+    - title: GitHub
+      url: https://github.com/sylvain-wei
+      icon: fa-brands fa-github
+    - title: Twitter
+      url: https://twitter.com/veison02
+      icon: fa-brands fa-twitter
+    - title: Instagram
+      url: https://www.instagram.com/sylvain_1006
+      icon: fa-brands fa-instagram
+    - title: Zhihu
+      url: https://www.zhihu.com/people/sylvain02
+      icon: fa-brands fa-zhihu
+    - title: Email
+      url: https://weish@buaa.edu.cn
+      icon: fa-solid fa-at
 
 # Footer Links
-# See https://fontawesome.com/v5/search?q=email&o=r
+# See https://fontawesome.com/v6/search?q=email&o=r
 footer_links:
   - title: GitHub
     url: https://github.com/sylvain-wei
     icon: fa-brands fa-github
-    # icon: fab fa-github
-  # - title: Facebook
-  #   url: https://www.facebook.com/suzzzylin
-  #   icon: fab fa-facebook-square
   - title: Twitter
     url: https://twitter.com/veison02
     icon: fa-brands fa-twitter
-    # icon: fab fa-twitter  # fab fa-twitter-square
   - title: Instagram
     url: https://www.instagram.com/sylvain_1006
     icon: fa-brands fa-instagram
   - title: Zhihu
     url: https://www.zhihu.com/people/sylvain02
     icon: fa-brands fa-zhihu
-    # icon: fab fa-zhihu
   - title: Email
     url: https://weish@buaa.edu.cn
-    icon: fa-solid fa-envelope
-  - title: Feed
-    url: atom.xml
-    icon: fa-solid fa-rss
+    icon: fa-solid fa-at
+  # - title: Feed
+  #   url: atom.xml
+  #   icon: fa-solid fa-rss
 
   # - title: Linkedin
   #   url: https://www.linkedin.com/in/zi-lin/
