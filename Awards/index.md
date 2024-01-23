@@ -40,7 +40,7 @@ Lastest Update: 19th Jan 2024 &nbsp; [中文版本 (Chinese Version)](https://sy
 - 2023 - Present：Photographer at the Media Center of the [Institute of Artificial Intelligence](https://iai.buaa.edu.cn), Beihang University
 - 2022 - 2023：Head of the Volunteer Service Department at the Red Cross of Beihang University
 - 2021 - 2022：Officer at the Volunteer Department at the Red Cross of Beihang University
-- 2021 - 2022：Class Monitor of Class 204211 at the Artificial Intelligence Institute, Beihang University
+- 2021 - 2022：Class Monitor of Class 204211 at the Institute of Artificial Intelligence, Beihang University
 - 2020 - 2021：Deputy Secretary of the Youth League Branch 207330 at the Shie College, Beihang University
 - 2020 - 2021：Class Monitor of Class 207330 at the Shie College, Beihang University
 - 2022 - Present：Student Member of the [China Society of Image and Graphics](https://www.csig.org.cn) (CSIG)
