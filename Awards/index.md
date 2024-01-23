@@ -31,9 +31,9 @@ Lastest Update: 19th Jan 2024 &nbsp; [中文版本 (Chinese Version)](https://sy
 - Nov 2023：One-Star Volunteer of Haidian District Volunteer Service
 - Nov 2023：Outstanding Volunteer of Beihang University for the 2022-2023 Academic Year
 - Nov 2023：Meritorious Student of Beihang University for the 2022-2023 Academic Year
-- Nov 2021：Meritorious Student of Beihang University for the 2021-2022 Academic Year
-- Nov 2023：Meritorious Student of Beihang University for the 2020-2021 Academic Year
-- Jun 2022：Outstanding Communist Youth League Member of Beihang University for the 2020-2021 Academic Year
+- Nov 2022：Meritorious Student of Beihang University for the 2021-2022 Academic Year
+- Nov 2021：Meritorious Student of Beihang University for the 2020-2021 Academic Year
+- Jun 2021：Outstanding Communist Youth League Member of Beihang University for the 2020-2021 Academic Year
 
 ## Services
 
