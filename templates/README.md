@@ -1,1 +1,0 @@
-This directory is including templates for posts' layouts or something.
