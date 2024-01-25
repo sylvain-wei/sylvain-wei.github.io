@@ -1,5 +1,5 @@
 ---
-title: "Notes for <RAG for LLM: A Survey> by Tongji & Fudan"
+title: "Notes for A Survey of RAG LLMs"
 hidden: true
 last_modified_at: 2024-01-26
 tag: RAG LLM
@@ -7,14 +7,15 @@ author: Shaohang Wei
 date: 2024-01-25
 ---
 
-Author: Yunfan Gao et al.; Institute: Tongji University & Fudan University
-Time: 2023.12
+- Paper: [Retrieval-Augmented Generation for Large Language Models: A Survey](https://arxiv.org/abs/2312.10997)
+- Author: Yunfan Gao et al.; *Institute: Tongji University & Fudan University*
+- Time: 2023.12
 
 # Outline
 
 ## Roadmap of RAG
 
-![image-20240126000850692](../../images/2024-01-25-Retrieval-Augmented%20Generation%20for%20LLM_%20A%20%20Survey/image-20240126000850692.png)
+![image-20240126000850692](../../images/2024-01-25-note-for-RAG-LLM-survey/image-20240126000850692.png)
 
 - 2017(transformer): assimilating additional knowledge through Pre-Training Models(PTM) to augment language models. Main direction: optimizing _pre-training_ methodologies.
 - Post 2023(chatgpt is born): the lion's share of RAG endeavors concentrated on _inference_, with a miority dedicated to _fine-tunnig_ proccesses.
@@ -24,7 +25,7 @@ Time: 2023.12
 
 ## Definition of RAG
 
-![image-20240126000907755](../../images/2024-01-25-Retrieval-Augmented%20Generation%20for%20LLM_%20A%20%20Survey/image-20240126000907755.png)
+![image-20240126000907755](../../images/2024-01-25-note-for-RAG-LLM-survey/image-20240126000907755.png)
 
 
 
