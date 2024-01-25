@@ -201,6 +201,7 @@ Apart from the reference, this post is also inspired a lot from:
 Many thanks to their work, surveys on previous work and valuable thinkings to this direction. The literature review is necessarily incomplete as the literature on domain adaptation is huge (even though I only focus on parsing and tagging). I will appreciate it if you could give some feedbacks and suggestions after reading this post :)
 
 [^1]: Kevin Gimpel, Nathan Schneider, Brendan O’Connor, Dipanjan Das, Daniel Mills, Jacob Eisenstein, Michael Heilman, Dani Yogatama, Jeffrey Flanigan, and Noah A. Smith. 2011. Part-of-speech tagging for twitter: Annotation, features, and experiments. In Proc. of ACL.
+
 [^2]:  Lingpeng Kong, Nathan Schneider, Swabha Swayamdipta, Archna Bhatia, Chris Dyer, and Noah A. Smith. 2014. A Dependency Parser for Tweets. In Proc. of EMNLP.
 [^3]:Hara, T., Miyao, Y. & Tsujii, J. 2005. Adapting a Probabilistic Disambiguation Model of an HPSG Parser to a New Domain. In R. Dale, K.-F. Wong, J. Su & O. Y. Kwong (Eds.), Natural Language Processing IJCNLP 2005 (Vol. 3651, p. 199-210). Springer Berlin / Heidelberg.
 [^4]:Daume III, H. 2007. Frustratingly Easy Domain Adaptation. In ´ Proceedings of the 45th Meeting of the Association for Computational Linguistics. Prague, Czech Republic: Association for Computational Linguistics.

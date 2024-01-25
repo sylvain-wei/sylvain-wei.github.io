@@ -23,6 +23,8 @@ date: 2024-01-25
 
 <u>By the way</u>, the concept of RAG is originally proposed in Mid-2020[^lewis2020].
 
+Testing[^2]!!
+
 ## Definition of RAG
 
 ![image-20240126000907755](../../images/2024-01-25-note-for-RAG-LLM-survey/image-20240126000907755.png)
@@ -30,6 +32,4 @@ date: 2024-01-25
 
 
 [^lewis2020]:Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich K ̈ uttler, Mike Lewis, Wen-tau Yih, Tim Rockt ̈ aschel, et al. Retrieval-augmented generation for knowledge-intensive nlp tasks. Advances in Neural Information Processing Systems, 33:9459–9474, 2020.
-
-
-
+[^2]:job
