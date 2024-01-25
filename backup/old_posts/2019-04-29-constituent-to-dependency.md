@@ -53,7 +53,9 @@ Most of the relations in the Universal Dependencies can be added with syntactic 
 parsers does not contain these empty nodes.
 
 [^1]: Owen Rambow, Cassandre Creswell, Rachel Szekely, Harriet Taber, and Marilyn Walker. A dependency treebank for english. In Proceedings of LREC’02, 2002.
+
 [^2]:  M. Cmejrek, J. Curín, and J. Havelka. Prague czech-english dependency treebank: Any hopes for a common annotation scheme? In HLT-NAACL’04 workshop on Frontiers in Corpus Annotation, pages 47–54, 2004.
+
 [^3]:Joakim Nivre, Johan Hall, and Jens Nilsson. 2006. MaltParser: A data-driven parser generator for dependency parsing. In Proceedings of LREC2006.
 [^4]:Johansson, R., & Nugues, P. 2007. Extended constituent-to-dependency conversion for English. In *Proceedings of the 16th Nordic Conference of Computational Linguistics (NODALIDA 2007)* (pp. 105-112).
 [^5]:Choi, J. D., & Palmer, M. 2010. Robust constituent-to-dependency conversion for English. In *Proceedings of the 9th International Workshop on Treebanks and Linguistic Theories (TLT’9)* (pp. 55-66).

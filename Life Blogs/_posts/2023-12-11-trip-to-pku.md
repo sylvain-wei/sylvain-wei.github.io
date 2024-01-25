@@ -31,3 +31,4 @@ date: 2023-12-11
 简记于此，以记录燕园初雪之行。期待与燕园的未来五年，能与时光雕刻我的学术理想。
 
 <p align="center"><img src="../../images/2023-12-11-trip-to-pku/weiminghu.jpg" width="600px" alt="nothing"/></p>
+
