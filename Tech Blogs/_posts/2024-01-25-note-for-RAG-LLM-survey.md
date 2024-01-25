@@ -21,7 +21,7 @@ date: 2024-01-25
 - Post 2023(chatgpt is born): the lion's share of RAG endeavors concentrated on _inference_, with a miority dedicated to _fine-tunnig_ proccesses.
 - Post GPT-4: RAG's emphasis evolved into a _hybrid_ approach, combining the strengths of RAG and fine-tuning, alongside a dedicated minority continuing the focus on optimizing pre-training methodologies.
 
-*[hightlight]: The concept of RAG is originally proposed in Mid-2020[^lewis2020].*
+<u>By the way</u>, the concept of RAG is originally proposed in Mid-2020[^lewis2020].
 
 ## Definition of RAG
 
