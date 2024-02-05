@@ -1197,6 +1197,20 @@
   file = {D:\Zotero\literature_data\storage\42ZFSVWG\Hu 等 - 2023 - UnifEE Unified Evidence Extraction for Fact Verif.pdf}
 }
 
+@online{hu2024,
+  title = {Benchmarking {{Large Language Models}} in {{Complex Question Answering Attribution}} Using {{Knowledge Graphs}}},
+  author = {Hu, Nan and Chen, Jiaoyan and Wu, Yike and Qi, Guilin and Bi, Sheng and Wu, Tongtong and Pan, Jeff Z.},
+  date = {2024-01-25},
+  eprint = {2401.14640},
+  eprinttype = {arxiv},
+  eprintclass = {cs},
+  url = {http://arxiv.org/abs/2401.14640},
+  urldate = {2024-02-01},
+  abstract = {The attribution of question answering is to provide citations for supporting generated statements, and has attracted wide research attention. The current methods for automatically evaluating the attribution, which are often based on Large Language Models (LLMs), are still inadequate, particularly in recognizing subtle differences between attributions, and complex relationships between citations and statements. To compare these attribution evaluation methods and develop new ones, we introduce a set of fine-grained categories (i.e., supportive, insufficient, contradictory and irrelevant) for measuring the attribution, and develop a Complex Attributed Question Answering (CAQA) benchmark by leveraging knowledge graphs (KGs) for automatically generating attributions of different categories to question-answer pairs. Our analysis reveals that existing evaluators perform poorly under fine-grained attribution settings and exhibit weaknesses in complex citation-statement reasoning. Our CAQA benchmark, validated with human annotations, emerges as a promising tool for selecting and developing LLM attribution evaluators.},
+  pubstate = {preprint},
+  keywords = {Computer Science - Computation and Language}
+}
+
 @online{huang2019,
   title = {{{GPipe}}: {{Efficient Training}} of {{Giant Neural Networks}} Using {{Pipeline Parallelism}}},
   shorttitle = {{{GPipe}}},
@@ -2567,24 +2581,6 @@
   keywords = {Computer Science - Artificial Intelligence,Computer Science - Computation and Language}
 }
 
-@inproceedings{tao2022,
-  title = {Revisiting {{Graph}} Based {{Social Recommendation}}: {{A Distillation Enhanced Social Graph Network}}},
-  shorttitle = {Revisiting {{Graph}} Based {{Social Recommendation}}},
-  booktitle = {Proceedings of the {{ACM Web Conference}} 2022},
-  author = {Tao, Ye and Li, Ying and Zhang, Su and Hou, Zhirong and Wu, Zhonghai},
-  date = {2022-04-25},
-  pages = {2830--2838},
-  publisher = {{ACM}},
-  location = {{Virtual Event, Lyon France}},
-  doi = {10.1145/3485447.3512003},
-  url = {https://dl.acm.org/doi/10.1145/3485447.3512003},
-  urldate = {2023-06-25},
-  eventtitle = {{{WWW}} '22: {{The ACM Web Conference}} 2022},
-  isbn = {978-1-4503-9096-5},
-  langid = {english},
-  file = {D:\Zotero\literature_data\storage\7SMNDANT\Tao 等 - 2022 - Revisiting Graph based Social Recommendation A Di.pdf}
-}
-
 @inproceedings{thakoor2021,
   title = {Bootstrapped {{Representation Learning}} on {{Graphs}}},
   author = {Thakoor, Shantanu and Tallec, Corentin and Azar, Mohammad Gheshlaghi and Munos, Remi and Veličković, Petar and Valko, Michal},
@@ -3428,6 +3424,14 @@
   file = {D:\Zotero\literature_data\storage\73IWE3HV\Zellers 等 - 2018 - SWAG A Large-Scale Adversarial Dataset for Ground.pdf}
 }
 
+@article{zeng,
+  title = {{{MAPLE}}: {{Micro Analysis}} of {{Pairwise Language Evolution}} for {{Few-Shot Claim Verification}}},
+  author = {Zeng, Xia and Zubiaga, Arkaitz},
+  abstract = {Claim verification is an essential step in the automated fact-checking pipeline which assesses the veracity of a claim against a piece of evidence. In this work, we explore the potential of few-shot claim verification, where only very limited data is available for supervision. We propose MAPLE (Micro Analysis of Pairwise Language Evolution), a pioneering approach that explores the alignment between a claim and its evidence with a small seq2seq model and a novel semantic measure. Its innovative utilization of micro language evolution path leverages unlabelled pairwise data to facilitate claim verification while imposing low demand on data annotations and computing resources. MAPLE demonstrates significant performance improvements over SOTA baselines SEED, PET and LLaMA 2 across three factchecking datasets: FEVER, Climate FEVER, and SciFact. Data and code are available here.},
+  langid = {english},
+  file = {D:\Zotero\literature_data\storage\UEUWWHIK\Zeng 和 Zubiaga - MAPLE Micro Analysis of Pairwise Language Evoluti.pdf}
+}
+
 @online{zeng2021,
   title = {{{PanGu-}}\$\textbackslash alpha\$: {{Large-scale Autoregressive Pretrained Chinese Language Models}} with {{Auto-parallel Computation}}},
   shorttitle = {{{PanGu-}}\$\textbackslash alpha\$},
@@ -3719,6 +3723,21 @@
   file = {D\:\\Zotero\\literature_data\\storage\\GGHTFKSK\\Zhao 等 - 2023 - A Survey of Large Language Models.pdf;D\:\\Zotero\\literature_data\\storage\\BZQHR55M\\2303.html}
 }
 
+@online{zhao2023c,
+  title = {A {{Survey}} of {{Large Language Models}}},
+  author = {Zhao, Wayne Xin and Zhou, Kun and Li, Junyi and Tang, Tianyi and Wang, Xiaolei and Hou, Yupeng and Min, Yingqian and Zhang, Beichen and Zhang, Junjie and Dong, Zican and Du, Yifan and Yang, Chen and Chen, Yushuo and Chen, Zhipeng and Jiang, Jinhao and Ren, Ruiyang and Li, Yifan and Tang, Xinyu and Liu, Zikang and Liu, Peiyu and Nie, Jian-Yun and Wen, Ji-Rong},
+  date = {2023-11-24},
+  eprint = {2303.18223},
+  eprinttype = {arxiv},
+  eprintclass = {cs},
+  url = {http://arxiv.org/abs/2303.18223},
+  urldate = {2024-02-04},
+  abstract = {Language is essentially a complex, intricate system of human expressions governed by grammatical rules. It poses a significant challenge to develop capable AI algorithms for comprehending and grasping a language. As a major approach, language modeling has been widely studied for language understanding and generation in the past two decades, evolving from statistical language models to neural language models. Recently, pre-trained language models (PLMs) have been proposed by pre-training Transformer models over large-scale corpora, showing strong capabilities in solving various NLP tasks. Since researchers have found that model scaling can lead to performance improvement, they further study the scaling effect by increasing the model size to an even larger size. Interestingly, when the parameter scale exceeds a certain level, these enlarged language models not only achieve a significant performance improvement but also show some special abilities that are not present in small-scale language models. To discriminate the difference in parameter scale, the research community has coined the term large language models (LLM) for the PLMs of significant size. Recently, the research on LLMs has been largely advanced by both academia and industry, and a remarkable progress is the launch of ChatGPT, which has attracted widespread attention from society. The technical evolution of LLMs has been making an important impact on the entire AI community, which would revolutionize the way how we develop and use AI algorithms. In this survey, we review the recent advances of LLMs by introducing the background, key findings, and mainstream techniques. In particular, we focus on four major aspects of LLMs, namely pre-training, adaptation tuning, utilization, and capacity evaluation. Besides, we also summarize the available resources for developing LLMs and discuss the remaining issues for future directions.},
+  pubstate = {preprint},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Computation and Language},
+  file = {D\:\\Zotero\\literature_data\\storage\\K9AL3BUM\\Zhao 等 - 2023 - A Survey of Large Language Models.pdf;D\:\\Zotero\\literature_data\\storage\\WBKJPD69\\2303.html}
+}
+
 @online{zhong2023,
   title = {Poisoning {{Retrieval Corpora}} by {{Injecting Adversarial Passages}}},
   author = {Zhong, Zexuan and Huang, Ziqing and Wettig, Alexander and Chen, Danqi},
@@ -3886,6 +3905,16 @@
   abstract = {腾讯文档-在线文档},
   langid = {zh\_CN},
   file = {D:\Zotero\literature_data\storage\AT9BWH39\DR1ZtZ3JTZWJDa2x0.html}
+}
+
+@online{zotero-2773,
+  title = {{{LLMSurvey}}/Assets/{{LLM}}\_{{Survey}}\_{{Chinese}}.Pdf at Main · {{RUCAIBox}}/{{LLMSurvey}}},
+  url = {https://github.com/RUCAIBox/LLMSurvey/blob/main/assets/LLM_Survey_Chinese.pdf},
+  urldate = {2024-02-04},
+  abstract = {The official GitHub page for the survey paper "A Survey of Large Language Models". - RUCAIBox/LLMSurvey},
+  langid = {english},
+  organization = {{GitHub}},
+  file = {D:\Zotero\literature_data\storage\UF6TTJZ4\LLM_Survey_Chinese.html}
 }
 
 @online{zotero-372,
