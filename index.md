@@ -40,7 +40,6 @@ My goal is to enable machines to **truly understand human natural language**. Th
 - **Beihang University**
   - *Sept. 2021 - Jun. 2024* 
   - B.Eng. in **Artificial Intelligence**
-  
   - *Sept. 2020 - Aug. 2021* 
   - B.Eng. in **Information Science, Shie College**
 
