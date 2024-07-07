@@ -5,34 +5,38 @@ excerpt: "Shaohang Wei's homepage"
 search_omit: true
 ---
 
-I am a senior student in Artificial Intelligence at **Beihang University**. Starting from the fall of 2024, I will officially enroll as a Ph.D. student in [Institute of Computational Linguistic (ICL)](https://icl.pku.edu.cn) at **Peking University**. 
+<!-- I am a senior student in Artificial Intelligence at **Beihang University**. Starting from the fall of 2024, I will officially enroll as a Ph.D. student in [Institute of Computational Linguistic (ICL)](https://icl.pku.edu.cn) at **Peking University**.  -->
 
-I will continue to update my blogs on the web with my technical insights and personal reflections. Your support and attention are greatly appreciated! If you are interested in any aspect of me, please feel free to reach out to me via **email** - *weish@buaa.edu.cn* or **WeChat** - *sylvain4ai*. 
+I am a first-year Ph.D. student in [Institute of Computational Linguistic (ICL)](https://icl.pku.edu.cn) at Peking University.
 
-## Research Interests
+<!-- I will continue to update my blogs on the web with my technical insights and personal reflections. Your support and attention are greatly appreciated! If you are interested in any aspect of me, please feel free to reach out to me via **email** - *weish@buaa.edu.cn* or **WeChat** - *sylvain4ai*.  -->
 
-*<font color='blue'>[Highlight]</font> I am actively looking for a research internship opportunity in NLP/LLM from Mar to Aug 2024. Please contact me if you have any leads!*
+## Research Topics
 
-- Interpretability and Mechanisms of Large Language Models
-- Natural Language Understanding
-- Self-supervised Learning
-- Graph Representation Learning
+<!-- *<font color='blue'>[Highlight]</font> I am actively looking for a research internship opportunity in NLP/LLM from Mar to Aug 2024. Please contact me if you have any leads!* -->
+My destination is to make machines **really** understand the natural language of human beings, which is in need of deep understanding and exploration of white-box and visible process of decision. And only a model that can dynamically **LEARN** and update world knowledge and that can really reason like a human, can work as an reliable intelligence.
 
-My research interests are interdisciplinary, with a primary focus on (1) the evaluation, mechanisms, and interpretability of **large language models (LLM)**. I also specialize in (2) developing advanced techniques for **natural language understanding (NLU)**. Additionally, I have a strong interest in *self-supervised learning (SSL)* and *graph representation learning*. I am driven by a passion for exploring the fundamental principles that underlie artificial intelligence technologies.
+- Interpretability and Mechanisms of Large Language Models.
+- Reliable Artificial Intelligence.
+- Multi-modal Large Language Models.
 
 ## Education
 
-- Beihang University  
-  *Sept. 2021 - Present*  
-  B.Eng. in **Artificial Intelligence**
+- **Peking University**
+  *Jul. 2024 - Present*
+  Ph.D. Stu. in *Computer Science and Technology, NLP*
 
-- Beihang University  
+- **Beihang University**
+  *Sept. 2021 - Jun. 2024*
+  B.Eng. in *Artificial Intelligence*
   *Sept. 2020 - Aug. 2021*  
-  B.Eng. in **Information Science**
+  B.Eng. in *Information Science, Shie College*
 
 ## News and Updates
 
-- **Sept 2023：**Formally provisionally admitted by the School of Computer Science at Peking University.
+- **Jun 2024：**Our work on Medical Calculation using LLMs: **MedCalc: Bridging Medical Calculator and LLM Agent with Nested Tool Calling** is done. (Coming soon.)
+
+- **May 2024：**Our work on automatic pair-wise evaluation for T2I models: **MindScore: Quantifying Human Preference for Text-to-Image Generation through Multi-view Lens** is done. (Coming soon.)
 
 - **Jun 2023：**Participated in research program on evaluation of text-to-image models, collaborated with [FlagEval](https://github.com/FlagOpen/FlagEval) Group at [北京智源人工智能研究院 (BAAI)](https://www.baai.ac.cn/).
 
