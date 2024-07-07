@@ -32,16 +32,17 @@ My goal is to enable machines to **truly understand human natural language**. Th
 - **Apr 2023：**Participated in research program on Graph Contrastive Learning, at MAGIC Group, ACT Lab at Beihang University.
 
 ## Education
+
 - **Peking University**
-  *Jul. 2024 - Present* 
-  Ph.D. Stu. in **Computer Science and Technology, NLP**
+  - *Jul. 2024 - Present* 
+  - Ph.D. Stu. in **Computer Science and Technology, NLP**
 
 - **Beihang University**
-  *Sept. 2021 - Jun. 2024* 
-  B.Eng. in **Artificial Intelligence**
+  - *Sept. 2021 - Jun. 2024* 
+  - B.Eng. in **Artificial Intelligence**
   
-  *Sept. 2020 - Aug. 2021* 
-  B.Eng. in **Information Science, Shie College**
+  - *Sept. 2020 - Aug. 2021* 
+  - B.Eng. in **Information Science, Shie College**
 
 <div style="text-align: center;">
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hello! This is my first post on Twitter!😃</p>&mdash; veison (@veison02) <a href="https://twitter.com/veison02/status/1748184433642164650?ref_src=twsrc%5Etfw">January 19, 2024</a></blockquote>
