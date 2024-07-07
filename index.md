@@ -14,7 +14,7 @@ I am a first-year Ph.D. student in [Institute of Computational Linguistic (ICL)]
 ## Research Topics
 
 <!-- *<font color='blue'>[Highlight]</font> I am actively looking for a research internship opportunity in NLP/LLM from Mar to Aug 2024. Please contact me if you have any leads!* -->
-My destination is to make machines **really** understand the natural language of human beings, which is in need of deep understanding and exploration of white-box and visible process of decision. And only a model that can dynamically **LEARN** and update world knowledge and that can really reason like a human, can work as an reliable intelligence.
+My goal is to enable machines to **truly understand human natural language**. This requires a deep exploration of transparent, white-box decision-making processes. Only a model that can dynamically learn, update its world knowledge, and reason like a human can function as a reliable intelligence.
 
 - Interpretability and Mechanisms of Large Language Models.
 - Reliable Artificial Intelligence.
@@ -23,12 +23,15 @@ My destination is to make machines **really** understand the natural language of
 ## Education
 
 - **Peking University**
+  
   *Jul. 2024 - Present*
   Ph.D. Stu. in *Computer Science and Technology, NLP*
 
 - **Beihang University**
+  
   *Sept. 2021 - Jun. 2024*
   B.Eng. in *Artificial Intelligence*
+
   *Sept. 2020 - Aug. 2021*  
   B.Eng. in *Information Science, Shie College*
 
