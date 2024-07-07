@@ -19,7 +19,7 @@ locale: en-US
 title: Shaohang Wei
 my_site_title: Shaohang Wei
 name: Shaohang Wei
-description: "weish[at]buaa.edu"
+description: "weish[at]pku.edu"
 baseurl: #/blog # the subpath of your site, e.g. "/blog"
 #url: http://127.0.0.1:4000
 url: https://sylvain-wei.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
@@ -95,7 +95,7 @@ defaults:
 author:
   name: Shaohang Wei
   picture:  /images/shaohangwei2.jpg
-  email: weish@buaa.edu.cn
+  email: veison1006@outlook.com
   twitter: veison02
   # facebook: zi.lin.12935
   github: sylvain-wei
@@ -109,9 +109,9 @@ author:
     - title: Instagram
       url: https://www.instagram.com/sylvain_1006
       icon: fa-brands fa-instagram
-    - title: Zhihu
-      url: https://www.zhihu.com/people/sylvain02
-      icon: fa-brands fa-zhihu
+    # - title: Zhihu
+    #   url: https://www.zhihu.com/people/sylvain02
+    #   icon: fa-brands fa-zhihu
     - title: Email
       url: https://outlook.live.com
       icon: fa-solid fa-at
@@ -128,9 +128,9 @@ footer_links:
   - title: Instagram
     url: https://www.instagram.com/sylvain_1006
     icon: fa-brands fa-instagram
-  - title: Zhihu
-    url: https://www.zhihu.com/people/sylvain02
-    icon: fa-brands fa-zhihu
+  # - title: Zhihu
+  #   url: https://www.zhihu.com/people/sylvain02
+  #   icon: fa-brands fa-zhihu
   - title: Email
     url: https://outlook.live.com
     icon: fa-solid fa-at
