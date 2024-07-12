@@ -7,7 +7,7 @@ search_omit: true
 
 <!-- I am a senior student in Artificial Intelligence at **Beihang University**. Starting from the fall of 2024, I will officially enroll as a Ph.D. student in [Institute of Computational Linguistic (ICL)](https://icl.pku.edu.cn) at **Peking University**.  -->
 
-I will be starting as a first-year Ph.D. student in [Institute of Computational Linguistic (ICL)](https://icl.pku.edu.cn) at Peking University. You can reach out to me via 「shaohang[at]stu.pku.edu.cn」* or 「veison1006[at]outlook.com」.
+I will be starting as a first-year Ph.D. student in [Institute of Computational Linguistic (ICL)](https://icl.pku.edu.cn) at Peking University. Please feel free to reach out to me via Email, **shaohang[at]stu.pku.edu.cn** or **veison1006[at]outlook.com**.
 
 <!-- I will continue to update my blogs on the web with my technical insights and personal reflections. Your support and attention are greatly appreciated! If you are interested in any aspect of me, please feel free to reach out to me via **email** - *weish@buaa.edu.cn* or **WeChat** - *sylvain4ai*.  -->
 
