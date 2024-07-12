@@ -19,7 +19,7 @@ locale: en-US
 title: Shaohang Wei
 my_site_title: Shaohang Wei
 name: Shaohang Wei
-description: "weish[at]pku.edu"
+description: "shaohang[at]pku.edu"
 baseurl: #/blog # the subpath of your site, e.g. "/blog"
 #url: http://127.0.0.1:4000
 url: https://sylvain-wei.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
