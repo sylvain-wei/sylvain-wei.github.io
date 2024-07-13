@@ -7,11 +7,11 @@ search_omit: true
 
 <!-- I am a senior student in Artificial Intelligence at **Beihang University**. Starting from the fall of 2024, I will officially enroll as a Ph.D. student in [Institute of Computational Linguistic (ICL)](https://icl.pku.edu.cn) at **Peking University**.  -->
 
-I will be starting as a first-year Ph.D. student in [Institute of Computational Linguistic (ICL)](https://icl.pku.edu.cn) at Peking University.
+I will be starting as a Ph.D. student in [Institute of Computational Linguistic (ICL)](https://icl.pku.edu.cn) at Peking University.
 
 Find me on [Twitter](https://twitter.com/veison02), [GitHub](https://github.com/sylvain-wei).
 
-Email: <span style="font-family: 'Courier New', Courier, monospace;">[firstname]@stu.pku.edu.cn</span>.
+Email: <span style="font-family: 'Courier New', Courier, monospace;">shaohang@stu.pku.edu.cn</span>.
 <!-- I will continue to update my blogs on the web with my technical insights and personal reflections. Your support and attention are greatly appreciated! If you are interested in any aspect of me, please feel free to reach out to me via **email** - *weish@buaa.edu.cn* or **WeChat** - *sylvain4ai*.  -->
 
 ## Research Topics
