@@ -14,7 +14,7 @@ I will be starting as a first-year Ph.D. student in [Institute of Computational 
 ## Research Topics
 
 <!-- *<font color='blue'>[Highlight]</font> I am actively looking for a research internship opportunity in NLP/LLM from Mar to Aug 2024. Please contact me if you have any leads!* -->
-My goal is to enable machines to **truly understand human natural language**. This requires a deep exploration of transparent, white-box decision-making processes. Only a model that can dynamically learn, update its world knowledge, and reason like a human can function as a reliable intelligence.
+My goal is to enable machines to **truly understand human natural language**. This requires a deep exploration of transparent, white-box decision-making processes. Only a model that can dynamically learn, update its world knowledge, and reason like a human can function as a reliable intelligence. Additionally, I am interested in how to augment LLMs with external retrieval components to alleviate the hallucination problem and make them more trustworthy.
 
 - Interpretability and Mechanisms of Large Language Models.
 - Reliable Artificial Intelligence.
