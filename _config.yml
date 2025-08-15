@@ -1,8 +1,8 @@
-remote_theme: ankitsultana/researcher@gem
+remote_theme: ankitsultana/researcher
 plugins:
   - jekyll-remote-theme
 title: Researcher
-url: "https://ankitsultana.com"
+url: "https://sylvain-wei.github.io"
 baseurl: "/researcher"
 
 markdown: kramdown
