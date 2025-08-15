@@ -3,7 +3,7 @@ plugins:
   - jekyll-remote-theme
 title: Researcher
 url: "https://sylvain-wei.github.io"
-baseurl: "/researcher"
+baseurl: ""
 
 markdown: kramdown
 #ins_logo: "./bits-logo.png"
