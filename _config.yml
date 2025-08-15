@@ -1,7 +1,7 @@
 remote_theme: ankitsultana/researcher
 plugins:
   - jekyll-remote-theme
-title: Researcher
+title: Shaohang Wei
 url: "https://sylvain-wei.github.io"
 baseurl: ""
 
