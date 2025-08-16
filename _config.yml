@@ -12,7 +12,7 @@ tracking_id: #
 
 footer: yes
 footer_url: ""
-footer_text: ""
+footer_text: "Update Date: 2025-08-16"
 
 sass:
     style: compressed
