@@ -8,7 +8,9 @@ layout: default
 
 I am a first-year Ph.D. student in Computer Science at [Peking University](https://www.pku.edu.cn), advised by Prof. [Houfeng Wang](https://scholar.google.com/citations?user=YCX4y1gAAAAJ&hl=zh-CN&oi=ao).
 
-[GitHub](https://github.com/sylvain-wei) / [Twitter/X](https://x.com/veison02) / [Google Scholar](https://scholar.google.com/citations?user=wuzIV_kAAAAJ&hl=zh-CN&oi=ao) / [E-mail](shaohang@stu.pku.edu.cn): shaohang[at]stu.pku.edu.cn
+[GitHub](https://github.com/sylvain-wei) / [Twitter/X](https://x.com/veison02) / [Google Scholar](https://scholar.google.com/citations?user=wuzIV_kAAAAJ&hl=zh-CN&oi=ao) / [REDNote小紅書](https://www.xiaohongshu.com/user/profile/657c1a1200000000190124ce)
+
+E-mail: shaohang[at]stu.pku.edu.cn
 
 ## Research Interest
 
