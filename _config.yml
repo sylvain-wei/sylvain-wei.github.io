@@ -5,6 +5,9 @@ title: Shaohang Wei
 url: "https://sylvain-wei.github.io"
 baseurl: ""
 
+favicon: true
+favicon_location: /favicon.ico
+
 markdown: kramdown
 #ins_logo: "./bits-logo.png"
 
