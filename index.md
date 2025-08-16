@@ -6,13 +6,13 @@ layout: default
 
 <img class="profile-picture" src="shaohang.jpg">
 
-Hi! I am a junior year student of B.E. Computer Science at Birla Institute of Technology and Science, Pilani.
+I am a first-year Ph.D. student in Computer Science at [Peking University](https://www.pku.edu.cn), advised by Prof. [Houfeng Wang](https://scholar.google.com/citations?user=YCX4y1gAAAAJ&hl=zh-CN&oi=ao).
 
-This is a jekyll based resume template. You can find the full source code on [GitHub](https://github.com/bk2dcradle/researcher)
+[GitHub](https://github.com/sylvain-wei) [Twitter / X](https://x.com/veison02) [Google Scholar](https://scholar.google.com/citations?user=wuzIV_kAAAAJ&hl=zh-CN&oi=ao) [E-mail](shaohang@stu.pku.edu.cn)
 
 ## Research Interest
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam finibus ipsum ac erat aliquam dapibus. Vestibulum vehicula placerat ex, a consectetur odio pharetra quis. Mauris id urna ante. Fusce pharetra diam ac nisi aliquet, vel egestas ex iaculis. Pellentesque laoreet cursus tellus sed pellentesque. Praesent a rhoncus elit. Nunc ipsum nisl, consequat sit amet pretium quis, gravida id ipsum.
+My research interests broadly span language modeling, with a particular focus on post-training, alignment, and reasoning. I strive to understand the learning behaviors of LLMs and seek ways to push the boundaries of reasoning ability and enable LLMs to generalize across multiple domains.
 
 ## Publications
 
