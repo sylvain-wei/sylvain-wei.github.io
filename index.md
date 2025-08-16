@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Shaohang Wei
 ---
 
 ## About Me
