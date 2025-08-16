@@ -12,7 +12,7 @@ tracking_id: #
 
 footer: yes
 footer_url: ""
-footer_text: "Page design by Ankit Sultana"
+footer_text: ""
 
 sass:
     style: compressed
