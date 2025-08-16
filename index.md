@@ -8,11 +8,13 @@ layout: default
 
 I am a first-year Ph.D. student in Computer Science at [Peking University](https://www.pku.edu.cn), advised by Prof. [Houfeng Wang](https://scholar.google.com/citations?user=YCX4y1gAAAAJ&hl=zh-CN&oi=ao).
 
-[GitHub](https://github.com/sylvain-wei) [Twitter / X](https://x.com/veison02) [Google Scholar](https://scholar.google.com/citations?user=wuzIV_kAAAAJ&hl=zh-CN&oi=ao) [E-mail](shaohang@stu.pku.edu.cn)
+[GitHub](https://github.com/sylvain-wei) | [Twitter/X](https://x.com/veison02) | [Google Scholar](https://scholar.google.com/citations?user=wuzIV_kAAAAJ&hl=zh-CN&oi=ao) | [E-mail](shaohang@stu.pku.edu.cn)
 
 ## Research Interest
 
-My research interests broadly span language modeling, with a particular focus on post-training, alignment, and reasoning. I strive to understand the learning behaviors of LLMs and seek ways to push the boundaries of reasoning ability and enable LLMs to generalize across multiple domains.
+My research interests broadly span language modeling, with a particular focus on *post-training, alignment, and reasoning*. 
+
+**I strive to understand the learning behaviors of LLMs, and seek ways to push the boundaries of reasoning ability and enable LLMs to generalize across multiple domains.**
 
 ## Publications
 
