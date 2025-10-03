@@ -22,7 +22,7 @@ I strive to **understand** the learning behaviors of LLMs, and seek ways to **pu
 ## Publications
 
 1. **TIME: A Multi-level Benchmark for Temporal Reasoning of LLMs in Real-World Scenarios** __Shaohang Wei__, Wei Li, Feifan Song, Wen Luo, Tianyi Zhuang, Haochen Tan, Zhijiang Guo, Houfeng Wang
- [NeurIPS 2025 Spotlight (D&B Track)](https://arxiv.org/abs/2505.12891) / [Code](https://github.com/sylvain-wei/TIME) / [HF Dataset](https://huggingface.co/datasets/SylvainWei/TIME)
+ [NeurIPS 2025 Spotlight (D&B Track)](https://arxiv.org/abs/2505.12891) / [Code](https://github.com/sylvain-wei/TIME) / [HF Dataset](https://huggingface.co/datasets/SylvainWei/TIME) / [Page](https://sylvain-wei.github.io/TIME/)
 2. **CiteCheck: Towards Accurate Citation Faithfulness Detection** Ziyao Xu, __Shaohang Wei__, Zhuoheng Han, Jing Jin, Zhe Yang, Xiaoguang Li, Haochen Tan, Zhijiang Guo, Houfeng Wang [Arxiv 25.02](https://arxiv.org/abs/2502.10881) / [Code & Dataset](https://github.com/xzy-xzy/CiteCheck)
 3. **Well Begun is Half Done: Low-resource Preference Alignment by Weak-to-Strong Decoding** Feifan Song, __Shaohang Wei__, Wen Luo, Yuxuan Fan, Tianyu Liu, Guoyin Wang, Houfeng Wang [ACL 2025 Findings](https://arxiv.org/abs/2506.07434) / [Code](https://github.com/F2-Song/Weak-to-Strong-Decoding) / [HF Dataset](https://huggingface.co/datasets/songff/GenerAlign) / [Models](https://huggingface.co/songff/Pilot-3B)
 4. **Odysseus Navigates the Sirens' Song: Dynamic Focus Decoding for Factual and Diverse Open-Ended Text Generation** Wen Luo, Feifan Song, Wei Li, Guangyue Peng, __Shaohang Wei__, Houfeng Wang [ACL 2025 Main](https://arxiv.org/abs/2506.07434) / [Code](https://github.com/lllllw-222/Siren-DFD)
