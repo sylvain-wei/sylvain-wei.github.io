@@ -28,5 +28,6 @@ I strive to **understand** the learning behaviors of LLMs, and seek ways to **pu
 4. **Odysseus Navigates the Sirens' Song: Dynamic Focus Decoding for Factual and Diverse Open-Ended Text Generation** Wen Luo, Feifan Song, Wei Li, Guangyue Peng, __Shaohang Wei__, Houfeng Wang [ACL 2025 Main](https://arxiv.org/abs/2506.07434) / [Code](https://github.com/lllllw-222/Siren-DFD)
 5. **MeNTi: Bridging Medical Calculator and LLM Agent with Nested Tool Calling** Yakun Zhu, __Shaohang Wei__, Xu Wang, Kui Xue, Xiaofan Zhang, Shaoting Zhang [NAACL 2025 Main](https://aclanthology.org/2025.naacl-long.263/) / [Code](https://github.com/shzyk/MENTI) / [HF Dataset](https://huggingface.co/datasets/shzyk/CalcQA)
 6. **MindScore: Quantifying Human Preference for Text-to-image Generation Through Multi-view Lens** Yiqi Tong\*, Jiarui Zhang\*, __Shaohang Wei\*__, Wei Guo, Fuzhen Zhuang, Deqing Wang, Xi Yang, Richeng Xuan [Science China Information Sciences](https://link.springer.com/article/10.1007/s11432-024-4401-y) / [Code](https://link.springer.com/article/10.1007/s11432-024-4401-y)
+7. **Mitigating Overthinking through Reasoning Shaping** Feifan Song, __Shaohang Wei__, Bofei Gao, Yejie Wang, Wen Luo, Wei Li, Linli Yao, Weimin Xiong, Liang Chen, Tianyu Liu, Houfeng Wang [Arxiv 25.10](https://arxiv.org/abs/2510.09535)
 
 > To know why, to know how.
