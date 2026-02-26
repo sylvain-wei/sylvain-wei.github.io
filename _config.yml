@@ -24,7 +24,7 @@ sass:
 nav:
  - name: "About"
    link: ""
- # - name: "Resume"
-   # link: "resume.pdf"
+ - name: "CV"
+   link: "Shaohang_s_CV_260224.pdf"
  # - name: "Contact"
    # link: "contact"
