@@ -10,6 +10,7 @@ web delivery. No data, labels, legends, or scientific content were changed.
 | `OWPO-ICML2026.webp` | Figure 1 of arXiv:2605.22156 | `fig/fig1.pdf` |
 | `EAPO-ICML2026.webp` | Figure 1 of arXiv:2606.30420 | `figures/intro.pdf` |
 | `VerifierSupportReshaping-2026.webp` | Figure 1 of arXiv:2608.00220 | `figures/fig1_intro.pdf` |
+| `OnlySayWhatYouKnow-2026.webp` | Figure 1 of arXiv:2605.01749 | `fig/intro.pdf` |
 
 The previews remain subject to the licenses and attribution terms of their
 respective papers; their inclusion here does not relicense the paper figures.
