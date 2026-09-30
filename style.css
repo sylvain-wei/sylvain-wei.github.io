@@ -186,7 +186,7 @@ section { margin-top: 2rem; scroll-margin-top: 1.25rem; }
   padding: .85rem 0;
 }
 .publication + .publication { border-top: 1px solid var(--paper-line); }
-.pub-text { min-width: 0; }
+.paper-content { min-width: 0; }
 .publication h3 { font-size: 1.1rem; line-height: 1.4; margin: 0 0 .2rem; font-weight: 500; }
 .publication h3 a { display: block; color: var(--heading); }
 .publication h3 a:hover { color: var(--link); }
