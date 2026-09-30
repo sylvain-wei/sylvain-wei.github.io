@@ -1,0 +1,21 @@
+Asset sources
+
+Font Awesome Free 5.10.2 (matching https://haofeiyu.me/assets/css/all.min.css):
+- envelope.svg: https://raw.githubusercontent.com/FortAwesome/Font-Awesome/5.10.2/svgs/solid/envelope.svg
+- file-alt.svg: https://raw.githubusercontent.com/FortAwesome/Font-Awesome/5.10.2/svgs/solid/file-alt.svg
+- github.svg: https://raw.githubusercontent.com/FortAwesome/Font-Awesome/5.10.2/svgs/brands/github.svg
+- linkedin.svg: https://raw.githubusercontent.com/FortAwesome/Font-Awesome/5.10.2/svgs/brands/linkedin.svg
+- FONT-AWESOME-LICENSE.txt: https://raw.githubusercontent.com/FortAwesome/Font-Awesome/5.10.2/LICENSE.txt
+
+Academicons 1.7.0 (version declared by https://haofeiyu.me/assets/css/academicons.min.css):
+- google-scholar.svg: extracted google-scholar / U+E900 from https://haofeiyu.me/assets/fonts/academicons.svg?v=1.7.0
+- Official project and license statement: https://github.com/jpswalsh/academicons#license
+- Font metadata: copyright James Walsh; license SIL OFL 1.1; source glyph path preserved.
+- ACADEMICONS-LICENSE.txt retains source attribution and SIL OFL 1.1 terms.
+
+Noto Sans italic Latin variable font:
+- CSS: https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@1,400..700&display=swap
+- Font: https://fonts.gstatic.com/s/notosans/v42/o-0ZIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevtuXOm.woff2
+- License is retained in ../fonts/OFL.txt from https://raw.githubusercontent.com/google/fonts/main/ofl/notosans/OFL.txt
+
+Xiaohongshu / REDNote: Simple Icons (CC0), https://github.com/simple-icons/simple-icons/blob/develop/icons/xiaohongshu.svg

@@ -1,76 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shaohang Wei</title>
-  <meta name="description"
-    content="Shaohang Wei is a Ph.D. student in Computer Science at Peking University, working on language modeling, continual learning, and self-evolving LLMs and agents." />
-  <meta name="author" content="Shaohang Wei" />
-  <meta name="keywords"
-    content="Shaohang Wei, language modeling, continual learning, self-evolving LLMs, agents, Peking University, Computer Science" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;480;500&family=Space+Mono&display=swap">
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Shaohang Wei, Ph.D. student at Peking University. Research on data-efficient reinforcement learning, on-policy distillation, mid-training data synthesis, and model evaluation.">
+  <meta name="author" content="Shaohang Wei">
+  <link rel="canonical" href="https://sylvain-wei.github.io/">
+  <meta name="theme-color" content="#fafbfc">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shaohang Wei">
+  <meta property="og:description" content="Reinforcement learning, on-policy distillation, synthetic data, and evaluation. Ph.D. student at Peking University.">
+  <meta property="og:url" content="https://sylvain-wei.github.io/">
   <link rel="icon" type="image/png" href="asset/杭.png">
-  <meta name="theme-color" content="#ffffff">
+  <link rel="preload" href="asset/fonts/nunito-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="asset/fonts/ibm-plex-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261001-homepage">
+  <script src="script.js?v=20261001-homepage" defer></script>
 </head>
-
 <body>
-  <a href="#content" class="skip-link">Skip to content</a>
-  <div class="mobile-header">
-    <a class="mobile-header-name" href="#" data-page="home">Shaohang Wei</a>
-    <button class="mobile-menu-btn" id="menu-toggle" aria-expanded="false" aria-controls="sidebar">Menu</button>
-  </div>
-
-  <div class="container">
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-        <h1><a href="#" data-page="home">Shaohang Wei</a></h1>
+<a href="#about" class="skip-link">Skip to content</a>
+<svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+<symbol id="icon-mail" viewBox="0 0 512 512"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z" fill="currentColor" /></symbol>
+<symbol id="icon-scholar" viewBox="0 0 2048 2048"><path fill="currentColor" transform="translate(0 1755.136) scale(1 -1)" d="M1624.144 1414.115v124.49l90.354 70.538h-977.782l-590.432-513.25h391.57c-0.71-9.714-1.002-18.498-1.002-28.46 0-95.29 33.002-174.11 99.072-237.078 66.070-63.072 147.434-94.39 243.778-94.39 22.506 0 44.574 1.682 66.004 4.682-13.29-29.718-19.998-57.248-19.998-82.936 0-45.144 20.568-93.396 61.564-144.648-179.354-12.208-311.136-44.492-395.14-96.746-48.142-29.71-86.858-67.218-116.070-112.142-29.214-45.254-43.784-93.784-43.784-146.11 0-44.106 9.428-83.822 28.43-119.142s43.784-64.322 74.57-86.784c30.712-22.71 66.144-41.604 106.144-57 39.928-15.286 79.572-26.142 119.136-32.286 39.438-6.136 78.65-9.136 117.512-9.136 61.572 0 123.216 7.928 185.358 23.712 61.996 15.93 120.138 39.504 174.496 70.824 54.214 31.108 98.356 73.538 132.214 126.712 33.784 53.394 50.718 113.394 50.718 179.822 0 50.358-10.284 96.176-30.858 137.786-20.428 41.472-45.43 75.616-75.212 102.144-29.718 26.572-59.428 50.996-89.212 72.996-29.718 22.148-54.858 44.574-75.286 67.716-20.502 23.070-30.786 45.962-30.786 68.498 0 22.498 7.928 44.214 23.844 65.214 15.792 21.072 35.080 41.362 57.644 60.826 22.572 19.426 45.144 40.996 67.642 64.608 22.498 23.53 41.786 54.068 57.644 91.466 15.93 37.39 23.786 79.748 23.786 126.888 0 61.498-11.644 111.82-34.502 152.29-2.714 4.674-5.566 8.244-8.572 13.816l260.148 213.358v-78.256c-33.8-4.25-30.282-24.438-30.282-48.618v-588.192c0-27.238 22.286-49.526 49.526-49.526h18.234c27.238 0 49.526 22.286 49.526 49.526v588.192c0 24.122 3.554 44.288-29.996 48.596zM1133.356 397.071c5.216-3.43 16.932-12.712 35.284-27.604 18.512-14.826 31.072-26.038 37.786-33.894 6.576-7.606 16.362-19.040 29.148-34.502 12.858-15.426 21.57-28.818 26.142-39.928 4.572-11.322 9.216-24.964 13.926-40.894 4.506-15.748 6.788-31.89 6.788-48.282 0-77.934-30.004-135.68-89.856-173.070-60-37.398-131.504-56.108-214.572-56.108-41.998 0-83.214 4.996-123.714 14.606-40.426 9.676-79.14 24.394-116.070 43.894-36.93 19.464-66.64 46.644-89.146 81.356-22.572 34.926-33.858 75.038-33.858 119.998 0 47.178 12.786 88.182 38.502 122.998 25.57 34.86 59.144 61.22 100.718 79.156 41.428 18.038 83.426 30.822 125.996 38.392 42.57 7.782 85.928 11.68 130.004 11.68 20.428 0 36.278-1.148 47.564-3.182 2.078-1.002 13.86-9.464 35.358-25.432 21.504-15.828 34.86-25.578 40.002-29.184zM1118.004 856.855c-33.858-40.5-81.072-60.746-141.502-60.746-54.214 0-101.932 21.782-142.928 65.426-41.142 43.534-70.502 92.928-88.43 148.254-18 55.354-26.998 109.642-26.998 162.962 0 62.602 16.436 115.894 49.284 159.89 32.856 44.112 79.996 66.216 141.43 66.216 54.286 0 102.282-23.032 143.712-69.288 41.574-46.102 71.358-97.888 89.22-155.282 17.928-57.322 26.85-112.136 26.85-164.498 0-61.47-16.926-112.502-50.636-152.934z" /></symbol>
+<symbol id="icon-github" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" fill="currentColor" /></symbol>
+<symbol id="icon-linkedin" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" fill="currentColor" /></symbol>
+<symbol id="icon-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></symbol>
+<symbol id="icon-rednote" viewBox="0 0 24 24"><path d="M22.405 9.879c.002.016.01.02.07.019h.725a.797.797 0 0 0 .78-.972.794.794 0 0 0-.884-.618.795.795 0 0 0-.692.794c0 .101-.002.666.001.777zm-11.509 4.808c-.203.001-1.353.004-1.685.003a2.528 2.528 0 0 1-.766-.126.025.025 0 0 0-.03.014L7.7 16.127a.025.025 0 0 0 .01.032c.111.06.336.124.495.124.66.01 1.32.002 1.981 0 .01 0 .02-.006.023-.015l.712-1.545a.025.025 0 0 0-.024-.036zM.477 9.91c-.071 0-.076.002-.076.01a.834.834 0 0 0-.01.08c-.027.397-.038.495-.234 3.06-.012.24-.034.389-.135.607-.026.057-.033.042.003.112.046.092.681 1.523.787 1.74.008.015.011.02.017.02.008 0 .033-.026.047-.044.147-.187.268-.391.371-.606.306-.635.44-1.325.486-1.706.014-.11.021-.22.03-.33l.204-2.616.022-.293c.003-.029 0-.033-.03-.034zm7.203 3.757a1.427 1.427 0 0 1-.135-.607c-.004-.084-.031-.39-.235-3.06a.443.443 0 0 0-.01-.082c-.004-.011-.052-.008-.076-.008h-1.48c-.03.001-.034.005-.03.034l.021.293c.076.982.153 1.964.233 2.946.05.4.186 1.085.487 1.706.103.215.223.419.37.606.015.018.037.051.048.049.02-.003.742-1.642.804-1.765.036-.07.03-.055.003-.112zm3.861-.913h-.872a.126.126 0 0 1-.116-.178l1.178-2.625a.025.025 0 0 0-.023-.035l-1.318-.003a.148.148 0 0 1-.135-.21l.876-1.954a.025.025 0 0 0-.023-.035h-1.56c-.01 0-.02.006-.024.015l-.926 2.068c-.085.169-.314.634-.399.938a.534.534 0 0 0-.02.191.46.46 0 0 0 .23.378.981.981 0 0 0 .46.119h.59c.041 0-.688 1.482-.834 1.972a.53.53 0 0 0-.023.172.465.465 0 0 0 .23.398c.15.092.342.12.475.12l1.66-.001c.01 0 .02-.006.023-.015l.575-1.28a.025.025 0 0 0-.024-.035zm-6.93-4.937H3.1a.032.032 0 0 0-.034.033c0 1.048-.01 2.795-.01 6.829 0 .288-.269.262-.28.262h-.74c-.04.001-.044.004-.04.047.001.037.465 1.064.555 1.263.01.02.03.033.051.033.157.003.767.009.938-.014.153-.02.3-.06.438-.132.3-.156.49-.419.595-.765.052-.172.075-.353.075-.533.002-2.33 0-4.66-.007-6.991a.032.032 0 0 0-.032-.032zm11.784 6.896c0-.014-.01-.021-.024-.022h-1.465c-.048-.001-.049-.002-.05-.049v-4.66c0-.072-.005-.07.07-.07h.863c.08 0 .075.004.075-.074V8.393c0-.082.006-.076-.08-.076h-3.5c-.064 0-.075-.006-.075.073v1.445c0 .083-.006.077.08.077h.854c.075 0 .07-.004.07.07v4.624c0 .095.008.084-.085.084-.37 0-1.11-.002-1.304 0-.048.001-.06.03-.06.03l-.697 1.519s-.014.025-.008.036c.006.01.013.008.058.008 1.748.003 3.495.002 5.243.002.03-.001.034-.006.035-.033v-1.539zm4.177-3.43c0 .013-.007.023-.02.024-.346.006-.692.004-1.037.004-.014-.002-.022-.01-.022-.024-.005-.434-.007-.869-.01-1.303 0-.072-.006-.071.07-.07l.733-.003c.041 0 .081.002.12.015.093.025.16.107.165.204.006.431.002 1.153.001 1.153zm2.67.244a1.953 1.953 0 0 0-.883-.222h-.18c-.04-.001-.04-.003-.042-.04V10.21c0-.132-.007-.263-.025-.394a1.823 1.823 0 0 0-.153-.53 1.533 1.533 0 0 0-.677-.71 2.167 2.167 0 0 0-1-.258c-.153-.003-.567 0-.72 0-.07 0-.068.004-.068-.065V7.76c0-.031-.01-.041-.046-.039H17.93s-.016 0-.023.007c-.006.006-.008.012-.008.023v.546c-.008.036-.057.015-.082.022h-.95c-.022.002-.028.008-.03.032v1.481c0 .09-.004.082.082.082h.913c.082 0 .072.128.072.128V11.19s.003.117-.06.117h-1.482c-.068 0-.06.082-.06.082v1.445s-.01.068.064.068h1.457c.082 0 .076-.006.076.079v3.225c0 .088-.007.081.082.081h1.43c.09 0 .082.007.082-.08v-3.27c0-.029.006-.035.033-.035l2.323-.003c.098 0 .191.02.28.061a.46.46 0 0 1 .274.407c.008.395.003.79.003 1.185 0 .259-.107.367-.33.367h-1.218c-.023.002-.029.008-.028.033.184.437.374.871.57 1.303a.045.045 0 0 0 .04.026c.17.005.34.002.51.003.15-.002.517.004.666-.01a2.03 2.03 0 0 0 .408-.075c.59-.18.975-.698.976-1.313v-1.981c0-.128-.01-.254-.034-.38 0 .078-.029-.641-.724-.998z" fill="currentColor" /></symbol>
+</defs></svg>
+<div class="site">
+  <header>
+    <h1>Shaohang Wei</h1>
+    <p class="name-cn" lang="zh">魏少杭</p>
+    <p class="affiliation"><a href="https://cs.pku.edu.cn/info/1165/1843.htm">Institute of Computational Linguistics <span lang="zh">(计算语言学研究所)</span></a> · <a href="https://www.pku.edu.cn/">Peking University</a></p>
+    <p class="affiliation-detail"><a href="https://www.google.com/maps/search/?api=1&amp;query=Peking+University%2C+5+Yiheyuan+Road%2C+Haidian+District%2C+Beijing+100871%2C+China" target="_blank" rel="noopener noreferrer">5 Yiheyuan Rd, Haidian District, Beijing 100871, China</a></p>
+    <nav class="contact-links" aria-label="Contact and profiles"><a href="mailto:shaohang@stu.pku.edu.cn"><svg class="icon-mail" aria-hidden="true"><use href="#icon-mail"></use></svg>Email</a>
+<a href="https://scholar.google.com/citations?user=wuzIV_kAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer"><svg class="icon-scholar" aria-hidden="true"><use href="#icon-scholar"></use></svg>Scholar</a>
+<a href="https://github.com/sylvain-wei" target="_blank" rel="noopener noreferrer"><svg class="icon-github" aria-hidden="true"><use href="#icon-github"></use></svg>GitHub</a>
+<a href="https://www.linkedin.com/in/shaohang-wei/" target="_blank" rel="noopener noreferrer"><svg class="icon-linkedin" aria-hidden="true"><use href="#icon-linkedin"></use></svg>LinkedIn</a>
+<a href="https://x.com/veison02" target="_blank" rel="noopener noreferrer"><svg class="icon-x" aria-hidden="true"><use href="#icon-x"></use></svg>X</a>
+<a href="https://www.xiaohongshu.com/user/profile/657c1a1200000000190124ce" target="_blank" rel="noopener noreferrer"><svg class="icon-rednote" aria-hidden="true"><use href="#icon-rednote"></use></svg>REDNote</a></nav>
+  </header>
+  <main id="content">
+    <figure class="profile-photo">
+      <img src="asset/photos/shaohang-wei-victoria-peak.png" alt="Shaohang Wei at Victoria Peak, Hong Kong" width="3840" height="2160" fetchpriority="high" decoding="async">
+      <figcaption>Taken at <a href="https://www.discoverhongkong.com/eng/place-to-go/travel.guide-the-peak.html" target="_blank" rel="noopener noreferrer">Victoria Peak</a>, Hong Kong.</figcaption>
+    </figure>
+    <section class="intro" id="about" aria-label="About me">
+      <p>I am currently a Ph.D. student at the <a href="https://cs.pku.edu.cn/info/1165/1843.htm">Institute of Computational Linguistics <span lang="zh">(计算语言学研究所)</span></a>, <a href="https://cs.pku.edu.cn/">School of Computer Science</a>, <a href="https://www.pku.edu.cn/"><img class="org-icon" src="asset/logos/pku.png" alt="" width="18" height="18">Peking University</a>, advised by Prof. <a href="https://scholar.google.com/citations?user=YCX4y1gAAAAJ&amp;hl=en">Houfeng Wang</a>. My research focuses on <strong class="research-label">1) post-train:</strong> <strong class="research-description">data-efficient and stable reinforcement learning across domains (RL, OPD, for agentic AI and reasoning)</strong>; <strong class="research-label">2) data and eval:</strong> <strong class="research-description">data synthesis research and reliable evaluation</strong>.</p>
+      <p>Before PKU, I received my B.Eng. degree in Artificial Intelligence from <a href="https://ev.buaa.edu.cn/"><img class="org-icon" src="asset/logos/beihang.jpg" alt="" width="18" height="18">Beihang University</a> in 2024.</p>
+      <p>I have industrial internship experience at <a href="https://www.tencent.com/en-us/"><img class="org-icon" src="asset/logos/tencent.png" alt="" width="18" height="18">Tencent</a> (2026, <span lang="zh">青云计划</span>), <a href="https://tongyi.aliyun.com/"><img class="org-icon" src="asset/logos/tongyi_lab.png" alt="" width="18" height="18">Alibaba's Tongyi Lab</a>, <a href="https://qwen.ai/">Qwen Pilot</a> (2025), and <a href="https://pixverse.ai/en"><img class="org-icon" src="asset/logos/PixVerse.svg" alt="" width="18" height="18">PixVerse</a> (2024), focusing on post-train, data synthesis and agentic ai &amp; reasoning.</p>
+    </section>
+    <section id="experience" aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Industrial Experience</h2>
+      <div class="experience-list">
+        <article class="experience">
+          <div class="experience-heading"><h3><a href="https://www.tencent.com/en-us/"><img class="institution-logo" src="asset/logos/tencent.png" alt="" width="18" height="18">Tencent</a></h3><span class="entry-meta"> · <span class="entry-dates">Apr'26-now</span> · Research Intern</span><span class="experience-label" lang="zh"> · 青云计划</span></div>
+          <p class="entry-description"><strong>RL and OPD (multimodal agent):</strong> Working on post-training for visual agents: evidence diagnosis, trajectory reflection, targeted token-level supervision, and efficient tool use through <a href="https://arxiv.org/abs/2609.36838">ReVuE</a>.</p>
+        </article>
+        <article class="experience">
+          <div class="experience-heading"><h3><img class="institution-logo" src="asset/logos/tongyi_lab.png" alt="" width="18" height="18"><a href="https://qwen.ai/">Qwen Pilot</a>, <a href="https://tongyi.aliyun.com/">Alibaba · Tongyi Lab</a></h3><span class="entry-meta"> · <span class="entry-dates">May'25-Dec'25</span> · Research Intern</span></div>
+          <p class="entry-description"><strong>Algorithm Research:</strong> Worked on RLVR for mathematical reasoning and instruction following: token-level distribution shifts, cross-task learnability, and capability trade-offs. <strong>Infra &amp; RL Framework:</strong> Built experience-guided rollouts in VeRL for sample efficiency and training stability.</p>
+        </article>
+        <article class="experience">
+          <div class="experience-heading"><h3><a href="https://pixverse.ai/en"><img class="institution-logo" src="asset/logos/PixVerse.svg" alt="" width="18" height="18">PixVerse</a></h3><span class="entry-meta"> · <span class="entry-dates">Jun'24-Aug'24</span> · Research Intern</span></div>
+          <p class="entry-description">Worked on data synthesis and evaluation for video generation: VLM-based video captioning, caption quality analysis, and side-by-side annotation and evaluation workflows.</p>
+        </article>
       </div>
+    </section>
+    <section class="secondary" id="news" aria-labelledby="news-heading"><h2 id="news-heading">News</h2><ul class="news-list"><li><time datetime="2026-09">2026.09</time><span>Our new preprint on on-policy distillation (OPD) for multimodal agents, <a href="https://arxiv.org/abs/2609.36838" target="_blank" rel="noopener noreferrer">On-Policy Visual Evidence Distillation</a>, is now available.</span></li>
+<li><time datetime="2026-09">2026.09</time><span>1 paper was accepted to the NeurIPS 2026 Position Track.</span></li>
+<li><time datetime="2026-08">2026.08</time><span>Our new preprint on continual on-policy reinforcement learning for language models, <a href="https://arxiv.org/pdf/2608.00220" target="_blank" rel="noopener noreferrer">Verifier-Induced Support Reshaping in On-Policy Optimization</a>, is now available.</span></li></ul><details class="older-news"><summary>Earlier updates</summary><ul class="news-list"><li><time datetime="2026-05">2026.05</time><span>3 papers were accepted by ICML 2026.</span></li>
+<li><time datetime="2026-04">2026.04</time><span>1 paper was accepted by ACL 2026 Main.</span></li>
+<li><time datetime="2026-01">2026.01</time><span>1 paper was accepted by ICLR 2026.</span></li>
+<li><time datetime="2025-09">2025.09</time><span><a href="https://arxiv.org/pdf/2505.12891" target="_blank" rel="noopener noreferrer">TIME</a> was accepted as a NeurIPS 2025 Spotlight in the D&amp;B Track.</span></li>
+<li><time datetime="2025-05">2025.05</time><span>2 papers were accepted by ACL 2025 (Main and Findings).</span></li>
+<li><time datetime="2025-04">2025.04</time><span>1 paper was accepted by Science China Information Sciences.</span></li>
+<li><time datetime="2024-11">2024.11</time><span>1 paper was accepted by NAACL 2025 Main.</span></li></ul></details></section>
+    <section class="secondary" id="misc" aria-labelledby="more-heading">
+      <h2 id="more-heading">Open Source Projects &amp; Academic Service</h2>
+      <p><strong>Open source.</strong> Co-contributor to <a href="https://bloodarena.github.io/">BloodArena</a>, an AI-powered Blood on the Clocktower environment for human–agent dialogue and LLM gameplay evaluation. Co-author of <a href="https://github.com/NightingaleCen/LeafyLingo">LeafyLingo</a>, an interactive plant recognition system with a knowledge graph. Author of <a href="https://github.com/sylvain-wei/24-Game-Reasoning">24-Game-Reasoning</a>, a minimal tutorial on LLM reasoning with Zero-RL, SFT, and SFT+RL.</p>
+      <p><strong>Academic service.</strong> Reviewer for AAAI 2027, ICLR 2027, ICML 2026 (<strong>Gold Reviewer Award</strong>), and the EMNLP 2025 HCI-NLP Workshop.</p>
+    </section>
+    <section id="publications" aria-labelledby="publications-heading">
+      <div class="section-heading"><h2 id="publications-heading">Publications</h2><div class="publication-filters" role="group" aria-label="Filter publications" hidden><button type="button" data-filter="selected" aria-pressed="false">Selected</button><span class="filter-divider" aria-hidden="true">/</span><button type="button" data-filter="all" aria-pressed="false">All</button></div></div>
+      <p class="publication-note" id="publication-count" aria-live="polite">16 publications and preprints · * Equal contribution</p>
+      <div class="publication-list">
+      <article class="publication" id="paper-revue" data-selected="true" data-year="2026">
+        <div class="pub-text">
+          <h3><a href="https://arxiv.org/abs/2609.36838" target="_blank" rel="noopener noreferrer">On-Policy Visual Evidence Distillation</a></h3>
+          <p class="pub-authors"><span class="authors-full"><span data-author><strong>Shaohang Wei</strong></span>, <span data-author>Feifan Song</span>, <span data-author>Guangyue Peng</span>, <span data-author>Wenhao Yu</span>, <span data-author>Wei Li</span>, <span data-author>Wen Luo</span>, <span data-author>Yang Xu</span>, <span data-author>Yufan Shen</span>, <span data-author>Luke Mao</span>, <span data-author>Yang Du</span>, <span data-author>Asher Qin</span>, <span data-author>Houfeng Wang</span></span></p>
+          <p class="pub-venue">Preprint (under review)</p>
+          <p class="pub-tldr"><span class="tldr-label">TL;DR</span> ReVuE diagnoses where visual agents lose evidence and turns those reflections into targeted on-policy distillation, improving visual reasoning while reducing redundant reasoning and tool use.</p>
+          <p class="pub-links"><a href="https://arxiv.org/abs/2609.36838" target="_blank" rel="noopener noreferrer">[paper]</a> <a href="https://github.com/sylvain-wei/ReVuE" target="_blank" rel="noopener noreferrer">[code]</a> <a href="https://sylvain-wei.github.io/ReVuE/" target="_blank" rel="noopener noreferrer">[project]</a></p>
+        </div>
+      </article>
 
-      <div class="sidebar-info">
-        <a href="mailto:shaohang@stu.pku.edu.cn">Email</a>
-        <a href="https://www.linkedin.com/in/shaohang-wei/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://github.com/sylvain-wei" target="_blank" rel="noopener noreferrer">Github</a>
-        <a href="https://www.xiaohongshu.com/user/profile/657c1a1200000000190124ce" target="_blank" rel="noopener noreferrer">REDNote</a>
-        <a href="https://scholar.google.com/citations?user=wuzIV_kAAAAJ&amp;hl=zh-CN&amp;oi=ao" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+      <article class="publication" id="paper-visr" data-selected="true" data-year="2026">
+        <div class="pub-text">
+          <h3><a href="https://arxiv.org/abs/2608.00220" target="_blank" rel="noopener noreferrer">Verifier-Induced Support Reshaping in On-Policy Optimization</a></h3>
+          <p class="pub-authors"><span class="authors-full"><span data-author><strong>Shaohang Wei</strong></span>, <span data-author>Zikun Su</span>, <span data-author>Feifan Song</span>, <span data-author>Wen Luo</span>, <span data-author>Wei Li</span>, <span data-author>Guangyue Peng</span>, <span data-author>Houfeng Wang</span></span></p>
+          <p class="pub-venue">Preprint (under review)</p>
+          <p class="pub-tldr"><span class="tldr-label">TL;DR</span> RLVR can raise current-task scores while making successful behaviors for other tasks harder to sample, exposing a hidden trade-off between immediate gains and future learnability.</p>
+          <p class="pub-links"><a href="https://arxiv.org/abs/2608.00220" target="_blank" rel="noopener noreferrer">[paper]</a> <a href="https://github.com/sylvain-wei/VISR" target="_blank" rel="noopener noreferrer">[code]</a> <a href="https://sylvain-wei.github.io/VISR/" target="_blank" rel="noopener noreferrer">[project]</a></p>
+        </div>
+      </article>
+
+      <article class="publication" id="paper-swe-ext" data-selected="true" data-year="2026">
+        <div class="pub-text">
+          <h3><a href="https://conf.researchr.org/details/icsme-2026/icsme-2026-papers/24/SWE-Ext-Scaling-and-Extending-Augmented-Data-for-Mid-Training-of-Repository-Level-Co" target="_blank" rel="noopener noreferrer">SWE-Ext: Scaling and Extending Augmented Data for Mid-Training of Repository-Level Coding Tasks</a></h3>
+          <p class="pub-authors"><span class="authors-full"><span data-author>Wei Li</span>, <span data-author>Xin Zhang</span>, <span data-author><strong>Shaohang Wei</strong></span>, <span data-author>Wen Luo</span>, <span data-author>Feifan Song</span>, <span data-author>Guangyue Peng</span>, <span data-author>Yanjie Gao</span>, <span data-author>Zhongxin Guo</span>, <span data-author>Yangyu Huang</span>, <span data-author>Houfeng Wang</span></span></p>
+          <p class="pub-venue">The 42nd International Conference on Software Maintenance and Evolution <span class="venue-short">(ICSME 2026)</span></p>
+          <p class="pub-tldr"><span class="tldr-label">TL;DR</span> SWE-Ext turns GitHub pull requests into multilingual coding and completion data, improving repository-level mid-training and providing stronger initialization for downstream post-training.</p>
+          <p class="pub-links"><a href="https://openreview.net/forum?id=HYQXJYzmFU" target="_blank" rel="noopener noreferrer">[paper]</a></p>
+        </div>
+      </article>
+
+      <article class="publication" id="paper-eapo" data-selected="true" data-year="2026">
+        <div class="pub-text">
+          <h3><a href="https://arxiv.org/abs/2606.30420" target="_blank" rel="noopener noreferrer">Experience Augmented Policy Optimization for LLM Reasoning</a></h3>
+          <p class="pub-authors"><span class="authors-full"><span data-author>Jinda Lu</span>, <span data-author>Kexin Huang</span>, <span data-author>Junkang Wu</span>, <span data-author>Shuo Yang</span>, <span data-author>Jinghan Li</span>, <span data-author>Chiyu Ma</span>, <span data-author><strong>Shaohang Wei</strong></span>, <span data-author>Xiang Wang</span>, <span data-author>Guoyin Wang</span>, <span data-author>Jingren Zhou</span></span></p>
+          <p class="pub-venue">The 43rd International Conference on Machine Learning <span class="venue-short">(ICML 2026)</span></p>
+          <p class="pub-tldr"><span class="tldr-label">TL;DR</span> EAPO reuses a trained policy&#x27;s experience at critical token decisions, with importance correction to improve reasoning while reducing the inefficiency of learning from scratch.</p>
+          <p class="pub-links"><a href="https://arxiv.org/abs/2606.30420" target="_blank" rel="noopener noreferrer">[paper]</a></p>
+        </div>
+      </article>
+
+      <article class="publication" id="paper-sparse" data-selected="true" data-year="2026">
+        <div class="pub-text">
+          <h3><a href="https://arxiv.org/pdf/2603.22446" target="_blank" rel="noopener noreferrer">Sparse but Critical: A Token-Level Analysis of Distributional Shifts in RLVR Fine-Tuning of LLMs</a></h3>
+          <p class="pub-authors"><span class="authors-full"><span data-author>Haoming Meng</span>, <span data-author>Kexin Huang</span>, <span data-author><strong>Shaohang Wei</strong></span>, <span data-author>Chiyu Ma</span>, <span data-author>Shuo Yang</span>, <span data-author>Xue Wang</span>, <span data-author>Guoyin Wang</span>, <span data-author>Bolin Ding</span>, <span data-author>Jingren Zhou</span></span></p>
+          <p class="pub-venue">The 14th International Conference on Learning Representations <span class="venue-short">(ICLR 2026)</span></p>
+          <p class="pub-tldr"><span class="tldr-label">TL;DR</span> RLVR changes surprisingly few token decisions; controlled token swaps show that these sparse changes account for much of the observed reasoning improvement.</p>
+          <p class="pub-links"><a href="https://arxiv.org/pdf/2603.22446" target="_blank" rel="noopener noreferrer">[paper]</a></p>
+        </div>
+      </article>
+
+      <article class="publication" id="paper-time" data-selected="true" data-year="2025">
+        <div class="pub-text">
+          <h3><a href="https://arxiv.org/abs/2505.12891" target="_blank" rel="noopener noreferrer">TimE: A Multi-level Benchmark for Temporal Reasoning of LLMs in Real-World Scenarios</a></h3>
+          <p class="pub-authors"><span class="authors-full"><span data-author><strong>Shaohang Wei</strong></span>, <span data-author>Wei Li</span>, <span data-author>Feifan Song</span>, <span data-author>Wen Luo</span>, <span data-author>Tianyi Zhuang</span>, <span data-author>Haochen Tan</span>, <span data-author>Zhijiang Guo</span>, <span data-author>Houfeng Wang</span></span></p>
+          <p class="pub-venue">The 39th Annual Conference on Neural Information Processing Systems <span class="venue-short">(NeurIPS 2025)</span> · <strong class="spotlight">Spotlight</strong> (Datasets and Benchmarks Track)</p>
+          <p class="pub-tldr"><span class="tldr-label">TL;DR</span> TimE evaluates temporal reasoning across Wikipedia, news, and dialogue, testing how models handle dense timelines, changing events, and time-dependent social interactions.</p>
+          <p class="pub-links"><a href="https://arxiv.org/abs/2505.12891" target="_blank" rel="noopener noreferrer">[paper]</a> <a href="https://github.com/sylvain-wei/TIME" target="_blank" rel="noopener noreferrer">[code]</a> <a href="https://sylvain-wei.github.io/TIME/" target="_blank" rel="noopener noreferrer">[project]</a></p>
+        </div>
+      </article>
+
+      <article class="publication" id="paper-ranktuner" data-selected="false" data-year="2026">
+        <div class="pub-text">
+          <h3><a href="https://arxiv.org/abs/2602.01745" target="_blank" rel="noopener noreferrer">Probability-Entropy Calibration: An Elastic Indicator for Adaptive Fine-tuning</a></h3>
+          <p class="pub-authors"><span class="authors-full"><span data-author>Wenhao Yu</span>, <span data-author><strong>Shaohang Wei</strong></span>, <span data-author>Jiahong Liu</span>, <span data-author>Yifan Li</span>, <span data-author>Minda Hu</span>, <span data-author>Aiwei Liu</span>, <span data-author>Hao Zhang</span>, <span data-author>Irwin King</span></span></p>
+          <p class="pub-venue">The 43rd International Conference on Machine Learning <span class="venue-short">(ICML 2026)</span></p>
+          <p class="pub-tldr"><span class="tldr-label">TL;DR</span> RankTuner combines token probability and uncertainty to focus fine-tuning on under-learned tokens, improving reasoning and transfer without overemphasizing inherently uncertain targets.</p>
+          <p class="pub-links"><a href="https://arxiv.org/abs/2602.01745" target="_blank" rel="noopener noreferrer">[paper]</a></p>
+        </div>
+      </article>
+
+      <article class="publication" id="paper-owpo" data-selected="false" data-year="2026">
+        <div class="pub-text">
+          <h3><a href="https://arxiv.org/abs/2605.22156" target="_blank" rel="noopener noreferrer">One-Way Policy Optimization for Self-Evolving LLMs</a></h3>
+          <p class="pub-authors"><span class="authors-full"><span data-author>Shuo Yang</span>, <span data-author>Jinda Lu</span>, <span data-author>Kexin Huang</span>, <span data-author>Chiyu Ma</span>, <span data-author><strong>Shaohang Wei</strong></span>, <span data-author>Yuyang Liu</span>, <span data-author>Guoyin Wang</span>, <span data-author>Jingren Zhou</span>, <span data-author>Li Yuan</span></span></p>
+          <p class="pub-venue">The 43rd International Conference on Machine Learning <span class="venue-short">(ICML 2026)</span></p>
+          <p class="pub-tldr"><span class="tldr-label">TL;DR</span> OWPO separates verifier-guided update direction from reference-based update strength, preserving improvements beyond the reference policy and supporting continued self-improvement.</p>
+          <p class="pub-links"><a href="https://arxiv.org/abs/2605.22156" target="_blank" rel="noopener noreferrer">[paper]</a></p>
+        </div>
+      </article>
+
+      <article class="publication" id="paper-cag" data-selected="false" data-year="2026">
+        <div class="pub-text">
+          <h3><a href="https://arxiv.org/abs/2605.01749" target="_blank" rel="noopener noreferrer">Only Say What You Know: Calibration-Aware Generation for Long-Form Factuality</a></h3>
+          <p class="pub-authors"><span class="authors-full"><span data-author>Wen Luo</span>, <span data-author>Guangyue Peng</span>, <span data-author>Liang Wang</span>, <span data-author>Nan Yang</span>, <span data-author>Wei Li</span>, <span data-author>Yuhan Song</span>, <span data-author><strong>Shaohang Wei</strong></span>, <span data-author>Feifan Song</span>, <span data-author>Furu Wei</span>, <span data-author>Houfeng Wang</span></span></p>
+          <p class="pub-venue">arXiv 2026</p>
+          <p class="pub-tldr"><span class="tldr-label">TL;DR</span> Calibration-Aware Generation separates knowledge exploration from final answers, using reliability estimates to reduce hallucinations and improve factuality in long-form generation.</p>
+          <p class="pub-links"><a href="https://arxiv.org/abs/2605.01749" target="_blank" rel="noopener noreferrer">[paper]</a></p>
+        </div>
+      </article>
+
+      <article class="publication" id="paper-twopathways" data-selected="false" data-year="2026">
+        <div class="pub-text">
+          <h3><a href="https://arxiv.org/abs/2601.07422" target="_blank" rel="noopener noreferrer">Two Pathways to Truthfulness: On the Intrinsic Encoding of LLM Hallucinations</a></h3>
+          <p class="pub-authors"><span class="authors-full"><span data-author>Wen Luo</span>, <span data-author>Guangyue Peng</span>, <span data-author>Wei Li</span>, <span data-author><strong>Shaohang Wei</strong></span>, <span data-author>Feifan Song</span>, <span data-author>Liang Wang</span>, <span data-author>Nan Yang</span>, <span data-author>Xingxing Zhang</span>, <span data-author>Jing Jin</span>, <span data-author>Furu Wei</span>, <span data-author>Houfeng Wang</span></span></p>
+          <p class="pub-venue">The 64th Annual Meeting of the Association for Computational Linguistics <span class="venue-short">(ACL 2026)</span> · Main</p>
+          <p class="pub-tldr"><span class="tldr-label">TL;DR</span> Truthfulness signals arise through distinct question- and answer-based pathways inside LLMs; disentangling them helps explain knowledge boundaries and improve hallucination detection.</p>
+          <p class="pub-links"><a href="https://arxiv.org/abs/2601.07422" target="_blank" rel="noopener noreferrer">[paper]</a></p>
+        </div>
+      </article>
+
+      <article class="publication" id="paper-grsp" data-selected="false" data-year="2025">
+        <div class="pub-text">
+          <h3><a href="https://arxiv.org/abs/2510.09535" target="_blank" rel="noopener noreferrer">Mitigating Overthinking through Reasoning Shaping</a></h3>
+          <p class="pub-authors"><span class="authors-full"><span data-author>Feifan Song</span>, <span data-author><strong>Shaohang Wei</strong></span>, <span data-author>Bofei Gao</span>, <span data-author>Yejie Wang</span>, <span data-author>Wen Luo</span>, <span data-author>Wei Li</span>, <span data-author>Linli Yao</span>, <span data-author>Weimin Xiong</span>, <span data-author>Liang Chen</span>, <span data-author>Tianyu Liu</span>, <span data-author>Houfeng Wang</span></span></p>
+          <p class="pub-venue">arXiv 2025</p>
+          <p class="pub-tldr"><span class="tldr-label">TL;DR</span> GRSP regularizes reasoning at the step level, reducing excessive token use while retaining accuracy and improving reinforcement-learning stability.</p>
+          <p class="pub-links"><a href="https://arxiv.org/abs/2510.09535" target="_blank" rel="noopener noreferrer">[paper]</a></p>
+        </div>
+      </article>
+
+      <article class="publication" id="paper-mindscore" data-selected="false" data-year="2025">
+        <div class="pub-text">
+          <h3><a href="https://link.springer.com/article/10.1007/s11432-024-4401-y" target="_blank" rel="noopener noreferrer">MindScore: Quantifying Human Preference for Text-to-image Generation Through Multi-view Lens</a></h3>
+          <p class="pub-authors"><span class="authors-full"><span data-author>Yiqi Tong*</span>, <span data-author>Jiarui Zhang*</span>, <span data-author><strong>Shaohang Wei*</strong></span>, <span data-author>Wei Guo</span>, <span data-author>Fuzhen Zhuang</span>, <span data-author>Deqing Wang</span>, <span data-author>Xi Yang</span>, <span data-author>Richeng Xuan</span></span></p>
+          <p class="pub-venue">Science China Information Sciences, 2025</p>
+          <p class="pub-tldr"><span class="tldr-label">TL;DR</span> MindScore evaluates generated images through semantic matching, faithfulness, quality, and realism, bringing automatic evaluation closer to human preferences.</p>
+          <p class="pub-links"><a href="https://link.springer.com/article/10.1007/s11432-024-4401-y" target="_blank" rel="noopener noreferrer">[paper]</a></p>
+        </div>
+      </article>
+
+      <article class="publication" id="paper-odysseus" data-selected="false" data-year="2025">
+        <div class="pub-text">
+          <h3><a href="https://aclanthology.org/2025.acl-long.1320/" target="_blank" rel="noopener noreferrer">Odysseus Navigates the Sirens&#x27; Song: Dynamic Focus Decoding for Factual and Diverse Open-Ended Text Generation</a></h3>
+          <p class="pub-authors"><span class="authors-full"><span data-author>Wen Luo</span>, <span data-author>Feifan Song</span>, <span data-author>Wei Li</span>, <span data-author>Guangyue Peng</span>, <span data-author><strong>Shaohang Wei</strong></span>, <span data-author>Houfeng Wang</span></span></p>
+          <p class="pub-venue">The 63rd Annual Meeting of the Association for Computational Linguistics <span class="venue-short">(ACL 2025)</span> · Main</p>
+          <p class="pub-tldr"><span class="tldr-label">TL;DR</span> Dynamic Focus Decoding uses differences between model layers to balance factuality and diversity during generation, without extra training data or auxiliary models.</p>
+          <p class="pub-links"><a href="https://aclanthology.org/2025.acl-long.1320/" target="_blank" rel="noopener noreferrer">[paper]</a> <a href="https://github.com/lllllw-222/Siren-DFD" target="_blank" rel="noopener noreferrer">[code]</a></p>
+        </div>
+      </article>
+
+      <article class="publication" id="paper-wsd" data-selected="false" data-year="2025">
+        <div class="pub-text">
+          <h3><a href="https://aclanthology.org/2025.findings-acl.655/" target="_blank" rel="noopener noreferrer">Well Begun is Half Done: Low-resource Preference Alignment by Weak-to-Strong Decoding</a></h3>
+          <p class="pub-authors"><span class="authors-full"><span data-author>Feifan Song</span>, <span data-author><strong>Shaohang Wei</strong></span>, <span data-author>Wen Luo</span>, <span data-author>Yuxuan Fan</span>, <span data-author>Tianyu Liu</span>, <span data-author>Guoyin Wang</span>, <span data-author>Houfeng Wang</span></span></p>
+          <p class="pub-venue">Findings of the Association for Computational Linguistics <span class="venue-short">(ACL 2025)</span></p>
+          <p class="pub-tldr"><span class="tldr-label">TL;DR</span> A small aligned model drafts the opening, then a larger base model takes over, improving preference alignment while preserving downstream capabilities in evaluated settings.</p>
+          <p class="pub-links"><a href="https://aclanthology.org/2025.findings-acl.655/" target="_blank" rel="noopener noreferrer">[paper]</a> <a href="https://github.com/F2-Song/Weak-to-Strong-Decoding" target="_blank" rel="noopener noreferrer">[code]</a></p>
+        </div>
+      </article>
+
+      <article class="publication" id="paper-menti" data-selected="false" data-year="2025">
+        <div class="pub-text">
+          <h3><a href="https://aclanthology.org/2025.naacl-long.263/" target="_blank" rel="noopener noreferrer">MeNTi: Bridging Medical Calculator and LLM Agent with Nested Tool Calling</a></h3>
+          <p class="pub-authors"><span class="authors-full"><span data-author>Yakun Zhu</span>, <span data-author><strong>Shaohang Wei</strong></span>, <span data-author>Xu Wang</span>, <span data-author>Kui Xue</span>, <span data-author>Shaoting Zhang</span>, <span data-author>Xiaofan Zhang</span></span></p>
+          <p class="pub-venue">The 2025 Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics <span class="venue-short">(NAACL 2025)</span> · Main</p>
+          <p class="pub-tldr"><span class="tldr-label">TL;DR</span> MeNTi uses nested tool calls to select medical calculators, fill inputs, and convert units, with CalcQA providing a physician-built benchmark for evaluating these abilities.</p>
+          <p class="pub-links"><a href="https://aclanthology.org/2025.naacl-long.263/" target="_blank" rel="noopener noreferrer">[paper]</a> <a href="https://github.com/shzyk/MENTI" target="_blank" rel="noopener noreferrer">[code]</a></p>
+        </div>
+      </article>
+
+      <article class="publication" id="paper-citecheck" data-selected="false" data-year="2025">
+        <div class="pub-text">
+          <h3><a href="https://arxiv.org/abs/2502.10881" target="_blank" rel="noopener noreferrer">CiteCheck: Towards Accurate Citation Faithfulness Detection</a></h3>
+          <p class="pub-authors"><span class="authors-full"><span data-author>Ziyao Xu</span>, <span data-author><strong>Shaohang Wei</strong></span>, <span data-author>Zhuoheng Han</span>, <span data-author>Jing Jin</span>, <span data-author>Zhe Yang</span>, <span data-author>Xiaoguang Li</span>, <span data-author>Haochen Tan</span>, <span data-author>Zhijiang Guo</span>, <span data-author>Houfeng Wang</span></span></p>
+          <p class="pub-venue">arXiv 2025</p>
+          <p class="pub-tldr"><span class="tldr-label">TL;DR</span> CiteCheck combines cost-conscious annotation with synthetic negative examples to build Chinese citation-faithfulness data and train smaller, effective evaluators for retrieval-augmented generation.</p>
+          <p class="pub-links"><a href="https://arxiv.org/abs/2502.10881" target="_blank" rel="noopener noreferrer">[paper]</a></p>
+        </div>
+      </article>
       </div>
-
-      <nav>
-        <ol class="nav-index">
-          <li><a href="#about" data-page="about">About Me</a></li>
-          <li><a href="#publications" data-page="publications">Publications</a></li>
-          <li><a href="#misc" data-page="misc">Misc.</a></li>
-        </ol>
-      </nav>
-      <footer class="site-footer site-footer--sidebar"><span id="easter-egg" style="cursor: pointer">Shaohang Wei &copy; 2026</span></footer>
-    </aside>
-
-    <main id="content">
-      <!-- Content will load here -->
-    </main>
-  </div>
-
-  <div class="mobile-footer">
-    <button class="mobile-footer-btn" id="btn-top">Top</button>
-    <button class="mobile-footer-btn" id="btn-top-right">Top</button>
-  </div>
-
-  <div id="easter-egg-overlay" class="easter-egg-overlay">
-    <span class="easter-egg-text">nothing here<br>remember to drink water</span>
-  </div>
-
-  <div id="image-modal" class="modal" role="dialog" aria-modal="true" aria-label="Image preview" tabindex="-1">
-    <button class="modal-close" id="modal-close" aria-label="Close image preview">Close</button>
-    <img class="modal-content" id="modal-img" alt="">
-  </div>
-
-  <script src="script.js?v=20260930-news"></script>
+    </section>
+  </main>
+  <footer class="site-footer"><span>© 2026 Shaohang Wei</span></footer>
+</div>
 </body>
-
 </html>
