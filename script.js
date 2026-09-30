@@ -19,7 +19,7 @@ async function loadPage(page) {
   lastLoadedPage = page;
   document.body.classList.toggle('page-home', page === 'home');
   try {
-    const response = await fetch(`pages/${page}.html?v=20260930-arxiv`);
+    const response = await fetch(`pages/${page}.html?v=20260930-news`);
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     const html = await response.text();
 
