@@ -110,7 +110,6 @@ section { margin-top: 2rem; scroll-margin-top: 1.25rem; }
 .affiliation-detail a:hover { color: inherit; }
 .name-cn,
 .entry-dates,
-.news-list time,
 .publication-note,
 .profile-photo figcaption { font-family: var(--font-mono); }
 
@@ -195,7 +194,7 @@ section { margin-top: 2rem; scroll-margin-top: 1.25rem; }
 .authors-toggle { font-size: inherit; line-height: inherit; margin-left: 4px; border-bottom: 1px dotted #94a3b8; }
 .pub-venue { margin: 0 0 .15rem; font-size: .875rem; line-height: 1.6; font-style: italic; color: var(--muted); }
 .pub-venue strong { color: var(--heading); font-weight: 600; }
-.pub-venue .spotlight { color: #b91c1c; }
+.pub-venue .spotlight, .news-list .spotlight { color: #b91c1c; }
 .venue-short { white-space: nowrap; }
 .pub-tldr { font-size: .875rem; line-height: 1.7; margin: .25rem 0; }
 .tldr-label { font-size: inherit; font-weight: 600; color: var(--muted); margin-right: .2rem; }
