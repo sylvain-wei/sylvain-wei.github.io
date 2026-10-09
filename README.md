@@ -12,7 +12,7 @@ GitHub Pages serves the checked-in files directly; no build or package install i
 - `asset/logos/`: original institution marks; source links below.
 - `asset/photos/`: enhanced PNG portrait at Victoria Peak, Hong Kong, supplied by the user.
 - `asset/fonts/`: locally hosted Nunito Sans (normal and italic), IBM Plex Mono, and the previous Noto Sans fonts, with their SIL Open Font Licenses.
-- `asset/icons/`: Font Awesome 5.10.2 and Academicons 1.7.0 source icons and licenses.
+- `asset/icons/`: Font Awesome 5.10.2, Academicons 1.7.0, and Simple Icons source icons and licenses. The Hugging Face icon comes from [Simple Icons](https://github.com/simple-icons/simple-icons/blob/develop/icons/huggingface.svg).
 
 Section order: biography, Industrial Experience, News, Open Source Projects & Academic Service, Publications.
 
