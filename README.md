@@ -6,6 +6,7 @@ GitHub Pages serves the checked-in files directly; no build or package install i
 ## Editing
 
 - `index.html`: biography, industrial experience, publications, news, and additional activities.
+- `blog/index.html`: the `/blog/` landing page, with separate Blog and Random musings sections; shares the homepage stylesheet and fonts.
 - `style.css`: Nunito Sans / IBM Plex Mono typography, 770 px reading column, responsive layout.
 - `script.js`: Selected / All filtering and reversible author-list expansion.
 - `asset/paper_fig/`: retained source figures, no longer displayed on the homepage. See its README for provenance.
@@ -21,6 +22,17 @@ content remains readable without JavaScript. Author previews preserve author ord
 and always show Shaohang Wei. Publications use the full reading column without
 figures. Education is summarized in the biography. The original `pages/` fragments and VISR redirect remain available;
 the homepage no longer fetches those fragments.
+
+## Adding blog content
+
+For a long post, add `blog/<slug>/index.html`, reuse the shared stylesheet at
+`../../style.css`, and add its title, date, and a short summary inside
+`.blog-posts` in `blog/index.html`. For a short musing, add an `<article>` with
+a `<time datetime="YYYY-MM-DD">` and the note text inside `.musing-posts`.
+Remove the corresponding `.blog-empty` paragraph when the first entry is added.
+Keep newest entries first and use the existing heading, body, and date typography.
+The landing page intentionally has no sample posts or scripts; its content and
+navigation work without JavaScript.
 
 ## Source updates
 

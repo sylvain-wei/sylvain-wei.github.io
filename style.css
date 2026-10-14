@@ -135,9 +135,9 @@ section { margin-top: 2rem; scroll-margin-top: 1.25rem; }
 
 .intro { margin-top: 0; margin-bottom: 2rem; }
 .intro p { font-size: .95rem; line-height: 1.7; color: var(--ink); margin-bottom: .75rem; }
-.intro .blog-invite,
-.blog-invite a { color: #FFB656; }
-.blog-invite a:hover { color: #FFB656; text-decoration: underline; }
+.intro .blog-invite { color: var(--muted); font-size: .875rem; }
+.blog-invite a { color: var(--link); text-decoration: underline; text-decoration-color: currentColor; text-underline-offset: 3px; }
+.blog-invite a:hover { color: var(--link-hover); }
 .intro .research-label { font-weight: 700; color: #000; }
 .intro .research-description { font-weight: 700; color: #475569; }
 .org-icon {
@@ -226,6 +226,15 @@ section { margin-top: 2rem; scroll-margin-top: 1.25rem; }
 .skip-link:focus { transform: none; }
 .icon-definitions { position: absolute; width: 0; height: 0; overflow: hidden; }
 .anchor-alias { scroll-margin-top: 1.25rem; }
+
+.blog-owner { margin: 0 0 1rem; font-size: .875rem; color: var(--muted); }
+.blog-owner a { color: inherit; }
+.blog-owner a:hover { color: var(--link); }
+.blog-nav { display: flex; flex-wrap: wrap; gap: 1.25rem; font-size: .875rem; margin-top: 1rem; }
+.blog-nav a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.blog-page .intro { margin-bottom: 0; }
+.blog-page .blog-empty { font-size: .875rem; line-height: 1.7; color: var(--muted); margin: .85rem 0 0; }
+.blog-page .site-footer { color: var(--muted); }
 
 @media print {
   .site { width: 100%; max-width: none; margin: 0; padding: 0; }
