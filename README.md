@@ -31,8 +31,12 @@ For a long post, add `blog/<slug>/index.html`, reuse the shared stylesheet at
 a `<time datetime="YYYY-MM-DD">` and the note text inside `.musing-posts`.
 Remove the corresponding `.blog-empty` paragraph when the first entry is added.
 Keep newest entries first and use the existing heading, body, and date typography.
-The landing page intentionally has no sample posts or scripts; its content and
-navigation work without JavaScript.
+Keep all musing articles as direct children of `.musing-posts` in the HTML.
+`blog/musings.js` leaves the newest three visible and groups the remaining entries
+in a closed native `details` element labeled "Earlier musings", with the older
+entry count. With three or fewer entries, no disclosure is shown. New entries
+automatically follow this rule. Content and navigation remain readable without
+JavaScript; in that case all musings are expanded.
 
 ## Source updates
 

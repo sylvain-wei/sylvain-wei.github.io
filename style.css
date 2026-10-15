@@ -240,6 +240,10 @@ section { margin-top: 2rem; scroll-margin-top: 1.25rem; }
 .musing .musing-meta { color: var(--muted); font-family: var(--font-mono); font-size: .75rem; }
 .musing-translation > :last-child, .musing-original > :last-child { margin-bottom: 0; }
 .musing-original { margin-top: 3.4em; }
+.musing-archive { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--paper-line); }
+.musing-archive > summary { width: fit-content; color: var(--muted); font-size: .875rem; cursor: pointer; }
+.musing-archive > summary:hover { color: var(--link); }
+.musing-archive > summary:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
 
 @media print {
   .site { width: 100%; max-width: none; margin: 0; padding: 0; }
