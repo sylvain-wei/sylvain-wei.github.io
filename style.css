@@ -235,6 +235,11 @@ section { margin-top: 2rem; scroll-margin-top: 1.25rem; }
 .blog-page .intro { margin-bottom: 0; }
 .blog-page .blog-empty { font-size: .875rem; line-height: 1.7; color: var(--muted); margin: .85rem 0 0; }
 .blog-page .site-footer { color: var(--muted); }
+.musing { margin-top: 1.5rem; font-size: .95rem; line-height: 1.7; }
+.musing + .musing { padding-top: 1.5rem; border-top: 1px solid var(--paper-line); }
+.musing .musing-meta { color: var(--muted); font-family: var(--font-mono); font-size: .75rem; }
+.musing-translation > :last-child, .musing-original > :last-child { margin-bottom: 0; }
+.musing-original { margin-top: 3.4em; }
 
 @media print {
   .site { width: 100%; max-width: none; margin: 0; padding: 0; }
